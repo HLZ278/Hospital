@@ -10,6 +10,7 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
 	@Override
 	public User login(String userName) {
+		//DBUtils封装了数据库的连接
 		Connection conn = DBUtils.getCon();
 		PreparedStatement pstatement = null;
 		ResultSet resultSet = null;
@@ -35,6 +36,7 @@ public class UserDAOImpl implements UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
 			DBUtils.Close(resultSet, pstatement, conn);
 		}
 		return user;

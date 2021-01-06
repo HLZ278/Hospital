@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+//controller层
 @WebServlet("/doLogin")
 public class Login extends HttpServlet {
 
@@ -19,11 +19,13 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userName = req.getParameter("userName");
         String userPwd = req.getParameter("userPwd");
+        //调用业务层进行查询
         UserService userService = new UserServiceImpl();
         User user = userService.login(userName);
         if (user != null){
             if (user.getUserPwd().equals(userPwd)){
                 req.setAttribute("user", user);
+                //判断用户类型，跳转对应页面
                 switch (user.getUserType()) {
                     case UserType.NORMAL_USER:
                         req.getRequestDispatcher("home.jsp").forward(req, resp);
@@ -48,6 +50,7 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //任何post请求终将前往doGet处理
         doGet(req, resp);
     }
 }

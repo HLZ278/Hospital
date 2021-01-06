@@ -3,10 +3,11 @@ package service;
 import dao.UserDAO;
 import dao.UserDAOImpl;
 import entity.User;
-
+//业务层
 public class UserServiceImpl implements UserService {
 	@Override
 	public User login(String userName) {
+		//业务层进行一些处理后调用dao层操作获取数据库数据
 		UserDAO dao = new UserDAOImpl();
 		User user = dao.login(userName);
 		return user;
