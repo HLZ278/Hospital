@@ -3,12 +3,9 @@
 <html>
 <head>
     <title>home</title>
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/home.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/home.css">
 </head>
 <body>
 <%request.setCharacterEncoding("UTF-8"); %>

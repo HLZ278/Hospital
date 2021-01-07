@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
         } else {
             System.out.println("未找到对应用户");
         }
-        resp.sendRedirect("login.jsp");
+        resp.sendRedirect("");
     }
 
     @Override

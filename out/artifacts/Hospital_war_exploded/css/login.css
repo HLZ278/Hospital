@@ -1,0 +1,94 @@
+.bgGradient {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    height: calc(100% - 70px);
+    background-color: red; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to top right, #077893, #49ffeb);
+}
+
+.loginBox {
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 418px;
+    margin-top: 100px;
+    height: 400px;
+    width: 700px
+}
+
+.boxLeft {
+    float: left;
+    margin-left: 57.5px;
+    margin-top: 100px
+}
+
+.boxRight {
+    text-align: center;
+    float: right;
+    width: 55%;
+	height: 100%;
+	border-left: 2px solid rgba(53, 213, 208, 0.14);
+}
+
+.registInput {
+    margin: auto;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.registInput input {
+    width: 220px;
+    border: none;
+    font-size: 14px;
+    height: 40px;
+    color: #333;
+    outline: none;
+    margin-left: 5px
+}
+
+.registTitle {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.loginBtn {
+    margin-top: 25px
+}
+
+.loginBtn button {
+    font-weight: 700;
+    font-family: FontAwesome;
+    outline: none;
+    border: none;
+    color: white;
+    height: 32px;
+    background: #56b943;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.registIcon {
+    float: left;
+    margin-top: 10px
+}
+.registA a, .Q a{
+    width: 280px;
+    text-decoration: none;
+    color: #6a8bd4;
+}
+.registA a:hover, .Q a:hover{
+    text-decoration: none;
+    color: rgba(126, 171, 255, 0.8);
+}
+
+.registA {
+    float: right;
+    margin-right: 80px;
+    margin-top: 10px
+}
+
+.Q {
+    margin-top: 80px
+}

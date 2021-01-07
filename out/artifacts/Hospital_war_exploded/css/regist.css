@@ -1,0 +1,12 @@
+.registBox{
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 368px;
+    margin-top: 25px;
+    height: 550px;
+    width: 800px;
+    padding: 10px;
+}
+.fontText{
+    font-size: 15px; color: #077893;font-weight: 700;font-family:FontAwesome; float: left; margin-right: 10px
+}

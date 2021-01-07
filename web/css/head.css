@@ -12,16 +12,16 @@
 	z-index:99
 }
 .title{
-	line-height:70px;
-	float:left;
-	display:inline-block;
-	color:white;
-	width:100px;
-	text-transform:uppercase;
-	margin-left: 10px;
-	font-family:FontAwesome;
-	margin-right: 15px;
-}
+	 line-height:70px;
+	 float:left;
+	 display:inline-block;
+	 color:white;
+	 width:100px;
+	 text-transform:uppercase;
+	 margin-left: 10px;
+	 font-family:FontAwesome;
+	 margin-right: 15px;
+ }
 .homeHead{
 	margin-left:168px;
 	width:1200px;
@@ -29,6 +29,9 @@
 }
 .homeTitle{
 	float: left
+}
+.homeTitle h1{
+	font-weight: bold;
 }
 .registBtn{
 	float: right;
