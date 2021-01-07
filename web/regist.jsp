@@ -16,7 +16,7 @@
     <%request.setCharacterEncoding("UTF-8"); %>
     <%--网页头部--%>
     <div>
-      <jsp:include page="head.jsp"></jsp:include>
+        <jsp:include page="headLogined.jsp"></jsp:include>
     </div>
     <div class="bgGradient">
       <div class="registBox">
@@ -60,7 +60,7 @@
               </div>
               <div style="float: right; margin-right: 40px; margin-bottom: 10px; border-bottom: none; margin-top: 10px" class="registInput">
 
-                  <select style="border: none; border-bottom: 1px solid rgba(0,0,0,0.2); width: 250px">
+                  <select style="border: none; border-bottom: 1px solid rgba(0,0,0,0.2); width: 250px; color: #828282">
                       <option value ="volvo">居民身份证</option>
                       <option value ="saab">港澳居民来往内地通行证</option>
                       <option value="opel">台湾居民来往大陆通行证</option>

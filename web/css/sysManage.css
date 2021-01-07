@@ -1,0 +1,14 @@
+.sysMenuItem{
+}
+
+.sysMenuItem li{
+    line-height: 70px;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: FontAwesome;
+    height: 70px;
+    color: white;
+}
+.sysMenuItem ul{
+    text-align: center;
+}

@@ -12,7 +12,7 @@
 <%request.setCharacterEncoding("UTF-8"); %>
 <%--网页头部--%>
 <div>
-    <jsp:include page="head.jsp"></jsp:include>
+    <jsp:include page="headLogined.jsp"></jsp:include>
 </div>
 <div class="bgGradient">
     <div class="loginBox">
@@ -44,6 +44,8 @@
                         </svg>
                     </div>
                     <input type="text" autocomplete="off" placeholder="点击输入用户名"/>
+                    <span class="userError">用户名正确</span>
+
                 </div>
                 <div style="margin: auto; margin-top: 15px" class="registInput">
                     <div class="registIcon">
@@ -58,6 +60,7 @@
                         </svg>
                     </div>
                     <input type="password" autocomplete="off" placeholder="点击输入密码"/>
+                    <span class="pwdError" >密码格式正确</span>
                 </div>
                 <div class="loginBtn">
                     <button type="submit">登录</button>

@@ -11,7 +11,7 @@
 <%request.setCharacterEncoding("UTF-8"); %>
 <%--网页头部--%>
 <div>
-    <jsp:include page="head.jsp"></jsp:include>
+    <jsp:include page="headLogined.jsp"></jsp:include>
 </div>
 <%--轮播图--%>
 <div class="myContainer">
