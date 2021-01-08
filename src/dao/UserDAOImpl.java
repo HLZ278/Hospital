@@ -42,4 +42,26 @@ public class UserDAOImpl implements UserDAO {
 		return user;
 	}
 
+	@Override
+	public String findUser(String userName) {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		ResultSet resultSet = null;
+		try {
+			String sql = "select * from user where userName =?";
+			pstatement = conn.prepareStatement(sql);
+			pstatement.setString(1, userName);
+			resultSet = pstatement.executeQuery();
+			if (resultSet.next()) {
+				return "true";
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(resultSet, pstatement, conn);
+		}
+		return "false";
+	}
+
 }

@@ -32,16 +32,14 @@
         <div class="homeTitle">
             <h1 class="title">Hospital</h1>
         </div>
-        <%
-              request.setAttribute("ss", new User(1,"2","2",3));
-        %>
+
         <c:choose>
-            <c:when test="${ss==null}">
+            <c:when test="${user==null}">
                 <div class="registBtn">
                     <a href="login.jsp">登陆/注册</a>
                 </div>
             </c:when>
-            <c:when test="${ss.getUserType()==1}">
+            <c:when test="${user.getUserType()==1}">
                 <div class="dropdown">
                     <span>*立志 ▽</span>
                     <div class="dropdown-content">
@@ -52,7 +50,7 @@
                     </div>
                 </div>
             </c:when>
-            <c:when test="${ss.getUserType()==2}">
+            <c:when test="${user.getUserType()==2}">
                 <div class="dropdown">
                     <span>*立志 ▽</span>
                     <div class="dropdown-content">
@@ -61,7 +59,7 @@
                     </div>
                 </div>
             </c:when>
-            <c:when test="${ss.getUserType()==3}">
+            <c:when test="${user.getUserType()==3}">
                 <div class="dropdown">
                     <span>*立志 ▽</span>
                     <div class="dropdown-content">

@@ -19,6 +19,7 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userName = req.getParameter("userName");
         String userPwd = req.getParameter("userPwd");
+        System.out.println(userName+"---"+userPwd);
         //调用业务层进行查询
         UserService userService = new UserServiceImpl();
         User user = userService.login(userName);
@@ -40,12 +41,10 @@ public class Login extends HttpServlet {
                         break;
                 }
             }else {
-                System.out.println("密码错误");
+                req.setAttribute("msgg", 1);
+                req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
-        } else {
-            System.out.println("未找到对应用户");
         }
-        resp.sendRedirect("");
     }
 
     @Override

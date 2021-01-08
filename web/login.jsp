@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>login</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/login.css">
-
+    <script src="js/login.js"></script>
 </head>
 <body>
 <%request.setCharacterEncoding("UTF-8"); %>
@@ -30,9 +31,9 @@
         </div>
         <div class="boxRight">
             <div style="margin-top: 50px" class="registTitle"><font>LOGIN</font></div>
-            <form style="margin-top: 30px">
+            <form action="${pageContext.request.contextPath}/doLogin" style="margin-top: 30px">
                 <div class="registInput">
-                    <div class="registIcon" >
+                    <div class="registIcon">
                         <svg t="1609989203051" class="icon" viewBox="0 0 1024 1024" version="1.1"
                              xmlns="http://www.w3.org/2000/svg" p-id="2092" xmlns:xlink="http://www.w3.org/1999/xlink"
                              width="20" height="20">
@@ -43,8 +44,9 @@
                                   p-id="2093"></path>
                         </svg>
                     </div>
-                    <input type="text" autocomplete="off" placeholder="点击输入用户名"/>
-                    <span class="userError">用户名正确</span>
+                    <input id="userName" name="userName" type="text" autocomplete="off" placeholder="点击输入用户名"
+                           onblur="checkName()"/>
+                    <div class="userError" style="visibility: hidden">用户名不正确</div>
 
                 </div>
                 <div style="margin: auto; margin-top: 15px" class="registInput">
@@ -59,8 +61,15 @@
                                   fill="" p-id="4123"></path>
                         </svg>
                     </div>
-                    <input type="password" autocomplete="off" placeholder="点击输入密码"/>
-                    <span class="pwdError" >密码格式正确</span>
+                    <input name="userPwd" type="password" autocomplete="off" placeholder="点击输入密码" onclick="clearError()"/>
+                    <c:choose>
+                        <c:when test="${requestScope.msgg == 1}">
+                            <div style="visibility:visible" class="pwdError">密码错误</div>
+                        </c:when>
+                        <c:otherwise>
+                            <div style="visibility:hidden" class="pwdError">密码错误</div>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
                 <div class="loginBtn">
                     <button type="submit">登录</button>
