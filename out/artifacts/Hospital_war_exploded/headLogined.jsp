@@ -33,6 +33,7 @@
             <h1 class="title">Hospital</h1>
         </div>
 
+
         <c:choose>
             <c:when test="${user==null}">
                 <div class="registBtn">
@@ -41,27 +42,27 @@
             </c:when>
             <c:when test="${user.getUserType()==1}">
                 <div class="dropdown">
-                    <span>*立志 ▽</span>
+                    <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
                         <a href="#">就诊人管理</a>
                         <a href="#">预约挂号订单</a>
                         <a href="#">个人信息</a>
-                        <a href="#">退出登录</a>
+                        <a href="javascript:exit();">退出登录</a>
                     </div>
                 </div>
             </c:when>
             <c:when test="${user.getUserType()==2}">
                 <div class="dropdown">
-                    <span>*立志 ▽</span>
+                    <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
                         <a href="#">个人信息</a>
-                        <a  href="#">退出登录</a>
+                        <a  href="javascript:exit();">退出登录</a>
                     </div>
                 </div>
             </c:when>
             <c:when test="${user.getUserType()==3}">
                 <div class="dropdown">
-                    <span>*立志 ▽</span>
+                    <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
                         <a  href="#">个人信2息</a>
                         <a href="javascript:exit();">退出登录</a>
@@ -76,7 +77,7 @@
 </div>
 <script>
     function exit() {
-        window.location.href="home.jsp"
+        window.location.href="exitLogin"
     }
 </script>
 </body>

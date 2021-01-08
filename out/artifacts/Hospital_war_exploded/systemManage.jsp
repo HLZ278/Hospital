@@ -25,18 +25,18 @@
         </div>
         <div class="sysMenuItem">
             <ul>
-                <li class="sysLi"><a>普通用户管理</a><span style="margin-left: 5px">></span></li>
-                <li class="sysLi"><a>医院用户管理</a><span style="margin-left: 5px">></span></li>
-                <li class="sysLi"><a>医院管理</a><span style="margin-left: 5px">></span></li>
-                <li class="sysLi"><a>公告管理</a><span style="margin-left: 5px">></span></li>
-                <li class="sysLi"><a>留言管理</a><span style="margin-left: 5px">></span></li>
+                <li id="ordinaryUser" class="sysLi"><a >普通用户管理</a><span style="margin-left: 5px">></span></li>
+                <li id="hospitalUser" class="sysLi"><a >医院用户管理</a><span style="margin-left: 5px">></span></li>
+                <li id="hospital" class="sysLi"><a >医院管理</a><span style="margin-left: 5px">></span></li>
+                <li id="notice" class="sysLi"><a >公告管理</a><span style="margin-left: 5px">></span></li>
+                <li id="message" class="sysLi"><a >留言管理</a><span style="margin-left: 5px">></span></li>
 
             </ul>
         </div>
     </div>
 
-    <div>
-        <jsp:include page="commonUserManage.jsp"></jsp:include>
+    <div id="right">
+        <%@ include file="commonUserManage.jsp" %>
     </div>
 </div>
 
@@ -46,15 +46,41 @@
         let filter = document.getElementsByClassName("sysLi")
         for (let i = 0; i < filter.length; i++) {
             filter[i].addEventListener('click', function () {
+                var data = getData(filter[i].id)
+                switch (this.id) {
+                    case "ordinaryUser":
+                        $("#right").html(String.raw`<%@ include file="commonUserManage.jsp" %>`)
+                        break;
+                    case "hospitalUser":
+                        $("#right").html(String.raw`<%@ include file="hospitalUserManage.jsp" %>`)
+                        break;
+                    case "hospital":
+                        $("#right").html(String.raw`<%@ include file="hospitalTableManage.jsp" %>`)
+                        break;
+                    default:
+                        break;
+                }
                 filter[i].style.backgroundColor = "#4bbfd4"
                 for (let j = 0; j < filter.length; j++) {
-                    if (i != j) {
+                    if (i !== j) {
                         filter[j].style.backgroundColor = "#4097ac"
                     }
                 }
             })
         }
     };
+    function getData(id) {
+        window.
+        $.ajax({
+            type:"get",
+            url:id,
+            dataType:"text",
+            success:function(data){
+                return data
+            },
+        });
+    }
 </script>
+
 </body>
 </html>

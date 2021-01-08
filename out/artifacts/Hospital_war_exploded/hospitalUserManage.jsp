@@ -34,7 +34,7 @@
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
         <table border="1" cellspacing="0">
             <tr>
-                <th>用户ID</th>
+                <th>用户1ID</th>
                 <th>用户名</th>
                 <th>密码</th>
                 <th>电话</th>

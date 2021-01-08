@@ -3,6 +3,9 @@ package service;
 import dao.UserDAO;
 import dao.UserDAOImpl;
 import entity.User;
+
+import java.util.List;
+
 //业务层
 public class UserServiceImpl implements UserService {
 	@Override
@@ -17,6 +20,12 @@ public class UserServiceImpl implements UserService {
 	public String findUser(String userName) {
 		UserDAO dao = new UserDAOImpl();
 		return dao.findUser(userName);
+	}
+
+	@Override
+	public List<User> queryUser(int page) {
+		UserDAO dao = new UserDAOImpl();
+		return dao.queryUser(page);
 	}
 
 }

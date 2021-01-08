@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 //controller层
 @WebServlet("/doLogin")
@@ -25,7 +26,8 @@ public class Login extends HttpServlet {
         User user = userService.login(userName);
         if (user != null){
             if (user.getUserPwd().equals(userPwd)){
-                req.setAttribute("user", user);
+                HttpSession session = req.getSession();
+                session.setAttribute("user", user);
                 //判断用户类型，跳转对应页面
                 switch (user.getUserType()) {
                     case UserType.NORMAL_USER:

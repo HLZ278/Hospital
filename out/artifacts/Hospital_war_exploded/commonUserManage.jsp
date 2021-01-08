@@ -34,13 +34,13 @@
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
         <table border="1" cellspacing="0">
             <tr>
-                <th>1</th>
-                <th>2</th>
-                <th>2</th>
-                <th>2</th>
-                <th>2</th>
-                <th>2</th>
-                <th>2</th>
+                <th>用户ID</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>电话</th>
+                <th>注册日期</th>
+                <th>真实姓名</th>
+                <th>身份证类型</th>
                 <th>操作</th>
             </tr>
             <tr>
@@ -50,7 +50,7 @@
                 <td>1-1</td>
                 <td>1-1</td>
                 <td>1-1</td>
-                <td>1-2</td>
+                <td>1-1</td>
                 <td><a href="#">修改</a>/<a a href="#">删除</a></td>
             </tr>
             <tr>
