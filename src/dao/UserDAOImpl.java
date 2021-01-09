@@ -71,13 +71,12 @@ public class UserDAOImpl implements UserDAO {
 		Connection conn = DBUtils.getCon();
 		PreparedStatement pstatement = null;
 		ResultSet resultSet = null;
-		User user = null;
 		try {
-			String sql = "SELECT * FROM user WHERE userType=1 ORDER BY userID LIMIT"+(page-1)*15+", 15";
+			String sql = "SELECT * FROM user WHERE userType=1 ORDER BY userID LIMIT "+(page)*15+", 15";
 			pstatement = conn.prepareStatement(sql);
 			resultSet = pstatement.executeQuery();
-			if (resultSet.next()) {
-				user = new User();
+			while (resultSet.next()) {
+				User user = new User();
 				user.setUserID(resultSet.getInt("userID"));
 				user.setUserName(resultSet.getString("userName"));
 				user.setUserPwd(resultSet.getString("userPwd"));
@@ -95,6 +94,61 @@ public class UserDAOImpl implements UserDAO {
 			DBUtils.Close(resultSet, pstatement, conn);
 		}
 		return list;
+	}
+
+	@Override
+	public List<User> queryHospitalUser(int page) {
+		ArrayList<User> list = new ArrayList<>();
+		//DBUtils封装了数据库的连接
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		ResultSet resultSet = null;
+		try {
+			String sql = "SELECT * FROM user WHERE userType=2 ORDER BY userID LIMIT "+(page)*15+", 15";
+			pstatement = conn.prepareStatement(sql);
+			resultSet = pstatement.executeQuery();
+			while (resultSet.next()) {
+				User user = new User();
+				user.setUserID(resultSet.getInt("userID"));
+				user.setUserName(resultSet.getString("userName"));
+				user.setUserPwd(resultSet.getString("userPwd"));
+				user.setUserTel(resultSet.getString("userTel"));
+				user.setRegisteDate(resultSet.getDate("registeDate"));
+				user.setRealName(resultSet.getString("realName"));
+				user.setIdCardType(resultSet.getInt("idCardType"));
+				user.setIdCardNum(resultSet.getString("idCardNum"));
+				user.setHospitalID(resultSet.getInt("hospitalID"));
+				list.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(resultSet, pstatement, conn);
+		}
+		return list;
+	}
+
+	@Override
+	public String queryHospitalName(User user) {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		ResultSet resultSet = null;
+		try {
+			String sql = "select name from hospital where hospitalID =?";
+			pstatement = conn.prepareStatement(sql);
+			pstatement.setInt(1, user.getHospitalID());
+			resultSet = pstatement.executeQuery();
+			if (resultSet.next()) {
+				return resultSet.getString(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(resultSet, pstatement, conn);
+		}
+		return "暂无";
 	}
 
 

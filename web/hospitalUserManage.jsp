@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="entity.User" %><%--
   Created by IntelliJ IDEA.
   User: 96916
   Date: 2021/1/7
@@ -6,11 +7,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Title</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/sysManage.css">
-
 </head>
 <body>
 <div class="rightMain" style="background-color: #f0f0f0;float: right;  width: calc(100% - 300px);height: 100%">
@@ -34,66 +35,52 @@
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
         <table border="1" cellspacing="0">
             <tr>
-                <th>用户1ID</th>
+                <th>医院用户ID</th>
                 <th>用户名</th>
                 <th>密码</th>
                 <th>电话</th>
                 <th>注册日期</th>
                 <th>真实姓名</th>
                 <th>身份证类型</th>
+                <th>身份证号</th>
+                <th>管理医院</th>
                 <th>操作</th>
             </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-            </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-2</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
 
-            </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-2</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-            </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-2</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-            </tr>
+            <c:forEach var="user" items="${ list }">
+                <tr>
+                    <td>${user.userID}</td>
+                    <td>${user.userName}</td>
+                    <td>${user.userPwd}</td>
+                    <td>${user.userTel}</td>
+                    <td>${user.registeDate}</td>
+                    <td>${user.realName}</td>
+                    <c:choose>
+                        <c:when test="${user.idCardType==1}"><td>居民身份证</td></c:when>
+                        <c:when test="${user.idCardType==2}"><td>港澳居民来往内地通行证</td></c:when>
+                        <c:when test="${user.idCardType==3}"><td>台湾居民来往大陆通行证</td></c:when>
+                        <c:when test="${user.idCardType==4}"><td>护照</td></c:when>
+                        <c:when test="${user.idCardType==5}"><td>外国人永久居留身份证</td></c:when>
+                        <c:when test="${user.idCardType==6}"><td>港澳居民居住证</td></c:when>
+                        <c:when test="${user.idCardType==7}"><td>台湾居民居住证</td></c:when>
+                        <c:otherwise><td>其他</td></c:otherwise>
+                    </c:choose>
+                    <td>${user.idCardNum}</td>
+                    <td>${hospitalNameMap.get(user.userID)}</td>
+                    <td><a href="#">修改</a>/<a a href="#">删除</a></td>
+                </tr>
+            </c:forEach>
         </table>
         <div style="position:absolute; bottom: 0;left: 0; margin-left: 20px; height: 40px" >
             一页最多显示15条记录，共5页
         </div>
         <div style="position:absolute; bottom: 0;right: 0; margin: 10px;  width: 170px; height: 40px" >
-            <button class="weightText" style="float: left; height: 40px; width: 60px">上一页</button>
+            <button id="pre" class="weightText" style="float: left; height: 40px; width: 60px">上一页</button>
             <div style="float: left; line-height: 40px;margin-left: 17px">01</div>
             <button class="weightText" style="float: right; height: 40px; width: 60px">下一页</button>
         </div>
     </div>
 </div>
+
 </body>
 </html>

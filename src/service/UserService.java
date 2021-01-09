@@ -12,6 +12,6 @@ public interface UserService {
 	//2.登陆时查找用户
 	public String findUser(String userName);
 	public List<User> queryUser(int page);
-
-
+	public List<User> queryHospitalUser(int page);
+	public String queryHospitalName(User user);
 }

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>$Title$</title>
@@ -34,9 +35,8 @@
             </ul>
         </div>
     </div>
-
+    
     <div id="right">
-        <%@ include file="commonUserManage.jsp" %>
     </div>
 </div>
 
@@ -44,18 +44,18 @@
 <script type="text/javascript">
     window.onload = function () {
         let filter = document.getElementsByClassName("sysLi")
+
         for (let i = 0; i < filter.length; i++) {
             filter[i].addEventListener('click', function () {
-                var data = getData(filter[i].id)
-                switch (this.id) {
+                switch ($(this).attr("id")) {
                     case "ordinaryUser":
-                        $("#right").html(String.raw`<%@ include file="commonUserManage.jsp" %>`)
+                        window.location.href="ordinaryUser?page="+0+"&current="+1
                         break;
                     case "hospitalUser":
-                        $("#right").html(String.raw`<%@ include file="hospitalUserManage.jsp" %>`)
+                        window.location.href="hospitalUser?page="+0+"&current="+2
                         break;
                     case "hospital":
-                        $("#right").html(String.raw`<%@ include file="hospitalTableManage.jsp" %>`)
+                        window.location.href="ordinaryUser?page="+0+"&current="+3
                         break;
                     default:
                         break;
@@ -66,19 +66,29 @@
                         filter[j].style.backgroundColor = "#4097ac"
                     }
                 }
+
             })
         }
+        switch (<%=request.getParameter("current")%>) {
+            case 1:
+                filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+                $("#right").html(String.raw`<%@ include file="commonUserManage.jsp"%>`)
+                break;
+            case 2:
+                filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+                $("#right").html(String.raw`<%@ include file="hospitalUserManage.jsp"%>`)
+                break;
+            case 3:
+                filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+                $("#right").html(String.raw`<%@ include file="hospitalTableManage.jsp"%>`)
+                break;
+            default:
+                break;
+        }
     };
-    function getData(id) {
-        window.
-        $.ajax({
-            type:"get",
-            url:id,
-            dataType:"text",
-            success:function(data){
-                return data
-            },
-        });
+    function add() {
+            alert($('#ooo').get(0).tagName);
+        $('#ooo').css('display','none')
     }
 </script>
 

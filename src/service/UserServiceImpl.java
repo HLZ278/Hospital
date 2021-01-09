@@ -28,4 +28,15 @@ public class UserServiceImpl implements UserService {
 		return dao.queryUser(page);
 	}
 
+	@Override
+	public List<User> queryHospitalUser(int page) {
+		UserDAO dao = new UserDAOImpl();
+		return dao.queryHospitalUser(page);
+	}
+	@Override
+	public String queryHospitalName(User user) {
+		UserDAO dao = new UserDAOImpl();
+		return dao.queryHospitalName(user);
+	}
+
 }
