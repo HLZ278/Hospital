@@ -24,9 +24,10 @@ public class HospitalUserQuery extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
+        String userName = req.getParameter("userName");
         int page = Integer.parseInt(req.getParameter("page"));
         UserService userService = new UserServiceImpl();
-        List<User> users = userService.queryHospitalUser(page);
+        List<User> users = userService.queryHospitalUser(userName, page);
         HashMap<Integer, String> hospitalNameMap = new HashMap();
         for (User user:
              users) {

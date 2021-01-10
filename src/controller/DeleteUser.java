@@ -1,7 +1,5 @@
 package controller;
 
-import com.alibaba.fastjson.JSON;
-import entity.User;
 import service.UserService;
 import service.UserServiceImpl;
 
@@ -11,25 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 //controller层
-@WebServlet("/ordinaryUser")
-public class OrdinaryQuery extends HttpServlet {
+@WebServlet("/deleteUser")
+public class DeleteUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding("utf-8");
-        String userName = req.getParameter("userName");
-        int page = Integer.parseInt(req.getParameter("page"));
+        int userID = Integer.parseInt(req.getParameter("userID"));
+        //System.out.println("ssssssss"+userName);
         UserService userService = new UserServiceImpl();
-        List<User> users = userService.queryUser(userName, page);
-        Object o = JSON.toJSON(users);
-        req.setAttribute("list", o);
-        req.getRequestDispatcher("systemManage.jsp").forward(req, resp);
+        int result = userService.deleteUser(userID);
+        if (result!=0){
+            if (req.getParameter("userType").equals("1")){
+                resp.sendRedirect("ordinaryUser?page="+0+"&current="+1);
+            }else if (req.getParameter("userType").equals("2")){
+                resp.sendRedirect("hospitalUser?page="+0+"&current="+2);
+            }
+        }
     }
 
     @Override

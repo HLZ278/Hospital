@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/sysManage.css">
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/popWindow.css">
 </head>
 <body>
 <div class="rightMain" style="background-color: #f0f0f0;float: right;  width: calc(100% - 300px);height: 100%">
@@ -27,10 +27,9 @@
                 <path d="M945.28512 875.7248l-159.02208-156.11904c50.65216-67.06688 81.0496-150.27712 81.0496-240.80384 0-221.12256-179.21536-400.37888-400.37376-400.37888-221.13792 0-400.384 179.25632-400.384 400.37888 0 221.16352 179.24096 400.39936 400.384 400.39936 101.888 0 194.62144-38.38464 265.27744-101.05856l159.24736 156.32896c15.6416 15.36512 40.36608 14.71488 55.2448-1.47456 14.84288-16.19456 14.21824-41.856-1.42336-57.27232z m-478.32064-67.15392c-182.10816 0-329.71776-147.6352-329.71776-329.74336 0-182.08768 147.61472-329.728 329.71776-329.728 182.0928 0 329.71776 147.6352 329.71776 329.728 0 182.10816-147.62496 329.74336-329.71776 329.74336z"
                       fill="#575757" p-id="2649"></path>
             </svg>
-            <input type="text" autocomplete="off" placeholder="点击输入用户名称"/>
-            <button class="weightText">搜索</button>
+            <input id="hospitalUserName" type="text" autocomplete="off" placeholder="点击输入用户名称"/>
+            <button onclick="hospitalUserSearchByName()" class="weightText">搜索</button>
         </div>
-        <button style="float: left; line-height: 70px; margin-left: 30px" class="weightText">添加</button>
     </div>
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
         <table border="1" cellspacing="0">
@@ -67,7 +66,7 @@
                     </c:choose>
                     <td>${user.idCardNum}</td>
                     <td>${hospitalNameMap.get(user.userID)}</td>
-                    <td><a href="#">修改</a>/<a a href="#">删除</a></td>
+                    <td><a href="JavaScript:deleteHospitalUserConfirm(${user.userID})">删除</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -81,6 +80,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

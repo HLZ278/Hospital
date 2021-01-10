@@ -1,6 +1,7 @@
 package entity;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 //实体类，同表结构对应
 public class User {

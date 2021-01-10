@@ -7,33 +7,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ab5ccb4-3899-49ad-b746-6f8e72580c73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/HospitalUserQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.73.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/commonUserManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/DeleteUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/HospitalTableQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UserInsert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Hospital.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/popWindow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/HospitalUserQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/HospitalUserQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/OrdinaryQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/OrdinaryQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/commonUserManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/commonUserManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalTableManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalTableManage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalUserManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalUserManage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/systemManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/systemManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/controller/HospitalUserQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/controller/HospitalUserQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hospital/controller/OrdinaryQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/controller/OrdinaryQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/dao/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/UserDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hospital/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hospital/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/HospitalUserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HospitalUserQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/OrdinaryQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/OrdinaryQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/commonUserManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/commonUserManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/hospitalTableManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalTableManage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/hospitalUserManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalUserManage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/systemManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/systemManage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +51,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Jsp File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,7 +81,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,10 +94,12 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="A:\Apan\Hospital\web\WEB-INF\lib" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Apan\Hospital\web\css" />
       <recent name="A:\Apan\Hospital\web" />
-      <recent name="A:\Apan\Hospital\web\images" />
+      <recent name="A:\Apan\Hospital\web\WEB-INF" />
+      <recent name="A:\Apan\Hospital\web\js" />
+      <recent name="A:\Apan\Hospital\web\WEB-INF\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
@@ -99,12 +108,10 @@
       <recent name="entity" />
       <recent name="utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="A:\Apan\Hospital\web" />
-      <recent name="A:\Apan\Hospital\web\WEB-INF" />
-      <recent name="A:\Apan\Hospital\web\js" />
-      <recent name="A:\Apan\Hospital\web\css" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="A:\Apan\Hospital\web\WEB-INF\lib" />
+      <recent name="A:\Apan\Hospital\web" />
+      <recent name="A:\Apan\Hospital\web\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -247,7 +254,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -273,7 +280,8 @@
       <workItem from="1610023778870" duration="608000" />
       <workItem from="1610068383085" duration="30551000" />
       <workItem from="1610160920781" duration="337000" />
-      <workItem from="1610161279145" duration="28265000" />
+      <workItem from="1610161279145" duration="35583000" />
+      <workItem from="1610246832944" duration="15662000" />
     </task>
     <servers />
   </component>
@@ -285,10 +293,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="13" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609999496946" />
-    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1610183646385">
+    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1610262617326">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610183646385" />
+    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610262617326" />
     <state x="713" y="328" width="429" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609824962521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -301,78 +309,78 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="165" y="172" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610167291482" />
-    <state width="1024" height="218" key="GridCell.Tab.0.bottom" timestamp="1610189306031">
+    <state width="710" height="235" key="GridCell.Tab.0.bottom" timestamp="1610262645339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610189306031" />
-    <state width="1024" height="218" key="GridCell.Tab.0.center" timestamp="1610189306031">
+    <state width="710" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610262645339" />
+    <state width="710" height="235" key="GridCell.Tab.0.center" timestamp="1610262645339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610189306031" />
-    <state width="1024" height="218" key="GridCell.Tab.0.left" timestamp="1610189306031">
+    <state width="710" height="235" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610262645339" />
+    <state width="710" height="235" key="GridCell.Tab.0.left" timestamp="1610262645339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610189306031" />
-    <state width="1024" height="218" key="GridCell.Tab.0.right" timestamp="1610189306031">
+    <state width="710" height="235" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610262645339" />
+    <state width="710" height="235" key="GridCell.Tab.0.right" timestamp="1610262645339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610189306031" />
-    <state width="1024" height="218" key="GridCell.Tab.1.bottom" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610262645339" />
+    <state width="710" height="235" key="GridCell.Tab.1.bottom" timestamp="1610262645172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.1.center" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610262645172" />
+    <state width="710" height="235" key="GridCell.Tab.1.center" timestamp="1610262645172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.1.left" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610262645172" />
+    <state width="710" height="235" key="GridCell.Tab.1.left" timestamp="1610262645172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.1.right" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610262645172" />
+    <state width="710" height="235" key="GridCell.Tab.1.right" timestamp="1610262645172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.2.bottom" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610262645172" />
+    <state width="710" height="235" key="GridCell.Tab.2.bottom" timestamp="1610262645173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.2.center" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610262645173" />
+    <state width="710" height="235" key="GridCell.Tab.2.center" timestamp="1610262645173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.2.left" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610262645173" />
+    <state width="710" height="235" key="GridCell.Tab.2.left" timestamp="1610262645172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="1024" height="218" key="GridCell.Tab.2.right" timestamp="1610189305669">
+    <state width="710" height="235" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610262645172" />
+    <state width="710" height="235" key="GridCell.Tab.2.right" timestamp="1610262645173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="218" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610189305669" />
-    <state width="710" height="219" key="GridCell.Tab.3.bottom" timestamp="1610181421187">
+    <state width="710" height="235" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610262645173" />
+    <state width="1024" height="235" key="GridCell.Tab.3.bottom" timestamp="1610259888339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="710" height="219" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610181421187" />
-    <state width="710" height="219" key="GridCell.Tab.3.center" timestamp="1610181421187">
+    <state width="1024" height="235" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610259888339" />
+    <state width="1024" height="235" key="GridCell.Tab.3.center" timestamp="1610259888339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="710" height="219" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1610181421187" />
-    <state width="710" height="219" key="GridCell.Tab.3.left" timestamp="1610181421187">
+    <state width="1024" height="235" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1610259888339" />
+    <state width="1024" height="235" key="GridCell.Tab.3.left" timestamp="1610259888339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="710" height="219" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1610181421187" />
-    <state width="710" height="219" key="GridCell.Tab.3.right" timestamp="1610181421187">
+    <state width="1024" height="235" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1610259888339" />
+    <state width="1024" height="235" key="GridCell.Tab.3.right" timestamp="1610259888339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="710" height="219" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1610181421187" />
+    <state width="1024" height="235" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1610259888339" />
     <state x="367" y="0" key="SettingsEditor" timestamp="1610167299047">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="367" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610167299047" />
-    <state x="301" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1610161287789">
+    <state x="301" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1610246833384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="301" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1610161287789" />
+    <state x="301" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1610246833384" />
     <state x="862" y="100" width="580" height="630" key="dock-window-1" timestamp="1610006440274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -392,8 +400,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/systemManage.jsp</url>
           <line>45</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/DeleteUser.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

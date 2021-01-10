@@ -34,56 +34,27 @@
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
         <table border="1" cellspacing="0">
             <tr>
-                <th>用户2ID</th>
-                <th>用户名</th>
-                <th>密码</th>
-                <th>电话</th>
-                <th>注册日期</th>
-                <th>真实姓名</th>
-                <th>身份证类型</th>
+                <th>医院ID</th>
+                <th>医院名</th>
+                <th>等级</th>
+                <th>地区</th>
+                <th>地点</th>
+                <th>开门时间</th>
+                <th>关门时间</th>
                 <th>操作</th>
             </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-            </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-2</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-
-            </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-2</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-            </tr>
-            <tr>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-1</td>
-                <td>1-2</td>
-                <td><a href="#">修改</a>/<a a href="#">删除</a></td>
-            </tr>
+            <c:forEach var="hospital" items="${ list }">
+                <tr>
+                    <td>${hospital.hospitalID}</td>
+                    <td>${hospital.name}</td>
+                    <td>${hospital.grade}</td>
+                    <td>${hospital.area}</td>
+                    <td>${hospital.address}</td>
+                    <td>${hospital.release}</td>
+                    <td>${hospital.stop}</td>
+                    <td><a href="JavaScript:deleteHospitalConfirm(${hospital.hospitalID})">删除</a></td>
+                </tr>
+            </c:forEach>
         </table>
         <div style="position:absolute; bottom: 0;left: 0; margin-left: 20px; height: 40px" >
             一页最多显示15条记录，共5页

@@ -1,0 +1,43 @@
+.popup__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.popup {
+    box-sizing: border-box;
+    position: absolute;
+    width: 600px;
+    height: 650px;
+    background: #fff;
+    margin-left: 468px;
+    margin-top: 30px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+}
+.popup__title{
+    font-size: 30px;
+    font-weight: 600;
+    color: #004165;
+    margin-bottom: 20px;
+}
+.popup__btnWrapper {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.popup__text{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.popup__yesBtn {
+    color: #fff;
+    background-color: #007dba;
+    border: 1px solid #006ba1;
+}

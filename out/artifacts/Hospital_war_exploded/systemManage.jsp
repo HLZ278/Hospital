@@ -55,7 +55,7 @@
                         window.location.href="hospitalUser?page="+0+"&current="+2
                         break;
                     case "hospital":
-                        window.location.href="ordinaryUser?page="+0+"&current="+3
+                        window.location.href="hospitalTable?page="+0+"&current="+3
                         break;
                     default:
                         break;
@@ -87,9 +87,33 @@
         }
     };
     function add() {
-            alert($('#ooo').get(0).tagName);
+            //alert($('#ooo').get(0).tagName);
+        $('#ooo').css('display','block')
+    }
+    function addCancle() {
         $('#ooo').css('display','none')
     }
+    function addOrdinaryConfirm() {
+        $('#addUser').submit()
+    }
+    function ordinaryUserSearchByName() {
+        window.location.href="ordinaryUser?page="+0+"&current="+1+"&userName="+$('#ordinaryUserName').val()
+    }
+    function hospitalUserSearchByName() {
+        window.location.href="hospitalUser?page="+0+"&current="+2+"&userName="+$('#hospitalUserName').val()
+    }
+    function deleteUserConfirm(userID) {
+        if (confirm("确定删除?")){
+            window.location.href="deleteUser?userID="+userID+"&userType="+1
+        }
+    }
+    function deleteHospitalUserConfirm(userID) {
+        if (confirm("确定删除?")){
+            alert("sss")
+            window.location.href="deleteUser?userID="+userID+"&userType="+2
+        }
+    }
+
 </script>
 
 </body>
