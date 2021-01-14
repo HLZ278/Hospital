@@ -96,4 +96,43 @@ public class DepartmentDaoImpl implements DepartmentDao {
         }
         return list;
     }
+
+    @Override
+    public void deleteDepartment(int departmentID) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        try {
+            String sql = "delete from department where departmentID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, departmentID);
+            pstatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DBUtils.Close(null, pstatement, conn);
+        }
+    }
+
+    @Override
+    public void updateDepartment(Department department) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        try {
+            String sql;
+            sql = "update department set departmentType=?,departmentName=?, position=?, workTime=?, closeTime=? where departmentID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, department.getDepartmentType());
+            pstatement.setString(2, department.getDepartmentName());
+            pstatement.setString(3, department.getPosition());
+            pstatement.setTime(4, department.getWorkTime());
+            pstatement.setTime(5, department.getCloseTime());
+            pstatement.setInt(6, department.getDepartmentID());
+            pstatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(null, pstatement, conn);
+        }
+    }
 }

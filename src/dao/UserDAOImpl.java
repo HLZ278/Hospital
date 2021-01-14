@@ -245,6 +245,31 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return 0;
 	}
+	@Override
+	public int updateUser(User user) {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		int result = 0;
+		try {
+			String sql;
+			sql = "update user set userName=?,userPwd=?, userTel=?, realName=?, idCardType=?, idCardNum=? where userID=?";
+			pstatement = conn.prepareStatement(sql);
+			pstatement.setString(1, user.getUserName());
+			pstatement.setString(2, user.getUserPwd());
+			pstatement.setString(3, user.getUserTel());
+			pstatement.setString(4, user.getRealName());
+			pstatement.setInt(5, user.getIdCardType());
+			pstatement.setString(6, user.getIdCardNum());
+			pstatement.setInt(7, user.getUserID());
+			result = pstatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(null, pstatement, conn);
+		}
+		return result;
+	}
 
 
 }

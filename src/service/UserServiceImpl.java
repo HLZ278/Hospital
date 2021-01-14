@@ -64,4 +64,10 @@ public class UserServiceImpl implements UserService {
 		UserDAO dao = new UserDAOImpl();
 		return dao.queryUserIDByHospitalID(hospitalID);
 	}
+
+	@Override
+	public int updateUser(User user) {
+		UserDAO dao = new UserDAOImpl();
+		return dao.updateUser(user);
+	}
 }

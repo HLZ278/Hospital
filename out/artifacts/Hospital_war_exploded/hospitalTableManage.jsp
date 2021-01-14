@@ -56,7 +56,7 @@
                         <c:when test="${hospitalIDMap.get(hospital.hospitalID)!=0}"><td>${hospitalIDMap.get(hospital.hospitalID)}</td></c:when>
                         <c:otherwise><td><a href="JavaScript:addHospitalUser(${hospital.hospitalID})">添加</a></td></c:otherwise>
                     </c:choose>
-                    <td><a href="JavaScript:deleteHospitalConfirm(${hospital.hospitalID})">删除</a></td>
+                    <td><a href="#" onclick='updateHospital(this)'>修改</a>|<a href="JavaScript:deleteHospitalConfirm(${hospital.hospitalID})">删除</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -140,6 +140,39 @@
         <div class="popup__btnWrapper">
             <button class="popup__yesBtn"  onclick="addHU()">Yes</button>
             <button class="popup__noBtn" onclick="addHUCancle()">No</button>
+        </div>
+    </div>
+</div>
+<div id="updateBox" class="popup__wrapper" style="display: none">
+    <div class="popup">
+        <div class="popup__title">修改医院信息</div>
+        <div>
+            <form id="hospitalUpdate" method="post" action="hospitalUpdate" >
+                <div>
+                    医院名:<input id="updateHospitalName" type="text" name="hospitalName" autocomplete="off" placeholder="点击输入用户名"/>
+                </div>
+                <div>
+                    等级:<input id="updateGrade" type="text" name="grade" autocomplete="off" placeholder="点击输入密码"/>
+                </div>
+                <div>
+                    地区:<input id="updateArea" type="text" name="area" autocomplete="off" placeholder="点击输入手机号"/>
+                </div>
+                <div>
+                    地点:<input id="updateAddress" type="text" name="address" autocomplete="off" placeholder="点击输入真实姓名"/>
+                </div>
+                <div>
+                    开门时间:<input id="updateReleaseTime" type="time" name="releaseTime" autocomplete="off" placeholder="点击输入真实姓名"/>
+                </div>
+                <div>
+                    关门时间:<input id="updateStopTime" type="time" name="stopTime" autocomplete="off" placeholder="点击输入身份证号"/>
+                </div>
+                <input id="updateHospitalID" type="text" style="display: none" name="hospitalID" value="0"/>
+                <input type="text" style="display: none" name="which" value="1"/>
+            </form>
+        </div>
+        <div class="popup__btnWrapper">
+            <button class="popup__yesBtn"  onclick="updateHospitalConfirm()">Yes</button>
+            <button class="popup__noBtn" onclick="updateCancle()">No</button>
         </div>
     </div>
 </div>

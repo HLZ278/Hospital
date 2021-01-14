@@ -12,15 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//controller层
+//这个用来登陆时用户输入用户名后查找数据库是否有该用户，没有就警告一下
 @WebServlet("/findUser")
 public class FindUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userName = req.getParameter("userName");
-        //System.out.println("ssssssss"+userName);
         UserService userService = new UserServiceImpl();
+        //直接在print出findUser（）方法返回的字符串找到的话是true，没找到就是false
+        // 在前端的ajax会获取到本sevlet的返回值就是这个字符串，在前端判断一下就可以了
         resp.getWriter().print(userService.findUser(userName));
     }
 

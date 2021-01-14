@@ -12,4 +12,6 @@ public interface HospitalService {
 	public int insertHospital(Hospital hospital);
 	public String queryHospitalName(int hospitalID);
     void deleteHospital(int hospitalID);
+
+    void updateHospital(Hospital hospital);
 }

@@ -34,7 +34,7 @@
         <button style="float: left; line-height: 70px; margin-left: 30px" onclick="add()" class="weightText">添加</button>
     </div>
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
-        <table border="1" cellspacing="0">
+        <table id="tab" border="1" cellspacing="0">
             <tr>
                 <th>用户ID</th>
                 <th>用户名</th>
@@ -46,10 +46,7 @@
                 <th>身份证号</th>
                 <th>操作</th>
             </tr>
-<%--                        <%--%>
-
-<%--                            out.println(request.getAttribute("list"));--%>
-<%--                        %>--%>
+            <%--这个list就是在selevt中设置到request域中的json--%>
             <c:forEach var="user" items="${ list }">
                 <tr>
                     <td>${user.userID}</td>
@@ -69,7 +66,10 @@
                         <c:otherwise><td>其他</td></c:otherwise>
                     </c:choose>
                     <td>${user.idCardNum}</td>
-                    <td><a href="JavaScript:deleteUserConfirm(${user.userID})">删除</a></td>
+                    <td><a href="#" onclick='updateUser(this)'>修改</a>|<a href="JavaScript:deleteUser(${user.userID})">删除</a></td>
+<%--                    <td style="visibility: hidden;">--%>
+<%--                        <input type="hidden" id="userJson" value='${user}'/>--%>
+<%--                    </td>--%>
                 </tr>
             </c:forEach>
         </table>
@@ -121,6 +121,48 @@
         <div class="popup__btnWrapper">
             <button class="popup__yesBtn"  onclick="addOrdinaryConfirm()">Yes</button>
             <button class="popup__noBtn" onclick="addCancle()">No</button>
+        </div>
+    </div>
+</div>
+<div id="updateBox" class="popup__wrapper" style="display: none">
+    <div class="popup">
+        <div class="popup__title">修改普通用户</div>
+        <div>
+            <form id="userUpdate" method="post" action="userUpdate" >
+                <div>
+                    请输入用户名:<input id="updateUserName" type="text" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                </div>
+                <div>
+                    请输入密码:<input id="updateUserPwd" type="text" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                </div>
+                <div>
+                    手机号:<input id="updateUserTel" type="text" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                </div>
+                <div>
+                    真实姓名:<input id="updateRealName" type="text" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                </div>
+                <div>
+                    身份证类型:<select id="updateIdCardType" name="idCardType">
+                    <option value ="1">居民身份证</option>
+                    <option value ="2">港澳居民来往内地通行证</option>
+                    <option value="3">台湾居民来往大陆通行证</option>
+                    <option value="4">护照</option>
+                    <option value="5">外国人永久居留身份证</option>
+                    <option value="6">港澳居民居住证</option>
+                    <option value="7">台湾居民居住证</option>
+                </select>
+                </div>
+                <div>
+                    身份证号码:<input id="updateIdcardNum" type="text" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                </div>
+                <input type="text" style="display: none" name="userType" value="1"/>
+                <input id="updateUserID" type="text" style="display: none" name="userID" value="0"/>
+                <input type="text" style="display: none" name="which" value="1"/>
+            </form>
+        </div>
+        <div class="popup__btnWrapper">
+            <button class="popup__yesBtn"  onclick="updateConfirm()">Yes</button>
+            <button class="popup__noBtn" onclick="updateCancle()">No</button>
         </div>
     </div>
 </div>

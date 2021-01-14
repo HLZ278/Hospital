@@ -35,4 +35,10 @@ public class HospitalServiceImpl implements HospitalService{
         HospitalDAO dao = new HospitalDaoImpl();
         dao.deleteHospital(hospitalID);
     }
+
+    @Override
+    public void updateHospital(Hospital hospital) {
+        HospitalDAO dao = new HospitalDaoImpl();
+        dao.updateHospital(hospital);
+    }
 }

@@ -18,9 +18,9 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //表单提交后获取到表单中的用户名和密码
         String userName = req.getParameter("userName");
         String userPwd = req.getParameter("userPwd");
-        System.out.println(userName+"---"+userPwd);
         //调用业务层进行查询
         UserService userService = new UserServiceImpl();
         User user = userService.login(userName);
@@ -43,6 +43,7 @@ public class Login extends HttpServlet {
                         break;
                 }
             }else {
+                //来到这个else代表着密码输入错误，用request发送个信息给前端
                 req.setAttribute("msgg", 1);
                 req.getRequestDispatcher("login.jsp").forward(req, resp);
             }

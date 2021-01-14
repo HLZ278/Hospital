@@ -92,6 +92,41 @@
   function departmentSearch() {
     window.location.href="queryDepartment?page="+0+"&current="+1+"&departmentName="+$('#departmentName').val()
   }
+  function deleteDepartment(departmentID) {
+    if (confirm("确定删除?")) {
+      window.location.href = "deleteDepartment?departmentID="+departmentID
+    }
+  }
+  function updateDepartment(obj) {
+    $(obj.parentNode.parentNode).children('td').each(function (j) {
+      switch (j) {
+        case 0:
+          $("#updateDepartmentID").val($(this).text())
+        case 1:
+          $("#updateDepartmentType").val($(this).text())
+          break;
+        case 2:
+          $("#updateDepartmentName").val($(this).text())
+          break;
+        case 3:
+          $("#updatePosition").val($(this).text())
+          break;
+        case 4:
+          $("#updateWorkTime").val($(this).text())
+          break;
+        case 5:
+          $("#updateCloseTime").val($(this).text())
+          break;
+      }
+    })
+    $("#updateBox").css('display', 'block')
+  }
+  function updateDepartmentConfirm() {
+    $("#departmentUpdate").submit()
+  }
+  function updateDepartmentCancle() {
+    $("#updateBox").css('display', 'none')
+  }
 </script>
 </body>
 </html>

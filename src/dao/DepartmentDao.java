@@ -11,4 +11,8 @@ public interface DepartmentDao {
 	void insertDepartment(Department department);
 
 	List<Department> queryDepartment(int hospitalID, int page, String departmentName);
+
+    void deleteDepartment(int departmentID);
+
+    void updateDepartment(Department department);
 }

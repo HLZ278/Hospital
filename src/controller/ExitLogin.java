@@ -19,6 +19,7 @@ public class ExitLogin extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //退出登录即是把user从session中移除后回到主页面
         HttpSession session = req.getSession();
         session.removeAttribute("user");
         resp.sendRedirect("home.jsp");

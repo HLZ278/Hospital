@@ -15,4 +15,7 @@ public interface UserDAO {
 	public int deleteUser(int userID);
 
     int queryUserIDByHospitalID(int hospitalID);
+
+	int updateUser(User user);
+
 }

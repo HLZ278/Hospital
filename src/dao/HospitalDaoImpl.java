@@ -118,6 +118,31 @@ public class HospitalDaoImpl implements HospitalDAO {
         }
         return list;
     }
+
+    @Override
+    public void updateHospital(Hospital hospital) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        try {
+            String sql;
+            sql = "update hospital set hospitalName=?,grade=?, area=?, address=?, releaseTime=?, stopTime=? where hospitalID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, hospital.getHospitalName());
+            pstatement.setString(2, hospital.getGrade());
+            pstatement.setString(3, hospital.getArea());
+            pstatement.setString(4, hospital.getAddress());
+            pstatement.setTime(5, hospital.getReleaseTime());
+            pstatement.setTime(6, hospital.getStopTime());
+            pstatement.setInt(7, hospital.getHospitalID());
+            pstatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(null, pstatement, conn);
+        }
+    }
+
     @Override
     public String queryHospitalName(int hospitalID) {
         Connection conn = DBUtils.getCon();

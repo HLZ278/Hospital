@@ -66,7 +66,7 @@
                     </c:choose>
                     <td>${user.idCardNum}</td>
                     <td>${hospitalNameMap.get(user.userID)}</td>
-                    <td><a href="JavaScript:deleteHospitalUserConfirm(${user.userID})">删除</a></td>
+                    <td><a href="#" onclick='updateHUser(this)'>修改</a>|<a href="JavaScript:deleteHospitalUser(${user.userID})">删除</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -77,6 +77,48 @@
             <button id="pre" class="weightText" style="float: left; height: 40px; width: 60px">上一页</button>
             <div style="float: left; line-height: 40px;margin-left: 17px">01</div>
             <button class="weightText" style="float: right; height: 40px; width: 60px">下一页</button>
+        </div>
+    </div>
+</div>
+<div id="updateBox" class="popup__wrapper" style="display: none">
+    <div class="popup">
+        <div class="popup__title">修改医院用户</div>
+        <div>
+            <form id="userUpdate" method="post" action="userUpdate" >
+                <div>
+                    请输入用户名:<input id="updateUserName" type="text" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                </div>
+                <div>
+                    请输入密码:<input id="updateUserPwd" type="text" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                </div>
+                <div>
+                    手机号:<input id="updateUserTel" type="text" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                </div>
+                <div>
+                    真实姓名:<input id="updateRealName" type="text" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                </div>
+                <div>
+                    身份证类型:<select id="updateIdCardType" name="idCardType">
+                    <option value ="1">居民身份证</option>
+                    <option value ="2">港澳居民来往内地通行证</option>
+                    <option value="3">台湾居民来往大陆通行证</option>
+                    <option value="4">护照</option>
+                    <option value="5">外国人永久居留身份证</option>
+                    <option value="6">港澳居民居住证</option>
+                    <option value="7">台湾居民居住证</option>
+                </select>
+                </div>
+                <div>
+                    身份证号码:<input id="updateIdcardNum" type="text" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                </div>
+                <input  type="text" style="display: none" name="userType" value="2"/>
+                <input id="updateUserID" type="text" style="display: none" name="userID" value="0"/>
+                <input type="text" style="display: none" name="which" value="1"/>
+            </form>
+        </div>
+        <div class="popup__btnWrapper">
+            <button class="popup__yesBtn"  onclick="updateHConfirm()">Yes</button>
+            <button class="popup__noBtn" onclick="updateHCancle()">No</button>
         </div>
     </div>
 </div>

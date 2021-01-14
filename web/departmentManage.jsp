@@ -52,7 +52,7 @@
                     <td>${department.position}</td>
                     <td>${department.workTime}</td>
                     <td>${department.closeTime}</td>
-                    <td><a href="#">管理</a>/<a a href="#">删除</a></td>
+                    <td><a href="#">管理</a>|<a href="#" onclick='updateDepartment(this)'>修改</a>|<a a href="JavaScript:deleteDepartment(${department.departmentID})">删除</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -91,6 +91,37 @@
         <div class="popup__btnWrapper">
             <button class="popup__yesBtn"  onclick="addDepartmentConfirm()">Yes</button>
             <button class="popup__noBtn" onclick="addCancle()">No</button>
+        </div>
+    </div>
+</div>
+<div id="updateBox" class="popup__wrapper" style="display: none">
+    <div class="popup">
+        <div class="popup__title">修改科室信息</div>
+        <div>
+            <form id="departmentUpdate" method="post" action="departmentUpdate" >
+                <div>
+                    科室名:<input id="updateDepartmentName" type="text" name="departmentName" autocomplete="off" placeholder="点击输入科室名"/>
+                </div>
+                <div>
+                    科室类别:<input id="updateDepartmentType" type="text" name="departmentType" autocomplete="off" placeholder="点击输入科室类别"/>
+                </div>
+                <div>
+                    科室位置:<input id="updatePosition" type="text" name="position" autocomplete="off" placeholder="点击输入科室位置"/>
+                </div>
+                <div>
+                    上班时间:<input id="updateWorkTime" type="time" name="workTime" autocomplete="off"/>
+                </div>
+                <div>
+                    下班时间:<input id="updateCloseTime" type="time" name="closeTime" autocomplete="off" />
+                </div>
+                <input type="text" style="display: none" name="userType" value="1"/>
+                <input id="updateDepartmentID" type="text" style="display: none" name="departmentID" value="0"/>
+                <input type="text" style="display: none" name="which" value="1"/>
+            </form>
+        </div>
+        <div class="popup__btnWrapper">
+            <button class="popup__yesBtn"  onclick="updateDepartmentConfirm()">Yes</button>
+            <button class="popup__noBtn" onclick="updateDepartmentCancle()">No</button>
         </div>
     </div>
 </div>
