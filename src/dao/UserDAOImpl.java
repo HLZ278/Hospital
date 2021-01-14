@@ -174,7 +174,7 @@ public class UserDAOImpl implements UserDAO {
 		PreparedStatement pstatement = null;
 		ResultSet resultSet = null;
 		try {
-			String sql = "SELECT * FROM hospital WHERE ORDER BY hospitalID LIMIT "+(page)*15+", 15";
+			String sql = "SELECT * FROM hospital ORDER BY hospitalID LIMIT "+(page)*15+", 15";
 			pstatement = conn.prepareStatement(sql);
 			resultSet = pstatement.executeQuery();
 			while (resultSet.next()) {
@@ -190,6 +190,7 @@ public class UserDAOImpl implements UserDAO {
 				hospital.setRule(resultSet.getString("rule"));
 				hospital.setDetails(resultSet.getString("details"));
 				hospital.setNotice(resultSet.getString("notice"));
+				System.out.println(resultSet.getTime("release"));
 				list.add(hospital);
 			}
 		} catch (SQLException e) {

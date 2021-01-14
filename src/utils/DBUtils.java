@@ -6,10 +6,10 @@ public class DBUtils {
 	public static Connection getCon() {
 		Connection con = null;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/registration?&useSSL=false&serverTimezone=UTC";
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/registration?&useSSL=false&serverTimezone=Asia/Shanghai";
 			String user = "root";
-			String password = "123654";
+			String password = "123456";
 			con = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

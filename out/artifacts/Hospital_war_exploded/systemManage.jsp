@@ -113,6 +113,12 @@
             window.location.href="deleteUser?userID="+userID+"&userType="+2
         }
     }
+    function deleteHospitalConfirm(hospitalID) {
+        if (confirm("确定删除?")){
+            alert("sss");
+            //window.location.href="deleteHospital?hospitalID="+hospitalID
+        }
+    }
 
 </script>
 
