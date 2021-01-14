@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import entity.User;
 import service.UserService;
 import service.UserServiceImpl;
+import utils.UserType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,26 +29,25 @@ public class UserInsert extends HttpServlet {
         user.setIdCardType(Integer.parseInt(req.getParameter("idCardType")));
         user.setIdCardNum((String) req.getParameter("idCardNum"));
         user.setUserType(Integer.parseInt(req.getParameter("userType")));
+        UserService userService = new UserServiceImpl();
+        int result = 0;
         if (req.getParameter("hospitalID")!=null){
             user.setHospitalID(Integer.parseInt(req.getParameter("hospitalID")));
+            result = userService.addUser(user, UserType.HOSPITAL_USER);
+        }else {
+            result = userService.addUser(user, UserType.NORMAL_USER);
         }
-        System.out.println(user);
         String which = req.getParameter("which");
-        UserService userService = new UserServiceImpl();
-        int result = userService.addUser(user);
         if (result!=0){
             if (req.getParameter("userType").equals("1")){
                 if (which.equals("ordinaryOption")){
                 }else {
-                    System.out.println("userType==1");
                     resp.sendRedirect("ordinaryUser?page="+0+"&current="+1);
                 }
-            }else if (!req.getParameter("userType").equals("1")){
-                System.out.println("userType!=1");
+            }else {
                 resp.sendRedirect("hospitalUser?page="+0+"&current="+2);
             }
         }else{
-            System.out.println("result==0");
             req.getRequestDispatcher("systemManage.jsp").forward(req, resp);
         }
 

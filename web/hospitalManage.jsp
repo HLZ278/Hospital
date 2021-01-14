@@ -25,15 +25,14 @@
     </div>
     <div class="sysMenuItem">
       <ul>
-        <li class="sysLi"><a>科室管理</a><span style="margin-left: 5px">></span></li>
-        <li class="sysLi"><a>预约订单管理</a><span style="margin-left: 5px">></span></li>
-        <li class="sysLi"><a>留言管理</a><span style="margin-left: 5px">></span></li>
+        <li id="departmentManage" class="sysLi"><a>科室管理</a><span style="margin-left: 5px">></span></li>
+        <li id="orderManage" class="sysLi"><a>预约订单管理</a><span style="margin-left: 5px">></span></li>
+        <li id="messageManage" class="sysLi"><a>留言管理</a><span style="margin-left: 5px">></span></li>
       </ul>
     </div>
   </div>
 
-  <div>
-    <jsp:include page="numSrc.jsp"></jsp:include>
+  <div id="hospitalRight">
   </div>
 </div>
 
@@ -43,6 +42,19 @@
     let filter = document.getElementsByClassName("sysLi")
     for (let i = 0; i < filter.length; i++) {
       filter[i].addEventListener('click', function () {
+        switch ($(this).attr("id")) {
+          case "departmentManage":
+            window.location.href="queryDepartment?page="+0+"&current="+1
+            break;
+          case "orderManage":
+            //window.location.href="orderManage?page="+0+"&current="+2
+            break;
+          case "messageManage":
+            //window.location.href="messageManage?page="+0+"&current="+3
+            break;
+          default:
+            break;
+        }
         filter[i].style.backgroundColor = "#4bbfd4"
         for (let j = 0; j < filter.length; j++) {
           if (i != j) {
@@ -51,7 +63,35 @@
         }
       })
     }
+    switch (<%=request.getParameter("current")%>) {
+      case 1:
+        filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+        $("#hospitalRight").html(String.raw`<%@ include file="departmentManage.jsp"%>`)
+        break;
+      case 2:
+        filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+        $("#hospitalRight").html(String.raw`<%@ include file="orderManage.jsp"%>`)
+        break;
+      case 3:
+        filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+        $("#hospitalRight").html(String.raw`<%@ include file="messageManage.jsp"%>`)
+        break;
+      default:
+        break;
+    }
   };
+  function addDepartment() {
+    $('#ooo').css('display','block')
+  }
+  function addCancle() {
+    $('#ooo').css('display','none')
+  }
+  function addDepartmentConfirm() {
+    $('#addDepartment').submit()
+  }
+  function departmentSearch() {
+    window.location.href="queryDepartment?page="+0+"&current="+1+"&departmentName="+$('#departmentName').val()
+  }
 </script>
 </body>
 </html>

@@ -1,11 +1,12 @@
 package controller;
 
-import com.alibaba.fastjson.JSON;
+import entity.Hospital;
 import entity.User;
 import service.HospitalService;
 import service.HospitalServiceImpl;
 import service.UserService;
 import service.UserServiceImpl;
+import utils.StringToTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,34 +14,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.sql.Time;
 
 //controller层
-@WebServlet("/hospitalUser")
-public class HospitalUserQuery extends HttpServlet {
-
+@WebServlet("/hospitalInsert")
+public class HospitalInsert extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
-        String userName = req.getParameter("userName");
-        int page = Integer.parseInt(req.getParameter("page"));
-        UserService userService = new UserServiceImpl();
-        List<User> users = userService.queryHospitalUser(userName, page);
-        HashMap<Integer, String> hospitalNameMap = new HashMap();
+        Hospital hospital = new Hospital();
+        hospital.setHospitalName((String) req.getParameter("hospitalName"));
+        hospital.setGrade((String) req.getParameter("grade"));
+        hospital.setArea((String) req.getParameter("area"));
+        hospital.setAddress((String) req.getParameter("address"));
+        hospital.setReleaseTime(StringToTime.doParse(req.getParameter("releaseTime")));
+        hospital.setStopTime(StringToTime.doParse(req.getParameter("stopTime")));
         HospitalService hospitalService = new HospitalServiceImpl();
-        for (User user:
-             users) {
-            String a = hospitalService.queryHospitalName(user.getHospitalID());
-            hospitalNameMap.put(user.getUserID(), a);
-        }
-        Object o = JSON.toJSON(users);
-        req.setAttribute("list", o);
-        req.setAttribute("hospitalNameMap", hospitalNameMap);
-        req.getRequestDispatcher("systemManage.jsp").forward(req, resp);
+        hospitalService.insertHospital(hospital);
+        resp.sendRedirect("hospitalTable?page="+0+"&current="+3);
+
     }
 
     @Override

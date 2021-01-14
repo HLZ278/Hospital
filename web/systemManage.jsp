@@ -96,11 +96,20 @@
     function addOrdinaryConfirm() {
         $('#addUser').submit()
     }
+    function addHU() {
+        $('#addUser').submit()
+    }
+    function addHUCancle() {
+        $('#addHU').css('display','none')
+    }
     function ordinaryUserSearchByName() {
         window.location.href="ordinaryUser?page="+0+"&current="+1+"&userName="+$('#ordinaryUserName').val()
     }
     function hospitalUserSearchByName() {
         window.location.href="hospitalUser?page="+0+"&current="+2+"&userName="+$('#hospitalUserName').val()
+    }
+    function hospitalSearchByName() {
+        window.location.href="hospitalTable?page="+0+"&current="+3+"&hospitalName="+$('#hospitalName').val()
     }
     function deleteUserConfirm(userID) {
         if (confirm("确定删除?")){
@@ -109,17 +118,21 @@
     }
     function deleteHospitalUserConfirm(userID) {
         if (confirm("确定删除?")){
-            alert("sss")
             window.location.href="deleteUser?userID="+userID+"&userType="+2
         }
     }
     function deleteHospitalConfirm(hospitalID) {
         if (confirm("确定删除?")){
-            alert("sss");
-            //window.location.href="deleteHospital?hospitalID="+hospitalID
+            window.location.href="deleteHospital?hospitalID="+hospitalID
         }
     }
-
+    function addHospital() {
+        $('#addHospital').submit()
+    }
+    function addHospitalUser(hospitalID) {
+        $('#addUserHospitalID').val(hospitalID)
+        $('#addHU').css('display','block')
+    }
 </script>
 
 </body>

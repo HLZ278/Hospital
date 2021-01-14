@@ -44,15 +44,11 @@ public class UserServiceImpl implements UserService {
 			return dao.queryHospitalUser(page);
 		}
 	}
+
 	@Override
-	public String queryHospitalName(User user) {
+	public int addUser(User user, int userType) {
 		UserDAO dao = new UserDAOImpl();
-		return dao.queryHospitalName(user);
-	}
-	@Override
-	public int addUser(User user) {
-		UserDAO dao = new UserDAOImpl();
-		return dao.addUser(user);
+		return dao.addUser(user, userType);
 	}
 
 	@Override
@@ -61,9 +57,11 @@ public class UserServiceImpl implements UserService {
 		return dao.deleteUser(userID);
 	}
 
+
+
 	@Override
-	public List<Hospital> queryHospital(int page) {
+	public int queryUserIDByHospitalID(int hospitalID) {
 		UserDAO dao = new UserDAOImpl();
-		return dao.queryHospital(page);
+		return dao.queryUserIDByHospitalID(hospitalID);
 	}
 }

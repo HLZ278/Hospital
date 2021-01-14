@@ -14,8 +14,8 @@ public interface UserService {
 	public String findUser(String userName);
 	public List<User> queryUser(String userName,int page);
 	public List<User> queryHospitalUser(String userName, int page);
-	public String queryHospitalName(User user);
-	public int addUser(User user);
+	public int addUser(User user, int userType);
 	public int deleteUser(int userID);
-	public List<Hospital> queryHospital(int page);
+
+    int queryUserIDByHospitalID(int hospitalID);
 }

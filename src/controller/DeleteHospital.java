@@ -1,5 +1,7 @@
 package controller;
 
+import service.HospitalService;
+import service.HospitalServiceImpl;
 import service.UserService;
 import service.UserServiceImpl;
 
@@ -11,22 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 //controller层
-@WebServlet("/deleteUser")
-public class DeleteUser extends HttpServlet {
-
+@WebServlet("/deleteHospital")
+public class DeleteHospital extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int userID = Integer.parseInt(req.getParameter("userID"));
-        //System.out.println("ssssssss"+userName);
-        UserService userService = new UserServiceImpl();
-        int result = userService.deleteUser(userID);
-        if (result!=0){
-            if (req.getParameter("userType").equals("1")){
-                resp.sendRedirect("ordinaryUser?page="+0+"&current="+1);
-            }else{
-                resp.sendRedirect("hospitalUser?page="+0+"&current="+2);
-            }
-        }
+        int hospitalID = Integer.parseInt(req.getParameter("hospitalID"));
+        HospitalService hospitalService = new HospitalServiceImpl();
+        hospitalService.deleteHospital(hospitalID);
+        resp.sendRedirect("hospitalTable?page="+0+"&current="+3);
     }
 
     @Override

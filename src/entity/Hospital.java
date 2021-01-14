@@ -1,17 +1,16 @@
 package entity;
 
 import java.sql.Time;
-import java.util.Date;
 
 public class Hospital {
     private int hospitalID;
-    private String name;
+    private String hospitalName;
     private String grade;
     private String area;
     private String address;
     private String icon;
-    private Time release;
-    private Time stop;
+    private Time releaseTime;
+    private Time stopTime;
     private String rule;
     private String details;
     private String notice;
@@ -23,13 +22,13 @@ public class Hospital {
     public String toString() {
         return "Hospital{" +
                 "hospitalID=" + hospitalID +
-                ", name='" + name + '\'' +
+                ", hospitalName='" + hospitalName + '\'' +
                 ", grade='" + grade + '\'' +
                 ", area='" + area + '\'' +
                 ", address='" + address + '\'' +
                 ", icon='" + icon + '\'' +
-                ", release=" + release +
-                ", stop=" + stop +
+                ", releaseTime=" + releaseTime +
+                ", stopTime=" + stopTime +
                 ", rule='" + rule + '\'' +
                 ", details='" + details + '\'' +
                 ", notice='" + notice + '\'' +
@@ -44,12 +43,12 @@ public class Hospital {
         this.hospitalID = hospitalID;
     }
 
-    public String getName() {
-        return name;
+    public String getHospitalName() {
+        return hospitalName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 
     public String getGrade() {
@@ -84,20 +83,20 @@ public class Hospital {
         this.icon = icon;
     }
 
-    public Time getRelease() {
-        return release;
+    public Time getReleaseTime() {
+        return releaseTime;
     }
 
-    public void setRelease(Time release) {
-        this.release = release;
+    public void setReleaseTime(Time releaseTime) {
+        this.releaseTime = releaseTime;
     }
 
-    public Time getStop() {
-        return stop;
+    public Time getStopTime() {
+        return stopTime;
     }
 
-    public void setStop(Time stop) {
-        this.stop = stop;
+    public void setStopTime(Time stopTime) {
+        this.stopTime = stopTime;
     }
 
     public String getRule() {

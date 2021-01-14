@@ -3,6 +3,8 @@ package controller;
 import com.alibaba.fastjson.JSON;
 import entity.Hospital;
 import entity.User;
+import service.HospitalService;
+import service.HospitalServiceImpl;
 import service.UserService;
 import service.UserServiceImpl;
 
@@ -24,12 +26,22 @@ public class HospitalTableQuery extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
+        String hospitalName = req.getParameter("hospitalName");
         int page = Integer.parseInt(req.getParameter("page"));
+        HospitalService hospitalService = new HospitalServiceImpl();
+
+        List<Hospital> hospitals = hospitalService.queryHospital(hospitalName, page);
         UserService userService = new UserServiceImpl();
-        List<Hospital> hospitals = userService.queryHospital(page);
+        HashMap<Integer, Integer> hospitalIDMap = new HashMap();
+        for (Hospital hospital:
+                hospitals) {
+            int a = userService.queryUserIDByHospitalID(hospital.getHospitalID());
+            hospitalIDMap.put(hospital.getHospitalID(), a);
+        }
         Object o = JSON.toJSON(hospitals);
         System.out.println(o);
         req.setAttribute("list", o);
+        req.setAttribute("hospitalIDMap", hospitalIDMap);
         req.getRequestDispatcher("systemManage.jsp").forward(req, resp);
     }
 
