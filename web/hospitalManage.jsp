@@ -10,6 +10,7 @@
 <head>
   <title>$Title$</title>
   <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/hospotalManage.css">
+  <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/popWindow.css">
 </head>
 <body>
 <%request.setCharacterEncoding("UTF-8"); %>
@@ -76,6 +77,14 @@
         filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
         $("#hospitalRight").html(String.raw`<%@ include file="messageManage.jsp"%>`)
         break;
+      case 4:
+        filter[0].style.backgroundColor = "#4bbfd4"
+        $("#hospitalRight").html(String.raw`<%@ include file="dorctorManage.jsp"%>`)
+        break;
+      <%--case 5:--%>
+      <%--  filter[0].style.backgroundColor = "#4bbfd4"--%>
+      <%--  $("#hospitalRight").html(String.raw`<%@ include file="numSrc.jsp"%>`)--%>
+      <%--  break;--%>
       default:
         break;
     }
@@ -126,6 +135,65 @@
   }
   function updateDepartmentCancle() {
     $("#updateBox").css('display', 'none')
+  }
+  function doctorManageEnter(departmentID) {
+    window.location.href="queryDoctor?page="+0+"&current="+4+"&departmentID="+departmentID
+  }
+
+  function addDoctor() {
+    $("#addDoctorBox").css('display', 'block')
+  }
+  function addDoctorConfirm() {
+    $("#addDoctor").submit()
+  }
+  function addDoctorCancle() {
+    $("#addDoctorBox").css('display', 'none')
+  }
+  function deleteDoctor(doctorID, departmentID) {
+    if (confirm("确定删除?")) {
+      window.location.href = "deleteDoctor?doctorID="+doctorID+"&departmentID="+departmentID
+    }
+  }
+  function updateDoctor(obj) {
+    $(obj.parentNode.parentNode).children('td').each(function (j) {
+      switch (j) {
+        case 0:
+          $("#updateDoctorID").val($(this).text())
+          break;
+        case 1:
+          $("#updateDoctorName").val($(this).text())
+              break;
+        case 2:
+          $("#updateJob").val($(this).text())
+          break;
+        case 3:
+          switch ($(this).text()){
+            case "男":
+              $("#updateIdCardType").val(1)
+              break;
+            case "女":
+              $("#updateIdCardType").val(2)
+              break;
+          }
+          break;
+        case 4:
+          $("#updateAge").val($(this).text())
+          break;
+        case 5:
+          $("#updateExpertise").val($(this).text())
+          break;
+        case 6:
+          $("#updateCost").val($(this).text())
+          break;
+      }
+    })
+    $("#updateBox").css('display', 'block')
+  }
+  function updateCancle() {
+    $("#updateBox").css('display', 'none')
+  }
+  function updateDoctorConfirm() {
+    $("#doctorUpdate").submit()
   }
 </script>
 </body>

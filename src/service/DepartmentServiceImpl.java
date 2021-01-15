@@ -34,4 +34,9 @@ public class DepartmentServiceImpl implements DepartmentService {
         DepartmentDao dao = new DepartmentDaoImpl();
         dao.updateDepartment(department);
     }
+    @Override
+    public Department queryDepartmentByID(int departmentID) {
+        DepartmentDao dao = new DepartmentDaoImpl();
+        return dao.queryDepartmentByID(departmentID);
+    }
 }

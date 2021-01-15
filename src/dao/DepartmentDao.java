@@ -15,4 +15,6 @@ public interface DepartmentDao {
     void deleteDepartment(int departmentID);
 
     void updateDepartment(Department department);
+
+    Department queryDepartmentByID(int departmentID);
 }

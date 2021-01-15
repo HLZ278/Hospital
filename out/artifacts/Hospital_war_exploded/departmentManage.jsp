@@ -7,12 +7,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Title</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/tableLeft.css">
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/popWindow.css">
 </head>
 <body>
 <div class="rightMain" style="background-color: #f0f0f0;float: right;  width: calc(100% - 300px);height: 100%">
@@ -52,7 +50,7 @@
                     <td>${department.position}</td>
                     <td>${department.workTime}</td>
                     <td>${department.closeTime}</td>
-                    <td><a href="#">管理</a>|<a href="#" onclick='updateDepartment(this)'>修改</a>|<a a href="JavaScript:deleteDepartment(${department.departmentID})">删除</a></td>
+                    <td><a href="JavaScript:doctorManageEnter(${department.departmentID})">管理</a>|<a href="#" onclick='updateDepartment(this)'>修改</a>|<a href="JavaScript:deleteDepartment(${department.departmentID})">删除</a></td>
                 </tr>
             </c:forEach>
         </table>
