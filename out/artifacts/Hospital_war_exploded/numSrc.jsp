@@ -68,7 +68,7 @@
     <div style="text-align: center; margin: 10px; position: absolute;top: 70px;background-color: white; height: 70px; width: calc(100% - 320px)">
         <font style="font-size:30px; font-weight:600;line-height: 70px; color: #007bff">号源管理：</font>
         <font style="font-size:30px;line-height: 70px">科室：${department.getDepartmentName()}->医生：${doctor.getDoctorName()}</font>
-        <button class="save" >保存</button>
+        <button class="save" onclick="saveNumSrc()">保存</button>
     </div>
     <div style="margin: 10px; position: absolute;top: 150px;background-color: white; height: 70px; width: calc(100% - 320px); height: 550px">
         <div class="colorBlock" style="background-color: #ff4a1a">

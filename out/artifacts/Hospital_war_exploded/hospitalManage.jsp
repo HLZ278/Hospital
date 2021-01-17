@@ -222,6 +222,24 @@
     $("#remainNum3")[0].innerHTML=parseInt($("#remainNum3")[0].innerHTML)-1
     $("#totalNum3")[0].innerHTML=parseInt($("#totalNum3")[0].innerHTML)-1
   }
+  function saveNumSrc() {
+    window.
+    $.ajax({
+      type:"post",
+      url:"insertOrUpdateNumSrc",
+      data:{"remainNum1": $("#remainNum1")[0].innerHTML
+        ,"totalNum1": $("#totalNum1")[0].innerHTML
+        ,"remainNum2": $("#remainNum2")[0].innerHTML
+        ,"totalNum2": $("#totalNum2")[0].innerHTML
+        ,"remainNum3": $("#remainNum3")[0].innerHTML
+        ,"totalNum3": $("#totalNum3")[0].innerHTML
+        ,"doctorID":<%=request.getParameter("doctorID")%>
+      },
+      success:function(data){
+        alert(data)
+      },
+    });
+  }
 </script>
 </body>
 </html>

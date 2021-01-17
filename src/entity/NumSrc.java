@@ -60,6 +60,14 @@ public class NumSrc {
         return total;
     }
 
+    public NumSrc(int signalSrcID, int doctorID, Date contractTime, int remain, int total) {
+        this.signalSrcID = signalSrcID;
+        this.doctorID = doctorID;
+        this.contractTime = contractTime;
+        this.remain = remain;
+        this.total = total;
+    }
+
     public void setTotal(int total) {
         this.total = total;
     }

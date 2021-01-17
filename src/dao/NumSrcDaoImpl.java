@@ -45,7 +45,31 @@ public class NumSrcDaoImpl implements NumSrcDao{
     }
 
     @Override
-    public void insertOrUpdateNumSrc(int doctorID) {
-
+    public void insertOrUpdateNumSrc(List<NumSrc> numSrcList) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        try {
+            String sql;
+            sql = "INSERT INTO signalsrc(doctorID,contractTime,remain,total) VALUE(?,?,?,?) ON DUPLICATE KEY UPDATE doctorID=?,contractTime=?";
+            pstatement = conn.prepareStatement(sql);
+            for (NumSrc numSrc:
+                 numSrcList) {
+                System.out.println(numSrc);
+                if (numSrc.getTotal()!=0){
+                    pstatement.setInt(1, numSrc.getDoctorID());
+                    pstatement.setDate(2, numSrc.getContractTime());
+                    pstatement.setInt(3, numSrc.getRemain());
+                    pstatement.setInt(4, numSrc.getTotal());
+                    pstatement.setInt(5, numSrc.getDoctorID());
+                    pstatement.setDate(6, numSrc.getContractTime());
+                    pstatement.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(null, pstatement, conn);
+        }
     }
 }
