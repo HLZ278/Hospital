@@ -141,4 +141,36 @@ public class DoctorDaoImpl implements DoctorDao{
             DBUtils.Close(null, pstatement, conn);
         }
     }
+
+    @Override
+    public Doctor queryDoctor(int doctorID) {
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        Doctor doctor = null;
+        try {
+            String sql = "SELECT * FROM doctor WHERE doctorID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, doctorID);
+            resultSet = pstatement.executeQuery();
+            if (resultSet.next()) {
+                doctor = new Doctor();
+                doctor.setDoctorID(resultSet.getInt("doctorID"));
+                doctor.setDoctorName(resultSet.getString("doctorName"));
+                doctor.setDepartmentID(resultSet.getInt("departmentID"));
+                doctor.setJob(resultSet.getString("job"));
+                doctor.setGender(resultSet.getInt("gender"));
+                doctor.setAge(resultSet.getInt("age"));
+                doctor.setExpertise(resultSet.getString("expertise"));
+                doctor.setCost(resultSet.getInt("cost"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return doctor;
+    }
 }

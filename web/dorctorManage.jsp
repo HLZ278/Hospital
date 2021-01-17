@@ -52,7 +52,7 @@
                     <td>${doctor.age}</td>
                     <td>${doctor.expertise}</td>
                     <td>${doctor.cost}</td>
-                    <td><a href="#">进入</a></td>
+                    <td><a href="JavaScript:numSrcManageEnter('${doctor.doctorID}', '${department.getDepartmentID()}')">进入</a></td>
                     <td><a href="#" onclick='updateDoctor(this)'>修改</a>|<a href="JavaScript:deleteDoctor('${doctor.doctorID}', '${department.getDepartmentID()}')">删除</a></td>
                 </tr>
             </c:forEach>

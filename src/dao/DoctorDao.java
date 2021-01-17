@@ -12,4 +12,6 @@ public interface DoctorDao {
 	void deleteDoctor(int doctorID);
 
 	void updateDoctor(Doctor doctor);
+
+	Doctor queryDoctor(int doctorID);
 }

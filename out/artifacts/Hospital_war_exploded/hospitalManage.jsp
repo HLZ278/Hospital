@@ -81,10 +81,10 @@
         filter[0].style.backgroundColor = "#4bbfd4"
         $("#hospitalRight").html(String.raw`<%@ include file="dorctorManage.jsp"%>`)
         break;
-      <%--case 5:--%>
-      <%--  filter[0].style.backgroundColor = "#4bbfd4"--%>
-      <%--  $("#hospitalRight").html(String.raw`<%@ include file="numSrc.jsp"%>`)--%>
-      <%--  break;--%>
+      case 5:
+          filter[0].style.backgroundColor = "#4bbfd4"
+        $("#hospitalRight").html(String.raw`<%@ include file="numSrc.jsp"%>`)
+        break;
       default:
         break;
     }
@@ -194,6 +194,33 @@
   }
   function updateDoctorConfirm() {
     $("#doctorUpdate").submit()
+  }
+  function numSrcManageEnter(doctorID, departmentID) {
+    window.location.href="queryNumSrc?page="+0+"&current="+5+"&departmentID="+departmentID+"&doctorID="+doctorID
+  }
+  function add1() {
+    $("#remainNum1")[0].innerHTML=parseInt($("#remainNum1")[0].innerHTML)+1
+    $("#totalNum1")[0].innerHTML=parseInt($("#totalNum1")[0].innerHTML)+1
+  }
+  function sub1() {
+    $("#remainNum1")[0].innerHTML=parseInt($("#remainNum1")[0].innerHTML)-1
+    $("#totalNum1")[0].innerHTML=parseInt($("#totalNum1")[0].innerHTML)-1
+  }
+  function add2() {
+    $("#remainNum2")[0].innerHTML=parseInt($("#remainNum2")[0].innerHTML)+1
+    $("#totalNum2")[0].innerHTML=parseInt($("#totalNum2")[0].innerHTML)+1
+  }
+  function sub2() {
+    $("#remainNum2")[0].innerHTML=parseInt($("#remainNum2")[0].innerHTML)-1
+    $("#totalNum2")[0].innerHTML=parseInt($("#totalNum2")[0].innerHTML)-1
+  }
+  function add3() {
+    $("#remainNum3")[0].innerHTML=parseInt($("#remainNum3")[0].innerHTML)+1
+    $("#totalNum3")[0].innerHTML=parseInt($("#totalNum3")[0].innerHTML)+1
+  }
+  function sub3() {
+    $("#remainNum3")[0].innerHTML=parseInt($("#remainNum3")[0].innerHTML)-1
+    $("#totalNum3")[0].innerHTML=parseInt($("#totalNum3")[0].innerHTML)-1
   }
 </script>
 </body>
