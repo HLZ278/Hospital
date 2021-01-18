@@ -21,7 +21,7 @@ public class NumSrcDaoImpl implements NumSrcDao{
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM signalsrc WHERE doctorID=? and contractTime between CAST(DATE_FORMAT(NOW(), '%Y-%m-%d')  AS DATETIME ) and CAST( CONCAT(DATE_FORMAT(NOW(), '%Y'),DATE_FORMAT(DATE_ADD(CURRENT_DATE(),INTERVAL 3 DAY),'-%m-%d')) AS DATETIME )";
+            String sql = "SELECT * FROM signalsrc WHERE doctorID=? and contractTime between CAST(DATE_FORMAT(NOW(), '%Y-%m-%d')  AS DATETIME ) and CAST( CONCAT(DATE_FORMAT(NOW(), '%Y'),DATE_FORMAT(DATE_ADD(CURRENT_DATE(),INTERVAL 2 DAY),'-%m-%d')) AS DATETIME )";
             pstatement = conn.prepareStatement(sql);
             pstatement.setInt(1, doctorID);
             resultSet = pstatement.executeQuery();
@@ -50,7 +50,7 @@ public class NumSrcDaoImpl implements NumSrcDao{
         PreparedStatement pstatement = null;
         try {
             String sql;
-            sql = "INSERT INTO signalsrc(doctorID,contractTime,remain,total) VALUE(?,?,?,?) ON DUPLICATE KEY UPDATE doctorID=?,contractTime=?";
+            sql = "INSERT INTO signalsrc(doctorID,contractTime,remain,total) VALUE(?,?,?,?) ON DUPLICATE KEY UPDATE remain=?,total=?";
             pstatement = conn.prepareStatement(sql);
             for (NumSrc numSrc:
                  numSrcList) {
@@ -60,8 +60,8 @@ public class NumSrcDaoImpl implements NumSrcDao{
                     pstatement.setDate(2, numSrc.getContractTime());
                     pstatement.setInt(3, numSrc.getRemain());
                     pstatement.setInt(4, numSrc.getTotal());
-                    pstatement.setInt(5, numSrc.getDoctorID());
-                    pstatement.setDate(6, numSrc.getContractTime());
+                    pstatement.setInt(5, numSrc.getRemain());
+                    pstatement.setInt(6, numSrc.getTotal());
                     pstatement.executeUpdate();
                 }
             }
