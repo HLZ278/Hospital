@@ -44,7 +44,7 @@
                 <div class="dropdown">
                     <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
-                        <a href="#">就诊人管理</a>
+                        <a href="javascript:patientManage();">就诊人管理</a>
                         <a href="#">预约挂号订单</a>
                         <a href="#">个人信息</a>
                         <a href="javascript:exit();">退出登录</a>
@@ -78,6 +78,9 @@
 <script>
     function exit() {
         window.location.href="exitLogin"
+    }
+    function patientManage() {
+        window.location.href="patientManage.jsp?"
     }
 </script>
 </body>
