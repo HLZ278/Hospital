@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/css/popWindow.css">
 </head>
 <style>
     .leftMenu{
@@ -49,6 +50,17 @@
         color: rgb(48, 255, 75);
 
     }
+    .patientDetail{
+        background: white;
+        font-size: 15px;
+        color: #08bbe6;
+        font-weight: 700;
+        font-family:FontAwesome;
+        outline: none;
+        border: none;
+        background-color: white
+    }
+
 </style>
 <body>
 <%request.setCharacterEncoding("UTF-8"); %>
@@ -80,11 +92,10 @@
             filter[i].addEventListener('click', function () {
                 switch ($(this).attr("id")) {
                     case "patientManage":
-                        window.location.href="patientManage.jsp?current="+1
+                        window.location.href="queryPatient?current="+1
                         break;
                     case "orderManage":
                         window.location.href="patientManage.jsp?current="+2
-
                         break;
                     case "messageManage":
                         window.location.href="patientManage.jsp?current="+3
@@ -111,12 +122,45 @@
                 break;
             case 3:
                 filter[parseInt("<%=request.getParameter("current")%>")-1].style.color = "rgb(48, 255, 75)"
-                $("#rightMain").html(String.raw`<%@ include file="messageManageM.jsp"%>`)
+                $("#rightMain").html(String.raw`<%@ include file="personManageM.jsp"%>`)
+                break;
+            case 4:
+                filter[0].style.color = "rgb(48, 255, 75)"
+                $("#rightMain").html(String.raw`<%@ include file="patientDetail.jsp"%>`)
                 break;
             default:
                 break;
         }
     };
+    function patientDetail(patientID) {
+        window.location.href="patientDetail?current="+4+"&patientID="+patientID
+    }
+    function updatePatientShow() {
+        $("#updateBox").css('display', 'block')
+    }
+    function updatePatientConfirm() {
+        $("#patientUpdate").submit()
+    }
+    function updatePatientCancle() {
+        $("#updateBox").css('display', 'none')
+    }
+    function addPatient() {
+        $("#updateBox").css('display', 'block')
+    }
+    function addPatientConfirm() {
+        $("#patientInsert").submit()
+    }
+    function deletePatient(patientID) {
+        if (confirm("确定删除?")) {
+            window.location.href = "deletePatient?patientID=" + patientID
+        }
+    }
+    function updateUserDetail() {
+        $("#updateBox").css('display', 'block')
+    }
+    function updateUserConfirm() {
+        $("#personUpdate").submit()
+    }
 </script>
 </body>
 </html>

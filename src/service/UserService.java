@@ -20,4 +20,5 @@ public interface UserService {
     int queryUserIDByHospitalID(int hospitalID);
 
     int updateUser(User user);
+
 }

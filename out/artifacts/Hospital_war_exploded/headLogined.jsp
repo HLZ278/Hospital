@@ -46,7 +46,7 @@
                     <div class="dropdown-content">
                         <a href="javascript:patientManage();">就诊人管理</a>
                         <a href="#">预约挂号订单</a>
-                        <a href="#">个人信息</a>
+                        <a href="#" onclick="personMessage()">个人信息</a>
                         <a href="javascript:exit();">退出登录</a>
                     </div>
                 </div>
@@ -80,7 +80,10 @@
         window.location.href="exitLogin"
     }
     function patientManage() {
-        window.location.href="patientManage.jsp?"
+        window.location.href="queryPatient?current=1"
+    }
+    function personMessage() {
+        window.location.href="patientManage.jsp?current="+3
     }
 </script>
 </body>
