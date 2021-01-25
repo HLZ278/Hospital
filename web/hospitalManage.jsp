@@ -66,15 +66,15 @@
     }
     switch (<%=request.getParameter("current")%>) {
       case 1:
-        filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+        filter[0].style.backgroundColor = "#4bbfd4"
         $("#hospitalRight").html(String.raw`<%@ include file="departmentManage.jsp"%>`)
         break;
       case 2:
-        filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+        filter[1].style.backgroundColor = "#4bbfd4"
         $("#hospitalRight").html(String.raw`<%@ include file="orderManage.jsp"%>`)
         break;
       case 3:
-        filter[parseInt("<%=request.getParameter("current")%>")-1].style.backgroundColor = "#4bbfd4"
+        filter[2].style.backgroundColor = "#4bbfd4"
         $("#hospitalRight").html(String.raw`<%@ include file="messageManage.jsp"%>`)
         break;
       case 4:

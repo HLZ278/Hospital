@@ -50,7 +50,8 @@
     </style>
 </head>
 <body>
-<% java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat("MM月dd日");
+<%
+    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat("MM月dd日");
     Date date = new Date();
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(date);

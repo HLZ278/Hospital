@@ -17,7 +17,7 @@ public class HospitalDaoImpl implements HospitalDAO {
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM hospital ORDER BY hospitalID LIMIT "+(page)*15+", 15";
+            String sql = "SELECT * FROM hospital ORDER BY hospitalID LIMIT "+(page)*12+", 12";
             pstatement = conn.prepareStatement(sql);
             resultSet = pstatement.executeQuery();
             while (resultSet.next()) {
@@ -141,6 +141,40 @@ public class HospitalDaoImpl implements HospitalDAO {
             //关闭数据库连接，同时先要关闭结果集和PreparedStatement
             DBUtils.Close(null, pstatement, conn);
         }
+    }
+
+    @Override
+    public Hospital queryHospitalByID(int hospitalID) {
+            //DBUtils封装了数据库的连接
+            Connection conn = DBUtils.getCon();
+            PreparedStatement pstatement = null;
+            ResultSet resultSet = null;
+        Hospital hospital = new Hospital();
+        try {
+                String sql = "SELECT * FROM hospital where hospitalID=?";
+                pstatement = conn.prepareStatement(sql);
+                pstatement.setInt(1, hospitalID);
+                resultSet = pstatement.executeQuery();
+                if (resultSet.next()) {
+                    hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                    hospital.setHospitalName(resultSet.getString("hospitalName"));
+                    hospital.setGrade(resultSet.getString("grade"));
+                    hospital.setArea(resultSet.getString("area"));
+                    hospital.setAddress(resultSet.getString("address"));
+                    hospital.setIcon(resultSet.getString("icon"));
+                    hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                    hospital.setStopTime(resultSet.getTime("stopTime"));
+                    hospital.setRule(resultSet.getString("rule"));
+                    hospital.setDetails(resultSet.getString("details"));
+                    hospital.setNotice(resultSet.getString("notice"));
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }finally {
+                //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+                DBUtils.Close(resultSet, pstatement, conn);
+            }
+            return hospital;
     }
 
     @Override

@@ -26,3 +26,6 @@ window.onload = function() {
         })
     }
 };
+function hospitalDetailM(hostpital) {
+    window.location.href="queryHospitalByID?hospitalID="+hostpital+"&current=1"
+}

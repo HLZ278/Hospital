@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -19,28 +18,14 @@
             <font style=" color: grey; margin-left: 20px; font-size: 15px">挂号须知:</font>
             <font style=" color: grey;font-size: 15px; margin-left: 10px">${hospital.getRule()}</font>
         </div>
+        <div>
+            <div style="width: 600px; color: grey;font-size: 15px; margin-left: 20px;word-wrap: break-word;word-break: break-all;overflow: hidden;">退号注意:&nbsp;&nbsp;&nbsp;已完成预约的号源，如需办理退号，至少在就诊前12小时前通过网站、微信公众号、电话等平台预约渠道进行取消预约。</div>
+        </div>
     </div>
 </div>
 <div style="float:left;margin: 20px;margin-top: 10px; width: 960px; height: 400px; margin-top: 50px">
-    <div style="font-weight: 600;">选择科室:</div>
-    <c:forEach var="key" items="${departmentMapKey}">
-        <div style="margin-top: 20px">
-            ${key}:
-            <div style="margin-left:30px;margin-right:30px;width: 900px;word-wrap: break-word;word-break: break-all;overflow: hidden;">
-                <c:forEach var="department" items="${ departmentMap.get(key) }" varStatus="status">
-                    <c:choose>
-                        <c:when test="${status.index!=0&&status.index%4==0}">
-                            <div style="float:left;min-width: 150px"><a href="#" onclick="numSrcOrder(${department.getDepartmentID()})">${department.getDepartmentName()}</a></div>
-                            <br/>
-                        </c:when>
-                        <c:otherwise>
-                            <div style="float:left;min-width: 150px"><a href="#" onclick="numSrcOrder(${department.getDepartmentID()})">${department.getDepartmentName()}</a></div>
-                        </c:otherwise>
-                    </c:choose>
-
-                </c:forEach>
-
-            </div>
-        </div>
-    </c:forEach>
+    <div style="font-weight: 600;">医院介绍:</div>
+    <div style="margin-top: 20px;width:900px;word-wrap: break-word;word-break: break-all;overflow: hidden;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hospital.getDetails()}
+    </div>
 </div>

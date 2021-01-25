@@ -42,6 +42,37 @@ public class DepartmentDaoImpl implements DepartmentDao {
         }
         return list;
     }
+    @Override
+    public List<Department> queryAllDepartment(int hospitalID) {
+        ArrayList<Department> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM department WHERE hospitalID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, hospitalID);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Department department = new Department();
+                department.setDepartmentID(resultSet.getInt("departmentID"));
+                department.setHospitalID(resultSet.getInt("hospitalID"));
+                department.setDepartmentType(resultSet.getString("departmentType"));
+                department.setDepartmentName(resultSet.getString("departmentName"));
+                department.setPosition(resultSet.getString("position"));
+                department.setWorkTime(resultSet.getTime("workTime"));
+                department.setCloseTime(resultSet.getTime("closeTime"));
+                list.add(department);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
+    }
 
     @Override
     public void insertDepartment(Department department) {

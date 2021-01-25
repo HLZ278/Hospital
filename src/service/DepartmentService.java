@@ -2,6 +2,7 @@ package service;
 
 import entity.Department;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface DepartmentService {
@@ -10,4 +11,6 @@ public interface DepartmentService {
     void deleteDepartment(int departmentID);
     void updateDepartment(Department department);
     Department queryDepartmentByID(int departmentID);
+
+    HashMap<String, List<Department>> queryDepartmentByHospital(int hospitalID);
 }

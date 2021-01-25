@@ -31,13 +31,13 @@ public class Login extends HttpServlet {
                 //判断用户类型，跳转对应页面
                 switch (user.getUserType()) {
                     case UserType.NORMAL_USER:
-                        req.getRequestDispatcher("home.jsp").forward(req, resp);
+                        resp.sendRedirect("enterHome");
                         break;
                     case UserType.HOSPITAL_USER:
-                        req.getRequestDispatcher("hospitalManage.jsp").forward(req, resp);
+                        resp.sendRedirect("queryDepartment?page=0&current=1");
                         break;
                     case UserType.SYS_USER:
-                        req.getRequestDispatcher("systemManage.jsp").forward(req, resp);
+                        resp.sendRedirect("ordinaryUser?page=0&current=1");
                         break;
                     default:
                         break;

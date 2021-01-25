@@ -57,14 +57,14 @@
                     <div class="dropdown-content">
                         <a href="#">个人信息</a>
                         <a  href="javascript:exit();">退出登录</a>
-                    </div>
+                </div>
                 </div>
             </c:when>
             <c:when test="${user.getUserType()==3}">
                 <div class="dropdown">
                     <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
-                        <a  href="#">个人信2息</a>
+                        <a  href="#">个人信息</a>
                         <a href="javascript:exit();">退出登录</a>
                     </div>
                 </div>

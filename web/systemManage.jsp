@@ -31,12 +31,12 @@
                 <li id="hospital" class="sysLi"><a>医院管理</a><span style="margin-left: 5px">></span></li>
                 <li id="notice" class="sysLi"><a>公告管理</a><span style="margin-left: 5px">></span></li>
                 <li id="message" class="sysLi"><a>留言管理</a><span style="margin-left: 5px">></span></li>
-
             </ul>
         </div>
     </div>
 
     <div id="right">
+
     </div>
 </div>
 

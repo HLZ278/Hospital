@@ -1,30 +1,28 @@
 package controller;
-
-import entity.User;
-import service.UserService;
-import service.UserServiceImpl;
-import utils.UserType;
+import entity.Hospital;
+import service.HospitalService;
+import service.HospitalServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
-//controller层
-@WebServlet("/exitLogin")
-public class ExitLogin extends HttpServlet {
-
+@WebServlet("/enterHome")
+public class Home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //退出登录即是把user从session中移除后回到主页面
-        HttpSession session = req.getSession();
-        session.removeAttribute("user");
-        resp.sendRedirect("enterHome");
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("utf-8");
+        HospitalService hospitalService = new HospitalServiceImpl();
+        List<Hospital> hospitals = hospitalService.queryHospital(null, 0);
+        req.setAttribute("hospitals", hospitals);
+        req.getRequestDispatcher("home.jsp").forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //任何post请求终将前往doGet处理

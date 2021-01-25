@@ -15,7 +15,7 @@ import java.io.IOException;
 
 //controller层
 @WebServlet("/userInsert")
-public class UserInsert extends HttpServlet {
+    public class UserInsert extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");

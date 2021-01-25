@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>home</title>
@@ -116,110 +117,34 @@
     <%-- 医院部分   --%>
     <div class="right">
         <%--    医院卡片部分，一个item就是一个卡片    --%>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float:right;" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float:right" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float:right;" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float:right" onclick="alert('sdf')">
-            <div style="" class="wapper">
-                <div style=" height: 50px">大连医科大学附属第一医院</div>
-                <div>
-                    <div style="float: left;">三级甲等</div>
-                    <div style="float: right; margin-right: 50px">8:00-18:00</div>
-                </div>
-            </div>
-            <img class="micon" src="images/hospital1.png"></img>
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float:right;" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float:right" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float:right;" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float: left;" onclick="alert('sdf')">
-
-        </div>
-        <div class="item" style="float:right" onclick="alert('sdf')">
-
-        </div>
+        <c:forEach var="hospital" items="${ hospitals }" varStatus="status">
+            <c:choose>
+                <c:when test="${status.index%2==0}"> <!-- idList是List类型变量 -->
+                    <div class="item" style="float: left;" onclick="hospitalDetailM(${hospital.getHospitalID()})">
+                        <div style="" class="wapper">
+                            <div style="height: 50px">${hospital.getHospitalName()}</div>
+                            <div>
+                                <div style="float: left;">${hospital.getGrade()}</div>
+                                <div style="float: right; margin-right: 50px">${hospital.getReleaseTime().getHours()}:${hospital.getReleaseTime().getMinutes()}-${hospital.getStopTime().getHours()}:${hospital.getStopTime().getMinutes()}</div>
+                            </div>
+                        </div>
+                        <img class="micon" src="images/${hospital.getIcon()}.png"></img>
+                    </div>
+                </c:when>
+                <c:when test="${status.index%2==1}">
+                    <div class="item" style="float: right;" onclick="hospitalDetailM(${hospital.getHospitalID()})">
+                        <div style="" class="wapper">
+                            <div style=" height: 50px">${hospital.getHospitalName()}</div>
+                            <div>
+                                <div style="float: left;">${hospital.getGrade()}</div>
+                                <div style="float: right; margin-right: 50px">${hospital.getReleaseTime().getHours()}:${hospital.getReleaseTime().getMinutes()}-${hospital.getStopTime().getHours()}:${hospital.getStopTime().getMinutes()}</div>
+                            </div>
+                        </div>
+                        <img class="micon" src="images/${hospital.getIcon()}.png"></img>
+                    </div>
+                </c:when>
+            </c:choose>
+        </c:forEach>
     </div>
 </div>
 <div style="">

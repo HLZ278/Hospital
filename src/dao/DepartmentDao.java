@@ -8,7 +8,9 @@ import java.util.List;
 public interface DepartmentDao {
 	public List<Department> queryDepartment(int hospitalID, int page);
 
-	void insertDepartment(Department department);
+    List<Department> queryAllDepartment(int hospitalID);
+
+    void insertDepartment(Department department);
 
 	List<Department> queryDepartment(int hospitalID, int page, String departmentName);
 

@@ -2,8 +2,6 @@ package controller;
 
 import service.DepartmentService;
 import service.DepartmentServiceImpl;
-import service.UserService;
-import service.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

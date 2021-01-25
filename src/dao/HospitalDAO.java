@@ -14,4 +14,5 @@ public interface HospitalDAO {
 	List<Hospital> queryHospitalByName(String hospitalName);
 
 	void updateHospital(Hospital hospital);
+	Hospital queryHospitalByID(int hospitalID);
 }

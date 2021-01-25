@@ -16,6 +16,7 @@ public class Hospital {
     private String notice;
 
     public Hospital() {
+
     }
 
     @Override
