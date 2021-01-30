@@ -48,7 +48,7 @@
             window.location.href="queryDepartment?page="+0+"&current="+1
             break;
           case "orderManage":
-            //window.location.href="orderManage?page="+0+"&current="+2
+            window.location.href="queryHospitalOrderManageView?page="+0+"&current="+2
             break;
           case "messageManage":
             //window.location.href="messageManage?page="+0+"&current="+3

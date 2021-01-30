@@ -24,8 +24,8 @@
     <div>年龄:${patient.getAge()}</div>
     <div>性别:
         <c:choose>
-            <c:when test="${patient.getGender()==1}">男</c:when>
-            <c:when test="${patient.getGender()==2}">女</c:when>
+            <c:when test="${patient.getGender()==1}">女</c:when>
+            <c:when test="${patient.getGender()==2}">男</c:when>
         </c:choose>
     </div>
     <div>生日:${patient.getBirthday()}</div>

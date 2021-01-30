@@ -63,6 +63,6 @@
     <div style="float:left;margin-top: 10px;margin-left:180px;color: grey">医事服务费：</div><div style="float:left;margin-top: 10px;width:600px;word-wrap: break-word;word-break: break-all;overflow: hidden;">60元</div>
 </div>
 <div style="text-align: center; height: 150px;clear: left">
-    <button onclick="" style="margin-top: 30px; height: 50px; width: 150px; background: #4490f1; border: none; color: white">确认</button>
+    <button onclick="orderConfirm()" style="margin-top: 30px; height: 50px; width: 150px; background: #4490f1; border: none; color: white">确认</button>
 </div>
 

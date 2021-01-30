@@ -121,7 +121,7 @@
                 break;
             case 2:
                 filter[parseInt("<%=request.getParameter("current")%>") - 1].style.color = "rgb(48, 255, 75)"
-                $("#rightMain").html(String.raw`<%@ include file="orderManageM.jsp"%>`)
+                $("#rightMain").html(String.raw`<%@ include file="departmentChoose.jsp"%>`)
                 break;
             case 3:
                 filter[parseInt("<%=request.getParameter("current")%>") - 1].style.color = "rgb(48, 255, 75)"
@@ -192,14 +192,16 @@
                     <div style="margin: 10px;margin-top: 20px; font-weight: 600">`+dateNumSrcViewMap[date][i].doctorName+String.raw`</div>
                     <div style="margin: 10px; color: grey; font-size: 15px">`+dateNumSrcViewMap[date][i].expertise+String.raw`</div>
                 </div>
-                <div ><button onclick="orderEnter(`+dateNumSrcViewMap[date][i].signalSrcID+String.raw`)" style=" margin-top:30px;float: right; line-height: 40px; width: 150px; border: none; background-color: #4490f1;border-radius: 5px; color: white; font-weight: 600">剩余:&nbsp;&nbsp;&nbsp;`+dateNumSrcViewMap[date][i].remain+String.raw`</button></div>
+                <div ><button onclick="orderEnter(`+dateNumSrcViewMap[date][i].signalSrcID+String.raw`,`+dateNumSrcViewMap[date][i].remain+String.raw`)" style=" margin-top:30px;float: right; line-height: 40px; width: 150px; border: none; background-color: #4490f1;border-radius: 5px; color: white; font-weight: 600">剩余:&nbsp;&nbsp;&nbsp;`+dateNumSrcViewMap[date][i].remain+String.raw`</button></div>
                 <div style="float: right; line-height: 100px; margin-right: 20px; font-weight: 500">预约费用:&nbsp;&nbsp;￥`+dateNumSrcViewMap[date][i].cost+String.raw`</div>
             </div>
         `)
         }
     }
-    function orderEnter(numSrcID) {
-        window.location.href = "orderConfirm?current=5&numSrcID=" + numSrcID
+    function orderEnter(numSrcID, remain) {
+        if (remain!=0){
+            window.location.href = "orderConfirm?current=5&numSrcID=" + numSrcID
+        }
     }
     var patientID=-1
     function selectPatient(id) {
@@ -210,7 +212,29 @@
         $("#item"+id).css('background','#4bbfd4')
         patientID=id
     }
+    function orderConfirm() {
+        if (patientID!=-1){
+            window.location.href = "orderInsert?patientID="+patientID+"&numSrcID=" + getArgs("numSrcID")
+        }
+    }
 
+
+
+    //获取地址栏上的某一个属性值
+    function getArgs(strParame) {
+        var args = new Object( );
+        var query = location.search.substring(1);
+        var pairs = query.split("&"); // Break at ampersand
+        for(var i = 0; i < pairs.length; i++) {
+            var pos = pairs[i].indexOf("=");
+            if (pos == -1) continue;
+            var argname = pairs[i].substring(0,pos);
+            var value = pairs[i].substring(pos+1);
+            value = decodeURIComponent(value);
+            args[argname] = value;
+        }
+        return args[strParame];
+    }
 </script>
 </body>
 </html>

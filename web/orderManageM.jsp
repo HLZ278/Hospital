@@ -1,46 +1,58 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div style="font-weight: 600; margin: 20px">
+    挂号订单
+</div>
+<div style="margin-top: 20px;margin-left: 25px">
+    订单状态：
+    <select id="orderStatus">
+        <option value="0">全部</option>
+        <option value="1">预约中</option>
+        <option value="2">已履约</option>
+        <option value="3">已取消</option>
+        <option value="4">爽约</option>
+    </select>
+    <button onclick="searchOrder()">查询</button>
+</div>
+<div>
+    <table width="900px" style="margin: 30px"  border="1" cellspacing="0">
+        <tr style="text-align: center">
+            <th>就诊人</th>
+            <th>医院名</th>
+            <th>科室</th>
+            <th>医生</th>
+            <th>上班时间</th>
+            <th>下班时间</th>
+            <th>挂号日期</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        <c:forEach var="orderManageView" items="${ orderManageViews }">
+            <tr style="text-align: center">
+                <td>${orderManageView.getPatientName()}</td>
+                <td>${orderManageView.getHospitalName()}</td>
+                <td>${orderManageView.getDepartmentName()}</td>
+                <td>${orderManageView.getDoctorName()}</td>
+                <td>${orderManageView.getWorkTime()}</td>
+                <td>${orderManageView.getCloseTime()}</td>
+                <td>${orderManageView.getContractTime()}</td>
 
-<div style="margin-top: 20px;margin-left: 20px">
-    <font style="font-weight: 600;font-size: 23px">${hospital.getHospitalName()}</font> <font style="color:grey;margin-left: 20px">${hospital.getGrade()}</font>
-</div>
-<div style="margin-left: 20px; margin-top: 10px">
-    <div style="float: left"><img src="images/hospital1.png" style="width: 80px; height: 80px">
-    </div>
-    <div style="float: left">
-        <font style=" margin-left: 20px">医院详情:</font>
-        <div>
-            <font style="font-size: 15px; color: grey; margin-left: 20px">医院地点:</font>
-            <font style=" color: grey;font-size: 15px; margin-left: 10px">${hospital.getAddress()}</font>
-        </div>
-        <div>
-            <font style=" color: grey; margin-left: 20px; font-size: 15px">挂号须知:</font>
-            <font style=" color: grey;font-size: 15px; margin-left: 10px">${hospital.getRule()}</font>
-        </div>
-    </div>
-</div>
-<div style="float:left;margin: 20px;margin-top: 10px; width: 960px; height: 400px; margin-top: 50px">
-    <div style="font-weight: 600;">选择科室:</div>
-    <c:forEach var="key" items="${departmentMapKey}">
-        <div style="margin-top: 20px">
-            ${key}:
-            <div style="margin-left:30px;margin-right:30px;width: 900px;word-wrap: break-word;word-break: break-all;overflow: hidden;">
-                <c:forEach var="department" items="${ departmentMap.get(key) }" varStatus="status">
+                <c:choose>
+                    <c:when test="${orderManageView.getOrderStatus()==1}"><td>预约中</td></c:when>
+                    <c:when test="${orderManageView.getOrderStatus()==2}"><td>已履约</td></c:when>
+                    <c:when test="${orderManageView.getOrderStatus()==3}"><td>已取消</td></c:when>
+                    <c:when test="${orderManageView.getOrderStatus()==4}"><td>爽约</td></c:when>
+                </c:choose>
+                <td>
                     <c:choose>
-                        <c:when test="${status.index!=0&&status.index%4==0}">
-                            <div style="float:left;min-width: 150px"><a href="#" onclick="numSrcOrder(${department.getDepartmentID()})">${department.getDepartmentName()}</a></div>
-                            <br/>
+                        <c:when test="${orderManageView.getOrderStatus()==1}">
+                            <a href="JavaScript:cancleOrder('${orderManageView.getOrderID()}','${orderManageView.getSignalSrcID()}')">取消预约</a>
                         </c:when>
-                        <c:otherwise>
-                            <div style="float:left;min-width: 150px"><a href="#" onclick="numSrcOrder(${department.getDepartmentID()})">${department.getDepartmentName()}</a></div>
-                        </c:otherwise>
                     </c:choose>
+                </td>
+            </tr>
+        </c:forEach>
 
-                </c:forEach>
-
-            </div>
-        </div>
-    </c:forEach>
+    </table>
 </div>

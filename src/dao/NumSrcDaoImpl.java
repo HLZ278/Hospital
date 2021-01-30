@@ -72,4 +72,41 @@ public class NumSrcDaoImpl implements NumSrcDao{
             DBUtils.Close(null, pstatement, conn);
         }
     }
+
+    public int subtract(int numSrcID) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        int result = 0;
+        try {
+            String sql;
+            sql = "update signalsrc set remain=remain-1 where signalSrcID=? and remain!=0";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, numSrcID);
+            result = pstatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(null, pstatement, conn);
+        }
+        return result;
+    }
+
+    @Override
+    public void cancleOrder(int numSrcID) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        try {
+            String sql;
+            sql = "update signalsrc set remain=remain+1 where signalSrcID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, numSrcID);
+            pstatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(null, pstatement, conn);
+        }
+    }
 }

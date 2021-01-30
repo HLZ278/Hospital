@@ -27,7 +27,7 @@
         width: 1000px;
         margin-left:368px;
         height: 650px;
-        background-color: red;
+        background-color: #b5b5b5;
         padding: 0px;
     }
     .patientul li{
@@ -95,7 +95,7 @@
                         window.location.href="queryPatient?current="+1
                         break;
                     case "orderManage":
-                        window.location.href="patientManage.jsp?current="+2
+                        window.location.href="queryOrderManageView?current="+2
                         break;
                     case "messageManage":
                         window.location.href="patientManage.jsp?current="+3
@@ -160,6 +160,16 @@
     }
     function updateUserConfirm() {
         $("#personUpdate").submit()
+    }
+    function cancleOrder(orderID,signalSrcID) {
+        window.location.href="cancleOrder?current=2&orderID="+orderID+"&signalSrcID="+signalSrcID
+    }
+    function searchOrder() {
+        if ($("#orderStatus")[0].value==0){
+            window.location.href="queryOrderManageView?current="+2
+        }else{
+            window.location.href="searchOrder?current=2&status="+$("#orderStatus")[0].value
+        }
     }
 </script>
 </body>

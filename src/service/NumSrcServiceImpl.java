@@ -35,4 +35,16 @@ public class NumSrcServiceImpl implements NumSrcService {
         numSrcList.get(2).setContractTime(new Date(bigTomorrowTime.getTime()));
         numSrcDao.insertOrUpdateNumSrc(numSrcList);
     }
+
+    @Override
+    public void cancleOrder(int numSrcID) {
+        NumSrcDaoImpl numSrcDao = new NumSrcDaoImpl();
+        numSrcDao.cancleOrder(numSrcID);
+    }
+
+    @Override
+    public int subtract(int numSrcID) {
+        NumSrcDaoImpl numSrcDao = new NumSrcDaoImpl();
+        return numSrcDao.subtract(numSrcID);
+    }
 }
