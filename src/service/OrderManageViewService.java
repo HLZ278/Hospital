@@ -10,4 +10,6 @@ public interface OrderManageViewService {
 
     List<OrderManageView> queryByHopitalID(int hopitalID);
     List<OrderManageView> queryByHopitalID(int hopitalID, int status);
+
+    List<OrderManageView> queryByOrderID(int orderID);
 }

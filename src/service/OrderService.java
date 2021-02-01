@@ -10,4 +10,7 @@ public interface OrderService {
     public void insert(Order order);
     public void cancle(int orderID);
 
+    void completeOrder(int orderID);
+
+    void breakOrder(int orderID);
 }

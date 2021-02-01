@@ -8,4 +8,10 @@ public interface OrderDao {
 	public void insert(Order order);
 
 	void cancle(int orderID);
+
+    void completeOrder(int orderID);
+
+	void breakOrder(int orderID);
 }
+
+

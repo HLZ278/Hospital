@@ -171,6 +171,7 @@
             window.location.href="searchOrder?current=2&status="+$("#orderStatus")[0].value
         }
     }
+
 </script>
 </body>
 </html>

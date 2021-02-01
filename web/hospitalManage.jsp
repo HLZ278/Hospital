@@ -240,6 +240,13 @@
       },
     });
   }
+
+  function completeOrBreakOrder(orderID, completeOrBreak) {
+     window.location.href="completeOrBreakOrder?completeOrBreak="+completeOrBreak+"&orderID="+orderID+"&page=0&current=2"
+  }
+  function searchOrderByID() {
+      window.location.href="searchOrderByID?current="+2+"&orderID="+$("#orderID")[0].value
+  }
 </script>
 </body>
 </html>

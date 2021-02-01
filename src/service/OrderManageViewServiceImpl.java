@@ -30,4 +30,10 @@ public class OrderManageViewServiceImpl implements OrderManageViewService{
 		OrderManageViewDaoImpl orderManageViewDao = new OrderManageViewDaoImpl();
 		return orderManageViewDao.queryByHopitalID(hopitalID, status);
 	}
+
+	@Override
+	public List<OrderManageView> queryByOrderID(int orderID) {
+		OrderManageViewDaoImpl orderManageViewDao = new OrderManageViewDaoImpl();
+		return orderManageViewDao.queryByOrderID(orderID);
+	}
 }

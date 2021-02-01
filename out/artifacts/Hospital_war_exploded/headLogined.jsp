@@ -45,7 +45,7 @@
                     <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
                         <a href="javascript:patientManage();">就诊人管理</a>
-                        <a href="#">预约挂号订单</a>
+                        <a href="javascript:orderManage();">预约挂号订单</a>
                         <a href="#" onclick="personMessage()">个人信息</a>
                         <a href="javascript:exit();">退出登录</a>
                     </div>
@@ -84,6 +84,9 @@
     }
     function personMessage() {
         window.location.href="patientManage.jsp?current="+3
+    }
+    function orderManage() {
+        window.location.href="queryOrderManageView?current="+2
     }
 </script>
 </body>

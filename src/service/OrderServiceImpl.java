@@ -25,4 +25,14 @@ public class OrderServiceImpl implements OrderService {
     public void cancle(int orderID) {
         orderDao.cancle(orderID);
     }
+
+    @Override
+    public void completeOrder(int orderID) {
+        orderDao.completeOrder(orderID);
+    }
+
+    @Override
+    public void breakOrder(int orderID) {
+        orderDao.breakOrder(orderID);
+    }
 }
