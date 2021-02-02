@@ -15,4 +15,8 @@ public interface HospitalService {
 	Hospital queryHospitalByID(int hospitalID);
 
     void updateHospital(Hospital hospital);
+
+    List<Hospital> queryHospitalByName(String hospitalName);
+
+	List<Hospital> queryHospitalByLevelAndArea(String level, String area);
 }

@@ -31,7 +31,7 @@
             <font style="line-height: 45px"><%= strCurrentTime %></font>
         </div>
         <div style="border-bottom: 1px solid rgba(0,0,0,0.2); width: 100%; height: 45px">
-            <font style="line-height: 45px">有号</font>
+            <font style="line-height: 45px">${havas.get(0)}</font>
         </div>
     </div>
 
@@ -41,7 +41,7 @@
             <font style="line-height: 45px"><%= tomorrowDate %></font>
         </div>
         <div style="border-bottom: 1px solid rgba(0,0,0,0.2); width: 100%; height: 45px">
-            <font style="line-height: 45px">有号</font>
+            <font style="line-height: 45px">${havas.get(1)}</font>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
             <font style="line-height: 45px"><%= bigTomorrowDate %></font>
         </div>
         <div style="border-bottom: 1px solid rgba(0,0,0,0.2); width: 100%; height: 45px">
-            <font style="line-height: 45px">有号</font>
+            <font style="line-height: 45px">${havas.get(2)}</font>
         </div>
     </div>
 </div>

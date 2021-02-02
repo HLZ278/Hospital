@@ -146,9 +146,9 @@ public class HospitalDaoImpl implements HospitalDAO {
     @Override
     public Hospital queryHospitalByID(int hospitalID) {
             //DBUtils封装了数据库的连接
-            Connection conn = DBUtils.getCon();
-            PreparedStatement pstatement = null;
-            ResultSet resultSet = null;
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
         Hospital hospital = new Hospital();
         try {
                 String sql = "SELECT * FROM hospital where hospitalID=?";
@@ -175,6 +175,115 @@ public class HospitalDaoImpl implements HospitalDAO {
                 DBUtils.Close(resultSet, pstatement, conn);
             }
             return hospital;
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByArea(String area) {
+        ArrayList<Hospital> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM hospital WHERE area=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, area);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Hospital hospital = new Hospital();
+                hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                hospital.setHospitalName(resultSet.getString("hospitalName"));
+                hospital.setGrade(resultSet.getString("grade"));
+                hospital.setArea(resultSet.getString("area"));
+                hospital.setAddress(resultSet.getString("address"));
+                hospital.setIcon(resultSet.getString("icon"));
+                hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                hospital.setStopTime(resultSet.getTime("stopTime"));
+                hospital.setRule(resultSet.getString("rule"));
+                hospital.setDetails(resultSet.getString("details"));
+                hospital.setNotice(resultSet.getString("notice"));
+                list.add(hospital);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByLevel(String level) {
+        ArrayList<Hospital> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM hospital WHERE grade=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, level);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Hospital hospital = new Hospital();
+                hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                hospital.setHospitalName(resultSet.getString("hospitalName"));
+                hospital.setGrade(resultSet.getString("grade"));
+                hospital.setArea(resultSet.getString("area"));
+                hospital.setAddress(resultSet.getString("address"));
+                hospital.setIcon(resultSet.getString("icon"));
+                hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                hospital.setStopTime(resultSet.getTime("stopTime"));
+                hospital.setRule(resultSet.getString("rule"));
+                hospital.setDetails(resultSet.getString("details"));
+                hospital.setNotice(resultSet.getString("notice"));
+                list.add(hospital);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByLevelAndArea(String level, String area) {
+        ArrayList<Hospital> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM hospital WHERE grade=? and area=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, level);
+            pstatement.setString(2, area);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Hospital hospital = new Hospital();
+                hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                hospital.setHospitalName(resultSet.getString("hospitalName"));
+                hospital.setGrade(resultSet.getString("grade"));
+                hospital.setArea(resultSet.getString("area"));
+                hospital.setAddress(resultSet.getString("address"));
+                hospital.setIcon(resultSet.getString("icon"));
+                hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                hospital.setStopTime(resultSet.getTime("stopTime"));
+                hospital.setRule(resultSet.getString("rule"));
+                hospital.setDetails(resultSet.getString("details"));
+                hospital.setNotice(resultSet.getString("notice"));
+                list.add(hospital);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
     }
 
     @Override

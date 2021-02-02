@@ -1,31 +1,28 @@
 package controller;
 import entity.Hospital;
-import entity.Notice;
 import service.HospitalService;
 import service.HospitalServiceImpl;
-import service.NoticeServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.synth.SynthSpinnerUI;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/enterHome")
-public class Home extends HttpServlet {
+@WebServlet("/homeWithSearchByHospitalName")
+public class SearchByHospitalName extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
+        String hospitalName = req.getParameter("hospitalName");
         HospitalService hospitalService = new HospitalServiceImpl();
-        List<Hospital> hospitals = hospitalService.queryHospital(null, 0);
+        List<Hospital> hospitals = hospitalService.queryHospitalByName(hospitalName);
         req.setAttribute("hospitals", hospitals);
-        NoticeServiceImpl noticeService = new NoticeServiceImpl();
-        List<Notice> notices = noticeService.queryAll();
-        req.getSession().setAttribute("notices", notices);
         req.getRequestDispatcher("home.jsp").forward(req, resp);
     }
     @Override

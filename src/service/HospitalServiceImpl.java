@@ -47,4 +47,28 @@ public class HospitalServiceImpl implements HospitalService{
         HospitalDAO dao = new HospitalDaoImpl();
         dao.updateHospital(hospital);
     }
+
+    @Override
+    public List<Hospital> queryHospitalByName(String hospitalName) {
+        HospitalDAO dao = new HospitalDaoImpl();
+        return dao.queryHospitalByName(hospitalName);
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByLevelAndArea(String level, String area) {
+        HospitalDAO dao = new HospitalDaoImpl();
+        if (level.equals("全部")){
+            if (area.equals("全部")){
+                return dao.queryHospital(0);
+            }else {
+                return dao.queryHospitalByArea(area);
+            }
+        }else {
+            if (area.equals("全部")){
+                return dao.queryHospitalByLevel(level);
+            }else {
+                return dao.queryHospitalByLevelAndArea(level, area);
+            }
+        }
+    }
 }

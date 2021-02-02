@@ -15,4 +15,10 @@ public interface HospitalDAO {
 
 	void updateHospital(Hospital hospital);
 	Hospital queryHospitalByID(int hospitalID);
+
+	List<Hospital> queryHospitalByArea(String area);
+
+	List<Hospital> queryHospitalByLevel(String level);
+
+	List<Hospital> queryHospitalByLevelAndArea(String level, String area);
 }
