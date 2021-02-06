@@ -13,6 +13,7 @@ public interface HospitalService {
 	public String queryHospitalName(int hospitalID);
     void deleteHospital(int hospitalID);
 	Hospital queryHospitalByID(int hospitalID);
+	public int countHospital();
 
     void updateHospital(Hospital hospital);
 

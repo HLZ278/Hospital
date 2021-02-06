@@ -20,7 +20,7 @@ public class DoctorDaoImpl implements DoctorDao{
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM doctor WHERE departmentID=? and doctorName like ? ORDER BY doctorID LIMIT "+(page)*15+", 15";
+            String sql = "SELECT * FROM doctor WHERE departmentID=? and doctorName like ? ORDER BY doctorID LIMIT "+(page)*14+", 14";
             pstatement = conn.prepareStatement(sql);
             pstatement.setInt(1, departmentID);
             pstatement.setString(2, "%"+doctorName+"%");
@@ -54,7 +54,7 @@ public class DoctorDaoImpl implements DoctorDao{
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM doctor WHERE departmentID=? ORDER BY doctorID LIMIT "+(page)*15+", 15";
+            String sql = "SELECT * FROM doctor WHERE departmentID=? ORDER BY doctorID LIMIT "+(page)*14+", 14";
             pstatement = conn.prepareStatement(sql);
             pstatement.setInt(1, departmentID);
             resultSet = pstatement.executeQuery();
@@ -172,5 +172,28 @@ public class DoctorDaoImpl implements DoctorDao{
             DBUtils.Close(resultSet, pstatement, conn);
         }
         return doctor;
+    }
+
+    @Override
+    public int countDoctor(int department) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        int result = 0;
+        try {
+            String sql = "select count(*) from doctor WHERE departmentID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, department);
+            resultSet = pstatement.executeQuery();
+            if (resultSet.next()){
+                result=resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return result;
     }
 }

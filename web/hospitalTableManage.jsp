@@ -63,12 +63,12 @@
             </c:forEach>
         </table>
         <div style="position:absolute; bottom: 0;left: 0; margin-left: 20px; height: 40px" >
-            一页最多显示15条记录，共5页
+            一页最多显示14条记录，共${pageCount}页
         </div>
         <div style="position:absolute; bottom: 0;right: 0; margin: 10px;  width: 170px; height: 40px" >
-            <button class="weightText" style="float: left; height: 40px; width: 60px">上一页</button>
-            <div style="float: left; line-height: 40px;margin-left: 17px">01</div>
-            <button class="weightText" style="float: right; height: 40px; width: 60px">下一页</button>
+            <button onclick="preHospitalTable(${pageCount})" id="pre" class="weightText" style="float: left; height: 40px; width: 60px">上一页</button>
+            <div id="pageNum" style="float: left; line-height: 40px;margin-left: 19px">${nowPage+1}</div>
+            <button onclick="nextHospitalTable(${pageCount})" class="weightText" style="float: right; height: 40px; width: 60px">下一页</button>
         </div>
     </div>
 </div>

@@ -32,8 +32,6 @@
         <div class="homeTitle">
             <h1 class="title">Hospital</h1>
         </div>
-
-
         <c:choose>
             <c:when test="${user==null}">
                 <div class="registBtn">

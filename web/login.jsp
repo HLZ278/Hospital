@@ -32,7 +32,7 @@
         </div>
         <div class="boxRight">
             <div style="margin-top: 50px" class="registTitle"><font>LOGIN</font></div>
-            <form action="${pageContext.request.contextPath}/doLogin" method="post" style="margin-top: 30px">
+            <form id="loginForm" action="${pageContext.request.contextPath}/doLogin" method="post" style="margin-top: 30px">
                 <div class="registInput">
                     <div class="registIcon">
                         <svg t="1609989203051" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -47,7 +47,7 @@
                     </div>
                     <input id="userName" name="userName" type="text" autocomplete="off" placeholder="点击输入用户名"
                            onblur="checkName()"/>
-                    <div class="userError" style="visibility: hidden">用户名不正确</div>
+                    <div class="userError" style="visibility: hidden;">用户名不正确</div>
 
                 </div>
                 <div style="margin: auto; margin-top: 15px" class="registInput">
@@ -73,7 +73,7 @@
                     </c:choose>
                 </div>
                 <div class="loginBtn">
-                    <button type="submit">登录</button>
+                    <button onclick="doLogin()" type="button">登录</button>
                 </div>
             </form>
             <div class="registA">
@@ -88,5 +88,22 @@
 <div style="">
     <jsp:include page="footer.jsp"></jsp:include>
 </div>
+<script>
+    function doLogin() {
+        $.ajax({
+            type:"get",
+            url:"findUser",
+            data:{"userName": $("#userName").val()},
+            dataType:"text",
+            success:function(data){
+                if("true" === data){
+                    $("#loginForm").submit()
+                }else {
+                    alert("请检查您的用户名或密码")
+                }
+            },
+        });
+    }
+</script>
 </body>
 </html>

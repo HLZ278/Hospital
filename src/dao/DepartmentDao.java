@@ -19,4 +19,7 @@ public interface DepartmentDao {
     void updateDepartment(Department department);
 
     Department queryDepartmentByID(int departmentID);
+
+    int countDepartment(int hospitalID);
+
 }

@@ -89,13 +89,14 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 	}
 
 	@Override
-	public List<OrderManageView> queryByHopitalID(int hopitalID) {
+	public List<OrderManageView> queryByHopitalID(int hopitalID, String page) {
+		int pag = Integer.parseInt(page);
 		ArrayList<OrderManageView> list = new ArrayList<>();
 		Connection conn = DBUtils.getCon();
 		PreparedStatement pstatement = null;
 		ResultSet resultSet = null;
 		try {
-			String sql = "SELECT * FROM orderManageView WHERE hospitalID=? and orderStatus=1";
+			String sql = "SELECT * FROM orderManageView WHERE hospitalID=? and orderStatus=1 ORDER BY orderID LIMIT "+(pag)*14+", 14";
 			pstatement = conn.prepareStatement(sql);
 			pstatement.setInt(1, hopitalID);
 			resultSet = pstatement.executeQuery();
@@ -195,6 +196,29 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 			DBUtils.Close(resultSet, pstatement, conn);
 		}
 		return list;
+	}
+
+	@Override
+	public int countDepartment(int hospitalID) {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		ResultSet resultSet = null;
+		int result = 0;
+		try {
+			String sql = "select count(*) from orderManageView WHERE hospitalID=?";
+			pstatement = conn.prepareStatement(sql);
+			pstatement.setInt(1, hospitalID);
+			resultSet = pstatement.executeQuery();
+			if (resultSet.next()){
+				result=resultSet.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(resultSet, pstatement, conn);
+		}
+		return result;
 	}
 
 

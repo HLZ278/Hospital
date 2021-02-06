@@ -43,6 +43,12 @@ public class HospitalServiceImpl implements HospitalService{
     }
 
     @Override
+    public int countHospital() {
+        HospitalDAO dao = new HospitalDaoImpl();
+        return dao.countHospital();
+    }
+
+    @Override
     public void updateHospital(Hospital hospital) {
         HospitalDAO dao = new HospitalDaoImpl();
         dao.updateHospital(hospital);

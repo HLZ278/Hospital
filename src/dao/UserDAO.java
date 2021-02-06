@@ -13,8 +13,9 @@ public interface UserDAO {
 	public List<User> queryHospitalUser(int page);
 	public int addUser(User user, int userType);
 	public int deleteUser(int userID);
-
-    int queryUserIDByHospitalID(int hospitalID);
+	public int countOrdinaryUser();
+	public int countHospitalUser();
+	int queryUserIDByHospitalID(int hospitalID);
 
 	int updateUser(User user);
 

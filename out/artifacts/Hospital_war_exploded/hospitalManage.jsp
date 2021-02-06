@@ -22,7 +22,7 @@
   <div class="leftMenu" style="position: absolute;text-align:center;
           top: 70px;float:left;background-color: rgba(7,120,147,0.77); width: 300px;height: calc(100% - 70px)">
     <div style="background-color: #42e8e8; padding-top: 60px;padding-bottom: 60px; padding-right: 20px; padding-left: 20px">
-      <font style="color: white; font-weight: 700; font-size: 20px; font-family: FontAwesome">欢迎您，亲爱的大连市医科大学附属第一医院管理员</font>
+      <font style="color: white; font-weight: 700; font-size: 20px; font-family: FontAwesome">欢迎您，亲爱的${hospitalName}管理员</font>
     </div>
     <div class="sysMenuItem">
       <ul>
@@ -246,6 +246,54 @@
   }
   function searchOrderByID() {
       window.location.href="searchOrderByID?current="+2+"&orderID="+$("#orderID")[0].value
+  }
+
+  function preDepartmnet(pageCount) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==1){
+    }else {
+      window.location.href = "queryDepartment?page=" + (currentPage-2) + "&current=" + 1
+    }
+  }
+
+  function nextDepartmnet(pageCount) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==pageCount){
+    }else {
+      window.location.href = "queryDepartment?page=" + (currentPage) + "&current=" + 1
+    }
+  }
+
+  function preDoctor(pageCount, departmentID) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==1){
+    }else {
+      window.location.href="queryDoctor?page="+(currentPage-2)+"&current="+4+"&departmentID="+departmentID
+    }
+  }
+
+  function nextDoctor(pageCount, departmentID) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==pageCount){
+    }else {
+      window.location.href="queryDoctor?page="+(currentPage)+"&current="+4+"&departmentID="+departmentID
+
+    }
+  }
+  function preOrder(pageCount) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==1){
+    }else {
+      window.location.href="queryHospitalOrderManageView?page="+(currentPage-2)+"&current="+2
+    }
+  }
+  function nextOrder(pageCount) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==pageCount){
+    }else {
+      window.location.href="queryHospitalOrderManageView?page="+(currentPage)+"&current="+2
+
+    }
   }
 </script>
 </body>

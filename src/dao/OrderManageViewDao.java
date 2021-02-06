@@ -8,8 +8,10 @@ public interface OrderManageViewDao {
 
 	List<OrderManageView> queryByUserID(int userID, int status);
 
-	List<OrderManageView> queryByHopitalID(int hopitalID);
+	List<OrderManageView> queryByHopitalID(int hopitalID, String page);
 	List<OrderManageView> queryByHopitalID(int hopitalID, int status);
 
     List<OrderManageView> queryByOrderID(int orderID);
+
+	int countDepartment(int hospitalID);
 }

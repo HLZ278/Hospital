@@ -61,4 +61,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
         return departmentMap;
     }
+
+    @Override
+    public int countDepartment(int hospitalID) {
+        DepartmentDao dao = new DepartmentDaoImpl();
+        return dao.countDepartment(hospitalID);
+    }
 }

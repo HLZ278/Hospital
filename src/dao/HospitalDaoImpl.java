@@ -17,7 +17,7 @@ public class HospitalDaoImpl implements HospitalDAO {
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM hospital ORDER BY hospitalID LIMIT "+(page)*12+", 12";
+            String sql = "SELECT * FROM hospital ORDER BY hospitalID LIMIT "+(page)*14+", 14";
             pstatement = conn.prepareStatement(sql);
             resultSet = pstatement.executeQuery();
             while (resultSet.next()) {
@@ -63,6 +63,28 @@ public class HospitalDaoImpl implements HospitalDAO {
             e.printStackTrace();
         }finally {
             DBUtils.Close(null, pstatement, conn);
+        }
+        return result;
+    }
+
+    @Override
+    public int countHospital() {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        int result = 0;
+        try {
+            String sql = "select count(*) from hospital";
+            pstatement = conn.prepareStatement(sql);
+            resultSet = pstatement.executeQuery();
+            if (resultSet.next()){
+                result=resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
         }
         return result;
     }

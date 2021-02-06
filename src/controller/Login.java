@@ -47,6 +47,8 @@ public class Login extends HttpServlet {
                 req.setAttribute("msgg", 1);
                 req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
+        }else {
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 

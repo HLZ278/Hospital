@@ -34,6 +34,11 @@ public class QueryDoctor extends HttpServlet {
         Department department = departmentService.queryDepartmentByID(departmentID);
         System.out.println(department);
         Object o = JSON.toJSON(doctors);
+        int count = doctorService.countDoctor(departmentID);
+        int pageCount = (count/14)+1;
+        req.setAttribute("pageCount", pageCount);
+        req.setAttribute("nowPage", page);
+
         req.setAttribute("list", o);
         req.setAttribute("department", department);
         req.getRequestDispatcher("hospitalManage.jsp").forward(req, resp);

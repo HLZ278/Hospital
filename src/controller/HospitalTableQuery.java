@@ -43,6 +43,11 @@ public class HospitalTableQuery extends HttpServlet {
             int a = userService.queryUserIDByHospitalID(hospital.getHospitalID());
             hospitalIDMap.put(hospital.getHospitalID(), a);
         }
+        int count = hospitalService.countHospital();
+        int pageCount = (count/14)+1;
+        req.setAttribute("pageCount", pageCount);
+        req.setAttribute("nowPage", page);
+
         //将查找出来的hospitals（即医院集合）通过fastJson(第三方，不用深究)转为json对象
         Object o = JSON.toJSON(hospitals);
         //将该json对象设置到request域中的list，以后在前端就可以方便的取出hospital的各项属性

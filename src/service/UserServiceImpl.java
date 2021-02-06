@@ -57,6 +57,17 @@ public class UserServiceImpl implements UserService {
 		return dao.deleteUser(userID);
 	}
 
+	@Override
+	public int countOrdinaryUser() {
+		UserDAO dao = new UserDAOImpl();
+		return dao.countOrdinaryUser();
+	}
+
+	@Override
+	public int countHospitalUser() {
+		UserDAO dao = new UserDAOImpl();
+		return dao.countHospitalUser();
+	}
 
 
 	@Override

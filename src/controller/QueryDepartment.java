@@ -29,13 +29,18 @@ public class QueryDepartment extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         int hospitalID = user.getHospitalID();
         int page = Integer.parseInt(req.getParameter("page"));
+        HospitalServiceImpl hospitalService = new HospitalServiceImpl();
+        String hospitalName = hospitalService.queryHospitalName(hospitalID);
         DepartmentService departmentService = new DepartmentServiceImpl();
         //queryDepartment(hospitalID, page, departmentName)中通过hospitalID会查找该医院科室，departmentName则会进行判断是否有效而进行条件搜索（即用户点击搜索框）
         List<Department> departments = departmentService.queryDepartment(hospitalID, page, departmentName);
         Object o = JSON.toJSON(departments);
         req.setAttribute("list", o);
-        //进行转发到hospitalManage中，因为刚来到本sevlet时，携带了page和current这两个request域中的值，所以无需重新设置，直接转发到hospitalManage.jsp
-        //hospitalManage.jsp中的js会判断current值是什么而自动替换include页面，并使对应导航选中
+        int count = departmentService.countDepartment(hospitalID);
+        int pageCount = (count/14)+1;
+        req.getSession().setAttribute("hospitalName", hospitalName);
+        req.setAttribute("pageCount", pageCount);
+        req.setAttribute("nowPage", page);
         req.getRequestDispatcher("hospitalManage.jsp").forward(req, resp);
     }
 

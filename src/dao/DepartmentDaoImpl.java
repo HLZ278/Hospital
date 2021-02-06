@@ -19,7 +19,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM department WHERE hospitalID=? ORDER BY departmentType LIMIT "+(page)*15+", 15";
+            String sql = "SELECT * FROM department WHERE hospitalID=? ORDER BY departmentType LIMIT "+(page)*14+", 14";
             pstatement = conn.prepareStatement(sql);
             pstatement.setInt(1, hospitalID);
             resultSet = pstatement.executeQuery();
@@ -198,5 +198,28 @@ public class DepartmentDaoImpl implements DepartmentDao {
             DBUtils.Close(resultSet, pstatement, conn);
         }
         return department;
+    }
+
+    @Override
+    public int countDepartment(int hospitalID) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        int result = 0;
+        try {
+            String sql = "select count(*) from department WHERE hospitalID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, hospitalID);
+            resultSet = pstatement.executeQuery();
+            if (resultSet.next()){
+                result=resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return result;
     }
 }

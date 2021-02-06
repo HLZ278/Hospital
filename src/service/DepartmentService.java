@@ -13,4 +13,7 @@ public interface DepartmentService {
     Department queryDepartmentByID(int departmentID);
 
     HashMap<String, List<Department>> queryDepartmentByHospital(int hospitalID);
+
+    int countDepartment(int hospitalID);
+
 }

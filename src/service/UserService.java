@@ -16,7 +16,8 @@ public interface UserService {
 	public List<User> queryHospitalUser(String userName, int page);
 	public int addUser(User user, int userType);
 	public int deleteUser(int userID);
-
+	public int countOrdinaryUser();
+	public int countHospitalUser();
     int queryUserIDByHospitalID(int hospitalID);
 
     int updateUser(User user);

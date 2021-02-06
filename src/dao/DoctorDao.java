@@ -14,4 +14,6 @@ public interface DoctorDao {
 	void updateDoctor(Doctor doctor);
 
 	Doctor queryDoctor(int doctorID);
+
+	int countDoctor(int department);
 }

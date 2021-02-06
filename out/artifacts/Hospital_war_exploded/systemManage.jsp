@@ -57,6 +57,9 @@
                     case "hospital":
                         window.location.href = "hospitalTable?page=" + 0 + "&current=" + 3
                         break;
+                    case "notice":
+                        window.location.href = "queryAllNotice?page=" + 0 + "&current=" + 4
+                        break;
                     default:
                         break;
                 }
@@ -82,13 +85,15 @@
                 filter[parseInt("<%=request.getParameter("current")%>") - 1].style.backgroundColor = "#4bbfd4"
                 $("#right").html(String.raw`<%@ include file="hospitalTableManage.jsp"%>`)
                 break;
+            case 4:
+                filter[parseInt("<%=request.getParameter("current")%>") - 1].style.backgroundColor = "#4bbfd4"
+                $("#right").html(String.raw`<%@ include file="noticeManage.jsp"%>`)
+                break;
             default:
                 break;
         }
     };
-
     function add() {
-        //alert($('#ooo').get(0).tagName);
         $('#ooo').css('display', 'block')
     }
 
@@ -119,7 +124,9 @@
     function hospitalSearchByName() {
         window.location.href = "hospitalTable?page=" + 0 + "&current=" + 3 + "&hospitalName=" + $('#hospitalName').val()
     }
-
+    function searchNotice() {
+        window.location.href = "searchNotice?page=" + 0 + "&current=" + 4 + "&noticeTitle=" + $('#noticeTitle').val()
+    }
     function deleteUser(userID) {
         if (confirm("确定删除?")) {
             window.location.href = "deleteUser?userID=" + userID + "&userType=" + 1
@@ -137,6 +144,11 @@
             window.location.href = "deleteHospital?hospitalID=" + hospitalID
         }
     }
+    function deleteNoticeConfirm(noticeID) {
+        if (confirm("确定删除?")) {
+            window.location.href = "deleteNotice?noticeID=" + noticeID
+        }
+    }
 
     function addHospital() {
         $('#addHospital').submit()
@@ -150,7 +162,18 @@
     function updateOrdinaryUser(obj) {
         alert(obj.href)
     }
-
+    function updateNotice(obj) {
+        $(obj.parentNode.parentNode).children('td').each(function (j) {
+            switch (j) {
+                case 0:
+                    $("#updateNoticeID").val($(this).text())
+                case 1:
+                    $("#updateNoticeTitle").val($(this).text())
+                    break;
+            }
+        })
+        $("#updateBox").css('display', 'block')
+    }
     function updateUser(obj) {
         $(obj.parentNode.parentNode).children('td').each(function (j) {
             switch (j) {
@@ -207,6 +230,9 @@
     function updateHospitalConfirm() {
         $("#hospitalUpdate").submit()
     }
+    function updateNoticeConfirm() {
+        $("#noticeUpdate").submit()
+    }
     function updateConfirm() {
         $("#userUpdate").submit()
     }
@@ -262,6 +288,9 @@
     function updateHConfirm() {
         $("#userUpdate").submit()
     }
+    function addNoticeConfirm() {
+        $("#insertNotice").submit()
+    }
     function updateHCancle() {
         $("#updateBox").css('display', 'none')
     }
@@ -291,6 +320,50 @@
             }
         })
         $("#updateBox").css('display', 'block')
+    }
+
+    function preOrdinaryUser(pageCount) {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==1){
+        }else {
+            window.location.href = "ordinaryUser?page=" + (currentPage-2) + "&current=" + 1
+        }
+    }
+    function nextOrdinaryUser(pageCount) {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==pageCount){
+        }else {
+            window.location.href = "ordinaryUser?page=" + (currentPage) + "&current=" + 1
+        }
+    }
+    function preHospitalUser(pageCount) {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==1){
+        }else {
+            window.location.href = "hospitalUser?page=" + (currentPage-2) + "&current=" + 2
+        }
+    }
+    function nextHospitalUser(pageCount) {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==pageCount){
+        }else {
+            window.location.href = "hospitalUser?page=" + (currentPage) + "&current=" + 2
+        }
+    }
+    function preHospitalTable(pageCount) {
+        var currentPage = $("#pageNum").html()
+
+        if(currentPage==1){
+        }else {
+            window.location.href = "hospitalTable?page=" + (currentPage-2) + "&current=" + 3
+        }
+    }
+    function nextHospitalTable(pageCount) {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==pageCount){
+        }else {
+            window.location.href = "hospitalTable?page=" + (currentPage) + "&current=" + 3
+        }
     }
 </script>
 

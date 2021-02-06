@@ -126,7 +126,11 @@
                 </c:when>
             </c:choose>
         </c:forEach>
+        <div style="height: 100px; width: 100px;background: none; float: left">
+
+        </div>
     </div>
+
 </div>
 <div style="">
     <jsp:include page="footer.jsp"></jsp:include>

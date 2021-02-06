@@ -110,7 +110,7 @@ public class UserDAOImpl implements UserDAO {
 		PreparedStatement pstatement = null;
 		ResultSet resultSet = null;
 		try {
-			String sql = "SELECT * FROM user WHERE userType=1 ORDER BY userID LIMIT "+(page)*15+", 15";
+			String sql = "SELECT * FROM user WHERE userType=1 ORDER BY userID LIMIT "+(page)*14+", 14";
 			pstatement = conn.prepareStatement(sql);
 			resultSet = pstatement.executeQuery();
 			while (resultSet.next()) {
@@ -142,7 +142,7 @@ public class UserDAOImpl implements UserDAO {
 		PreparedStatement pstatement = null;
 		ResultSet resultSet = null;
 		try {
-			String sql = "SELECT * FROM user WHERE userType=2 ORDER BY userID LIMIT "+(page)*15+", 15";
+			String sql = "SELECT * FROM user WHERE userType=2 ORDER BY userID LIMIT "+(page)*14+", 14";
 			pstatement = conn.prepareStatement(sql);
 			resultSet = pstatement.executeQuery();
 			while (resultSet.next()) {
@@ -220,6 +220,50 @@ public class UserDAOImpl implements UserDAO {
 		}finally {
 			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
 			DBUtils.Close(null, pstatement, conn);
+		}
+		return result;
+	}
+
+	@Override
+	public int countOrdinaryUser() {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		ResultSet resultSet = null;
+		int result = 0;
+		try {
+			String sql = "select count(*) from user where userType=1";
+			pstatement = conn.prepareStatement(sql);
+			resultSet = pstatement.executeQuery();
+			if (resultSet.next()){
+				result=resultSet.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(resultSet, pstatement, conn);
+		}
+		return result;
+	}
+
+	@Override
+	public int countHospitalUser() {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		ResultSet resultSet = null;
+		int result = 0;
+		try {
+			String sql = "select count(*) from user where userType=2";
+			pstatement = conn.prepareStatement(sql);
+			resultSet = pstatement.executeQuery();
+			if (resultSet.next()){
+				result=resultSet.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(resultSet, pstatement, conn);
 		}
 		return result;
 	}

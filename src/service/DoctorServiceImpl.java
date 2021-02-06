@@ -44,4 +44,10 @@ public class DoctorServiceImpl implements DoctorService {
         DoctorDao dao = new DoctorDaoImpl();
         return dao.queryDoctor(doctorID);
     }
+
+    @Override
+    public int countDoctor(int department) {
+        DoctorDao dao = new DoctorDaoImpl();
+        return dao.countDoctor(department);
+    }
 }

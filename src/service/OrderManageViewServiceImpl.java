@@ -20,9 +20,9 @@ public class OrderManageViewServiceImpl implements OrderManageViewService{
 	}
 
 	@Override
-	public List<OrderManageView> queryByHopitalID(int hopitalID) {
+	public List<OrderManageView> queryByHopitalID(int hopitalID, String page) {
 		OrderManageViewDaoImpl orderManageViewDao = new OrderManageViewDaoImpl();
-		return orderManageViewDao.queryByHopitalID(hopitalID);
+		return orderManageViewDao.queryByHopitalID(hopitalID, page);
 	}
 
 	@Override
@@ -35,5 +35,11 @@ public class OrderManageViewServiceImpl implements OrderManageViewService{
 	public List<OrderManageView> queryByOrderID(int orderID) {
 		OrderManageViewDaoImpl orderManageViewDao = new OrderManageViewDaoImpl();
 		return orderManageViewDao.queryByOrderID(orderID);
+	}
+
+	@Override
+	public int countDepartment(int hospitalID) {
+		OrderManageViewDaoImpl orderManageViewDao = new OrderManageViewDaoImpl();
+		return orderManageViewDao.countDepartment(hospitalID);
 	}
 }

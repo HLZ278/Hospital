@@ -30,7 +30,8 @@
                 </div>
 
                 <div style="margin:40px; float: right">
-                        ${notice.getCreateTime()}
+                        ${notice.getCreateTime().getYear()+1900}年${notice.getCreateTime().getMonth()+1}月${notice.getCreateTime().getDay()}日
+                        ${notice.getCreateTime().getHours()}:${notice.getCreateTime().getMinutes()}
                 </div>
             </c:when>
         </c:choose>
