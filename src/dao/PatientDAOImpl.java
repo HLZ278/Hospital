@@ -41,6 +41,8 @@ public class PatientDAOImpl implements PatientDao {
 				patient.setLinkidCardNum(resultSet.getString("linkidCardNum"));
 				patient.setLinkTel(resultSet.getString("linkTel"));
 				patient.setAge(resultSet.getInt("age"));
+				patient.setTimes(resultSet.getInt("times"));
+				patient.setUnseal(resultSet.getTimestamp("unseal"));
 				list.add(patient);
 			}
 		} catch (SQLException e) {
@@ -82,6 +84,8 @@ public class PatientDAOImpl implements PatientDao {
 				patient.setLinkidCardNum(resultSet.getString("linkidCardNum"));
 				patient.setLinkTel(resultSet.getString("linkTel"));
 				patient.setAge(resultSet.getInt("age"));
+				patient.setTimes(resultSet.getInt("times"));
+				patient.setUnseal(resultSet.getTimestamp("unseal"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -124,7 +128,25 @@ public class PatientDAOImpl implements PatientDao {
 			DBUtils.Close(null, pstatement, conn);
 		}
 	}
-
+	@Override
+	public void updatepatientBreak(Patient patient) {
+		Connection conn = DBUtils.getCon();
+		PreparedStatement pstatement = null;
+		try {
+			String sql;
+			sql = "update patient set times=?, unseal=? where patientID=?";
+			pstatement = conn.prepareStatement(sql);
+			pstatement.setInt(1, patient.getTimes());
+			pstatement.setTimestamp(2, patient.getUnseal());
+			pstatement.setInt(3, patient.getPatientID());
+			pstatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			//关闭数据库连接，同时先要关闭结果集和PreparedStatement
+			DBUtils.Close(null, pstatement, conn);
+		}
+	}
 	@Override
 	public void insertPatient(Patient patient) {
 		Connection conn = DBUtils.getCon();

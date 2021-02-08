@@ -6,7 +6,7 @@
     <font style="font-weight: 600;font-size: 23px">${hospital.getHospitalName()}</font> <font style="color:grey;margin-left: 20px">${hospital.getGrade()}</font>
 </div>
 <div style="margin-left: 20px; margin-top: 10px">
-    <div style="float: left"><img src="images/hospital1.png" style="width: 80px; height: 80px">
+    <div style="float: left"><img src="images/${hospital.getIcon()}.png" style="width: 80px; height: 80px">
     </div>
     <div style="float: left">
         <font style=" margin-left: 20px">医院详情:</font>

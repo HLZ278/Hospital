@@ -48,7 +48,7 @@
     </div>
 </div>
 <div class="main">
-    <div class="left">
+    <div class="left" >
         <%--   医院搜索框   --%>
         <div class="search">
             <svg t="1609910073093" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -97,40 +97,39 @@
     </div>
     <%-- 医院部分   --%>
     <div class="right" style="height: 700px">
-        <%--    医院卡片部分，一个item就是一个卡片    --%>
-        <c:forEach var="hospital" items="${ hospitals }" varStatus="status">
-            <c:choose>
-                <c:when test="${status.index%2==0}"> <!-- idList是List类型变量 -->
-                    <div class="item" style="float: left;" onclick="hospitalDetailM(${hospital.getHospitalID()})">
-                        <div style="" class="wapper">
-                            <div style="height: 50px">${hospital.getHospitalName()}</div>
-                            <div>
-                                <div style="float: left;">${hospital.getGrade()}</div>
-                                <div style="float: right; margin-right: 50px">${hospital.getReleaseTime().getHours()}:${hospital.getReleaseTime().getMinutes()}-${hospital.getStopTime().getHours()}:${hospital.getStopTime().getMinutes()}</div>
+        <div>
+            <%--    医院卡片部分，一个item就是一个卡片    --%>
+            <c:forEach var="hospital" items="${ hospitals }" varStatus="status">
+                <c:choose>
+                    <c:when test="${status.index%2==0}"> <!-- idList是List类型变量 -->
+                        <div class="item" style="float: left;" onclick="hospitalDetailM(${hospital.getHospitalID()})">
+                            <div style="" class="wapper">
+                                <div style="height: 50px">${hospital.getHospitalName()}</div>
+                                <div>
+                                    <div style="float: left;">${hospital.getGrade()}</div>
+                                    <div style="float: right; margin-right: 50px">${hospital.getReleaseTime().getHours()}:${hospital.getReleaseTime().getMinutes()}-${hospital.getStopTime().getHours()}:${hospital.getStopTime().getMinutes()}</div>
+                                </div>
                             </div>
+                            <img class="micon" src="images/${hospital.getIcon()}.png"></img>
                         </div>
-                        <img class="micon" src="images/${hospital.getIcon()}.png"></img>
-                    </div>
-                </c:when>
-                <c:when test="${status.index%2==1}">
-                    <div class="item" style="float: right;" onclick="hospitalDetailM(${hospital.getHospitalID()})">
-                        <div style="" class="wapper">
-                            <div style=" height: 50px">${hospital.getHospitalName()}</div>
-                            <div>
-                                <div style="float: left;">${hospital.getGrade()}</div>
-                                <div style="float: right; margin-right: 50px">${hospital.getReleaseTime().getHours()}:${hospital.getReleaseTime().getMinutes()}-${hospital.getStopTime().getHours()}:${hospital.getStopTime().getMinutes()}</div>
+                    </c:when>
+                    <c:when test="${status.index%2==1}">
+                        <div class="item" style="float: right;" onclick="hospitalDetailM(${hospital.getHospitalID()})">
+                            <div style="" class="wapper">
+                                <div style=" height: 50px">${hospital.getHospitalName()}</div>
+                                <div>
+                                    <div style="float: left;">${hospital.getGrade()}</div>
+                                    <div style="float: right; margin-right: 50px">${hospital.getReleaseTime().getHours()}:${hospital.getReleaseTime().getMinutes()}-${hospital.getStopTime().getHours()}:${hospital.getStopTime().getMinutes()}</div>
+                                </div>
                             </div>
+                            <img class="micon" src="images/${hospital.getIcon()}.png"></img>
                         </div>
-                        <img class="micon" src="images/${hospital.getIcon()}.png"></img>
-                    </div>
-                </c:when>
-            </c:choose>
-        </c:forEach>
-        <div style="height: 100px; width: 100px;background: none; float: left">
-
+                    </c:when>
+                </c:choose>
+            </c:forEach>
         </div>
     </div>
-
+</div>
 </div>
 <div style="">
     <jsp:include page="footer.jsp"></jsp:include>
@@ -139,6 +138,7 @@
     var level = "全部"
     var area = "全部"
     function findHospitalByName() {
+        page=0
         window.location.href="homeWithSearchByHospitalName?hospitalName="+$("#hospitalName")[0].value
     }
     function searchLevel(alevel) {
@@ -150,6 +150,7 @@
         searchHospitalAjax()
     }
     function searchHospitalAjax(){
+        page=0
         $(".right").html("")
         $.ajax({
             type:"post",
@@ -182,7 +183,6 @@
                     </div>`)
                     }
                 }
-
             }
         });
     }
@@ -221,6 +221,100 @@
     function noticeItem(noticeID) {
         window.location.href="noticePage.jsp?noticeID="+noticeID;
     }
+    //状态标记
+    var loading = false;
+    var page = 0;//当前页
+    var upOrDown;//向上还是向下滚动
+    //列表滚动加载数据
+    $(window).scroll(function () {
+        var scrollTop = $(this).scrollTop();    //滚动条距离顶部的高度
+        var scrollHeight = $(document).height();   //当前页面的总高度
+        var clientHeight = $(this).height();    //当前可视的页面高度
+        var totalHeight = parseFloat(clientHeight) + parseFloat(scrollTop);
+        if (scrollHeight - totalHeight < 200) {
+            if (!loading&&upOrDown==2) {
+                loading = true;
+                page += 1;
+
+                loadHospital()
+            } else {
+
+                return false;
+            }
+        }
+    });
+
+    function loadHospital() {
+        $.ajax({
+            type:"post",
+            url:"loadMoreHospital",
+            data:{"level": level, "area": area, "page":page},
+            dataType:"json",
+            success:function(data){
+                for(var i in data){
+                    if (i%2==0){
+                        $(".right").html($(".right").html()+String.raw`<div class="item" style="float: left;" onclick="hospitalDetailM(`+data[i].hospitalID+String.raw`)">
+                        <div style="" class="wapper">
+                            <div style="height: 50px">`+data[i].hospitalName+String.raw`</div>
+                            <div>
+                                <div style="float: left;">`+data[i].grade+String.raw`</div>
+                                <div style="float: right; margin-right: 50px">`+data[i].releaseTime+String.raw`-`+data[i].stopTime+String.raw`</div>
+                            </div>
+                        </div>
+                        <img class="micon" src="images/`+data[i].icon+String.raw`.png"></img>
+                    </div>`)
+                    }else {
+                        $(".right").html($(".right").html()+String.raw`<div class="item" style="float: right;" onclick="hospitalDetailM(`+data[i].hospitalID+String.raw`)">
+                        <div style="" class="wapper">
+                            <div style="height: 50px">`+data[i].hospitalName+String.raw`</div>
+                            <div>
+                                <div style="float: left;">`+data[i].grade+String.raw`</div>
+                                <div style="float: right; margin-right: 50px">`+data[i].releaseTime+String.raw`-`+data[i].stopTime+String.raw`</div>
+                            </div>
+                        </div>
+                        <img class="micon" src="images/`+data[i].icon+String.raw`.png"></img>
+                    </div>`)
+                    }
+                }
+                loading = false;
+            }
+        });
+    }
+
+
+    var scrollFunc = function (e) {
+
+        e = e || window.event;
+
+        if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+
+            if (e.wheelDelta > 0) { //当滑轮向上滚动时
+                upOrDown=1
+            }
+
+            if (e.wheelDelta < 0) { //当滑轮向下滚动时
+
+                upOrDown=2
+
+            }
+
+        } else if (e.detail) {  //Firefox滑轮事件
+            if (e.detail> 0) { //当滑轮向上滚动时
+                upOrDown=1
+            }
+
+            if (e.detail< 0) { //当滑轮向下滚动时
+                upOrDown=2
+            }
+        }
+
+    }
+    if (document.addEventListener) {//firefox
+
+        document.addEventListener('DOMMouseScroll', scrollFunc, false);
+
+    }
+    window.onmousewheel = document.onmousewheel = scrollFunc;
 </script>
 </body>
 </html>

@@ -39,6 +39,9 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 				orderManageView.setHospitalName(resultSet.getString("hospitalName"));
 				orderManageView.setOrderID(resultSet.getInt("orderID"));
 				orderManageView.setSignalSrcID(resultSet.getInt("signalSrcID"));
+				orderManageView.setHospitalID(resultSet.getInt("hospitalID"));
+				orderManageView.setPatientID(resultSet.getInt("patientID"));
+
 				list.add(orderManageView);
 			}
 		} catch (SQLException e) {
@@ -77,6 +80,8 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 				orderManageView.setOrderID(resultSet.getInt("orderID"));
 				orderManageView.setSignalSrcID(resultSet.getInt("signalSrcID"));
 				orderManageView.setHospitalID(resultSet.getInt("hospitalID"));
+				orderManageView.setPatientID(resultSet.getInt("patientID"));
+
 				list.add(orderManageView);
 			}
 		} catch (SQLException e) {
@@ -114,6 +119,8 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 				orderManageView.setOrderID(resultSet.getInt("orderID"));
 				orderManageView.setSignalSrcID(resultSet.getInt("signalSrcID"));
 				orderManageView.setHospitalID(resultSet.getInt("hospitalID"));
+				orderManageView.setPatientID(resultSet.getInt("patientID"));
+
 				list.add(orderManageView);
 			}
 		} catch (SQLException e) {
@@ -151,6 +158,8 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 				orderManageView.setOrderID(resultSet.getInt("orderID"));
 				orderManageView.setSignalSrcID(resultSet.getInt("signalSrcID"));
 				orderManageView.setHospitalID(resultSet.getInt("hospitalID"));
+				orderManageView.setPatientID(resultSet.getInt("patientID"));
+
 				list.add(orderManageView);
 			}
 		} catch (SQLException e) {
@@ -187,6 +196,8 @@ public class OrderManageViewDaoImpl implements OrderManageViewDao{
 				orderManageView.setOrderID(resultSet.getInt("orderID"));
 				orderManageView.setSignalSrcID(resultSet.getInt("signalSrcID"));
 				orderManageView.setHospitalID(resultSet.getInt("hospitalID"));
+				orderManageView.setPatientID(resultSet.getInt("patientID"));
+
 				list.add(orderManageView);
 			}
 		} catch (SQLException e) {

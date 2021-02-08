@@ -53,6 +53,11 @@ public class HospitalServiceImpl implements HospitalService{
         HospitalDAO dao = new HospitalDaoImpl();
         dao.updateHospital(hospital);
     }
+    @Override
+    public void updateHospitalMessage(Hospital hospital){
+        HospitalDAO dao = new HospitalDaoImpl();
+        dao.updateHospitalMessage(hospital);
+    }
 
     @Override
     public List<Hospital> queryHospitalByName(String hospitalName) {
@@ -74,6 +79,24 @@ public class HospitalServiceImpl implements HospitalService{
                 return dao.queryHospitalByLevel(level);
             }else {
                 return dao.queryHospitalByLevelAndArea(level, area);
+            }
+        }
+    }
+
+    @Override
+    public List<Hospital> loadMoreHospital(String level, String area, int page) {
+        HospitalDAO dao = new HospitalDaoImpl();
+        if (level.equals("全部")){
+            if (area.equals("全部")){
+                return dao.queryHospital(page);
+            }else {
+                return dao.queryHospitalByArea(area, page);
+            }
+        }else {
+            if (area.equals("全部")){
+                return dao.queryHospitalByLevel(level, page);
+            }else {
+                return dao.queryHospitalByLevelAndArea(level, area, page);
             }
         }
     }

@@ -1,6 +1,7 @@
 package entity;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Patient {
     private int patientID;
@@ -19,6 +20,8 @@ public class Patient {
     private String linkidCardNum;
     private String linkTel;
     private int age;
+    private int times;
+    private Timestamp unseal;
 
     @Override
     public String toString() {
@@ -39,7 +42,26 @@ public class Patient {
                 ", linkidCardNum='" + linkidCardNum + '\'' +
                 ", linkTel='" + linkTel + '\'' +
                 ", age=" + age +
+                ", times=" + times +
+                ", unseal=" + unseal +
                 '}';
+    }
+
+
+    public Timestamp getUnseal() {
+        return unseal;
+    }
+
+    public void setUnseal(Timestamp unseal) {
+        this.unseal = unseal;
+    }
+
+    public int getTimes() {
+        return times;
+    }
+
+    public void setTimes(int times) {
+        this.times = times;
     }
 
     public int getPatientID() {

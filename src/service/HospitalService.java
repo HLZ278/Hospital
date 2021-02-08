@@ -14,10 +14,13 @@ public interface HospitalService {
     void deleteHospital(int hospitalID);
 	Hospital queryHospitalByID(int hospitalID);
 	public int countHospital();
+	public void updateHospitalMessage(Hospital hospital);
 
     void updateHospital(Hospital hospital);
 
     List<Hospital> queryHospitalByName(String hospitalName);
 
 	List<Hospital> queryHospitalByLevelAndArea(String level, String area);
+
+    List<Hospital> loadMoreHospital(String level, String area, int page);
 }

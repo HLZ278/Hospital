@@ -51,8 +51,8 @@
 <%--                        <c:when test="${hospitalIDMap.get(hospital.hospitalID)!=0}"><td>${hospitalIDMap.get(hospital.hospitalID)}</td></c:when>--%>
 <%--                        <c:otherwise><td><a href="JavaScript:addHospitalUser(${hospital.hospitalID})">添加</a></td></c:otherwise>--%>
 <%--                    </c:choose>--%>
-                    <td><a href="#" onclick="completeOrBreakOrder('${orderManageView.getOrderID()}',1)">已履约</a>
-                    | <a href="#" onclick="completeOrBreakOrder('${orderManageView.getOrderID()}',2)">已爽约</a>
+                    <td><a href="#" onclick="completeOrBreakOrder('${orderManageView.getOrderID()}',1, '${orderManageView.getPatientID()}')">已履约</a>
+                    | <a href="#" onclick="completeOrBreakOrder('${orderManageView.getOrderID()}',2, '${orderManageView.getPatientID()}')">已爽约</a>
                     </td>
                 </tr>
             </c:forEach>

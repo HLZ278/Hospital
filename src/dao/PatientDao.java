@@ -12,6 +12,6 @@ public interface PatientDao {
     void updatepatient(Patient patient);
 
     void insertPatient(Patient patient);
-
+    void updatepatientBreak(Patient patient);
     void deletePatient(int patientID);
 }

@@ -17,14 +17,6 @@ public class OrderManageView {
     private int signalSrcID;
     private int hospitalID;
 
-    public int getHospitalID() {
-        return hospitalID;
-    }
-
-    public void setHospitalID(int hospitalID) {
-        this.hospitalID = hospitalID;
-    }
-
     @Override
     public String toString() {
         return "OrderManageView{" +
@@ -40,7 +32,26 @@ public class OrderManageView {
                 ", orderID=" + orderID +
                 ", signalSrcID=" + signalSrcID +
                 ", hospitalID=" + hospitalID +
+                ", patientID=" + patientID +
                 '}';
+    }
+
+    public int getPatientID() {
+        return patientID;
+    }
+
+    public void setPatientID(int patientID) {
+        this.patientID = patientID;
+    }
+
+    private int patientID;
+
+    public int getHospitalID() {
+        return hospitalID;
+    }
+
+    public void setHospitalID(int hospitalID) {
+        this.hospitalID = hospitalID;
     }
 
     public int getOrderID() {

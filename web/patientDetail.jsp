@@ -58,6 +58,8 @@
     </div>
     <div>联系人身份证号码:${patient.getLinkidCardNum()}</div>
     <div>联系人电话:${patient.getLinkTel()}</div>
+    <div>毁约次数:${patient.getTimes()}</div>
+    <div>封禁时间:${patient.getUnseal()}</div>
 </div>
 <div onclick="updatePatientShow()" style="float: left;margin: 30px; width: 400px; height: 65px; background-color: white; text-align: center; line-height: 65px">
     <div>+ 修改就诊人信息</div>

@@ -28,6 +28,12 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
+    public void updatepatientBreak(Patient patient) {
+        PatientDAOImpl patientDAO = new PatientDAOImpl();
+        patientDAO.updatepatientBreak(patient);
+    }
+
+    @Override
     public void deletePatient(int patientID) {
         PatientDAOImpl patientDAO = new PatientDAOImpl();
         patientDAO.deletePatient(patientID);

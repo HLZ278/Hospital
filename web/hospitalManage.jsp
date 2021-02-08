@@ -29,6 +29,7 @@
         <li id="departmentManage" class="sysLi"><a>科室管理</a><span style="margin-left: 5px">></span></li>
         <li id="orderManage" class="sysLi"><a>预约订单管理</a><span style="margin-left: 5px">></span></li>
         <li id="messageManage" class="sysLi"><a>留言管理</a><span style="margin-left: 5px">></span></li>
+        <li id="hospitalMessageManage" class="sysLi"><a>医院管理</a><span style="margin-left: 5px">></span></li>
       </ul>
     </div>
   </div>
@@ -52,6 +53,9 @@
             break;
           case "messageManage":
             //window.location.href="messageManage?page="+0+"&current="+3
+            break;
+          case "hospitalMessageManage":
+            window.location.href="hospitalMessageManage?&current="+6
             break;
           default:
             break;
@@ -84,6 +88,10 @@
       case 5:
           filter[0].style.backgroundColor = "#4bbfd4"
         $("#hospitalRight").html(String.raw`<%@ include file="numSrc.jsp"%>`)
+        break;
+      case 6:
+        filter[3].style.backgroundColor = "#4bbfd4"
+        $("#hospitalRight").html(String.raw`<%@ include file="hospitalMessageManage.jsp"%>`)
         break;
       default:
         break;
@@ -241,8 +249,8 @@
     });
   }
 
-  function completeOrBreakOrder(orderID, completeOrBreak) {
-     window.location.href="completeOrBreakOrder?completeOrBreak="+completeOrBreak+"&orderID="+orderID+"&page=0&current=2"
+  function completeOrBreakOrder(orderID, completeOrBreak,patientID) {
+     window.location.href="completeOrBreakOrder?completeOrBreak="+completeOrBreak+"&orderID="+orderID+"&page=0&current=2&patientID="+patientID
   }
   function searchOrderByID() {
       window.location.href="searchOrderByID?current="+2+"&orderID="+$("#orderID")[0].value

@@ -164,6 +164,30 @@ public class HospitalDaoImpl implements HospitalDAO {
             DBUtils.Close(null, pstatement, conn);
         }
     }
+    @Override
+    public void updateHospitalMessage(Hospital hospital) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        try {
+            String sql;
+            sql = "update hospital set hospitalName=?,grade=?, area=?, address=?, releaseTime=?, stopTime=?, icon=? where hospitalID=?";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, hospital.getHospitalName());
+            pstatement.setString(2, hospital.getGrade());
+            pstatement.setString(3, hospital.getArea());
+            pstatement.setString(4, hospital.getAddress());
+            pstatement.setTime(5, hospital.getReleaseTime());
+            pstatement.setTime(6, hospital.getStopTime());
+            pstatement.setString(7, hospital.getIcon());
+            pstatement.setInt(8, hospital.getHospitalID());
+            pstatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(null, pstatement, conn);
+        }
+    }
 
     @Override
     public Hospital queryHospitalByID(int hospitalID) {
@@ -207,7 +231,43 @@ public class HospitalDaoImpl implements HospitalDAO {
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM hospital WHERE area=?";
+            String sql = "SELECT * FROM hospital WHERE area=? ORDER BY hospitalID LIMIT 0, 14";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, area);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Hospital hospital = new Hospital();
+                hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                hospital.setHospitalName(resultSet.getString("hospitalName"));
+                hospital.setGrade(resultSet.getString("grade"));
+                hospital.setArea(resultSet.getString("area"));
+                hospital.setAddress(resultSet.getString("address"));
+                hospital.setIcon(resultSet.getString("icon"));
+                hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                hospital.setStopTime(resultSet.getTime("stopTime"));
+                hospital.setRule(resultSet.getString("rule"));
+                hospital.setDetails(resultSet.getString("details"));
+                hospital.setNotice(resultSet.getString("notice"));
+                list.add(hospital);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByArea(String area, int page) {
+        ArrayList<Hospital> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM hospital WHERE area=? ORDER BY hospitalID LIMIT "+(page)*14+", 14";
             pstatement = conn.prepareStatement(sql);
             pstatement.setString(1, area);
             resultSet = pstatement.executeQuery();
@@ -243,7 +303,43 @@ public class HospitalDaoImpl implements HospitalDAO {
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM hospital WHERE grade=?";
+            String sql = "SELECT * FROM hospital WHERE grade=? ORDER BY hospitalID LIMIT 0, 14";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, level);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Hospital hospital = new Hospital();
+                hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                hospital.setHospitalName(resultSet.getString("hospitalName"));
+                hospital.setGrade(resultSet.getString("grade"));
+                hospital.setArea(resultSet.getString("area"));
+                hospital.setAddress(resultSet.getString("address"));
+                hospital.setIcon(resultSet.getString("icon"));
+                hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                hospital.setStopTime(resultSet.getTime("stopTime"));
+                hospital.setRule(resultSet.getString("rule"));
+                hospital.setDetails(resultSet.getString("details"));
+                hospital.setNotice(resultSet.getString("notice"));
+                list.add(hospital);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByLevel(String level, int page) {
+        ArrayList<Hospital> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM hospital WHERE grade=? ORDER BY hospitalID LIMIT "+(page)*14+", 14";
             pstatement = conn.prepareStatement(sql);
             pstatement.setString(1, level);
             resultSet = pstatement.executeQuery();
@@ -279,10 +375,47 @@ public class HospitalDaoImpl implements HospitalDAO {
         PreparedStatement pstatement = null;
         ResultSet resultSet = null;
         try {
-            String sql = "SELECT * FROM hospital WHERE grade=? and area=?";
+            String sql = "SELECT * FROM hospital WHERE grade=? and area=? ORDER BY hospitalID LIMIT 0, 14";
             pstatement = conn.prepareStatement(sql);
             pstatement.setString(1, level);
             pstatement.setString(2, area);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                Hospital hospital = new Hospital();
+                hospital.setHospitalID(resultSet.getInt("hospitalID"));
+                hospital.setHospitalName(resultSet.getString("hospitalName"));
+                hospital.setGrade(resultSet.getString("grade"));
+                hospital.setArea(resultSet.getString("area"));
+                hospital.setAddress(resultSet.getString("address"));
+                hospital.setIcon(resultSet.getString("icon"));
+                hospital.setReleaseTime(resultSet.getTime("releaseTime"));
+                hospital.setStopTime(resultSet.getTime("stopTime"));
+                hospital.setRule(resultSet.getString("rule"));
+                hospital.setDetails(resultSet.getString("details"));
+                hospital.setNotice(resultSet.getString("notice"));
+                list.add(hospital);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Hospital> queryHospitalByLevelAndArea(String level, String area, int page) {
+        ArrayList<Hospital> list = new ArrayList<>();
+        //DBUtils封装了数据库的连接
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM hospital WHERE grade=? and area=? and  ORDER BY hospitalID LIMIT "+(page)*14+", 14";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, level);
+            pstatement.setString(1, area);
             resultSet = pstatement.executeQuery();
             while (resultSet.next()) {
                 Hospital hospital = new Hospital();

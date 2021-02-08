@@ -1,7 +1,9 @@
 package controller;
 
+import entity.Patient;
 import service.NumSrcServiceImpl;
 import service.OrderServiceImpl;
+import service.PatientServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 
 @WebServlet("/completeOrBreakOrder")
@@ -21,9 +25,32 @@ public class CompleteOrBreakOrder extends HttpServlet {
         int orderID = Integer.parseInt(req.getParameter("orderID"));
         int completeOrBreak = Integer.parseInt(req.getParameter("completeOrBreak"));
         OrderServiceImpl orderService = new OrderServiceImpl();
+        int patientID = Integer.parseInt(req.getParameter("patientID"));
+        PatientServiceImpl patientService = new PatientServiceImpl();
+        Patient patient = patientService.queryPatientByPatientID(patientID);
         if (completeOrBreak==1){
+            //履约
             orderService.completeOrder(orderID);
         }else {
+            //爽约次数加一
+            //爽约
+            //爽约次数到达三次封禁三天
+            if (patient.getTimes()==2){
+                Date date = new Date();
+                Timestamp timestamp = new Timestamp(date.getYear(),date.getMonth(), date.getDate()+3, date.getHours(), date.getMinutes(), date.getSeconds(),0);
+                patient.setUnseal(timestamp);
+                patient.setTimes(patient.getTimes()+1);
+
+            }else if (patient.getTimes()==5){//爽约次数到达三次封禁六天
+                Date date = new Date();
+                Timestamp timestamp = new Timestamp(date.getYear(),date.getMonth(), date.getDate()+6, date.getHours(), date.getMinutes(), date.getSeconds(),0);
+                patient.setUnseal(timestamp);
+                //爽约到达六次后清零重计
+                patient.setTimes(0);
+            }else {
+                patient.setTimes(patient.getTimes()+1);
+            }
+            patientService.updatepatientBreak(patient);
             orderService.breakOrder(orderID);
         }
         req.getRequestDispatcher("queryHospitalOrderManageView").forward(req, resp);
