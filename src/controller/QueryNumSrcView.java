@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-//用于医院管理界面中的科室管理
 @WebServlet("/queryNumSrcView")
 public class QueryNumSrcView extends HttpServlet {
     @Override

@@ -1,7 +1,10 @@
 //package filter;
 //
+//import utils.StringToTime;
+//
 //import java.io.IOException;
 //import java.io.PrintWriter;
+//import java.util.ArrayList;
 //
 //import javax.servlet.Filter;
 //import javax.servlet.FilterChain;
@@ -40,17 +43,17 @@
 //        uri = uri.substring(uri.lastIndexOf("/")+1);
 //        // 放行登录注册界面和请求以及相对应的效验请求还有css样式！！！很多人加了过滤器没有放行样式所以导致样式都没了
 //        // 解决方法放行样式：如下
-//        if (uri.equals("login.jsp") || uri.equals("checkUserTele.do") || uri.equals("reguser.do")
-//                || uri.equals("checkUserCardId.do") || uri.equals("userLogin.do") || uri.equals("insertUser.do")
-//                || uri.indexOf(".jpg") > 0 || uri.indexOf(".jpeg") > 0 || uri.indexOf(".png") > 0
-//                || uri.indexOf(".gif") > 0 || uri.indexOf(".css") > 0
-//                || uri.indexOf("js") > 0||uri.contains("homeWithSearchByHospitalName")
-//                ||uri.contains("login.jsp")||uri.contains("doLogin")||uri.contains("enterHome")
-//                || uri.contains("queryHospitalByID")|| uri.contains("hospitalDetail.jsp")
-//                || uri.contains("queryNumSrcView")) {
-//            // 放行到下一个过滤器，如果是最后一个，跳转到对应请求处理方法
-//            chain.doFilter(request, response);
-//            return;
+//        if (uri.contains("enterHome.jsp")||
+//                uri.contains("login.jsp") || uri.contains("regist")
+//                || uri.contains("findUser") || uri.contains("loadMoreHospital")|| uri.contains("queryAllNotice")
+//                || uri.contains("queryNumSrcView")||uri.contains("registC")
+//                ||uri.contains("homeWithSearchByHospitalName")||uri.contains("searchHospitalAjaxC")||uri.contains("searchNotice")
+//                || uri.contains("departmentChoose")|| uri.contains("footer")
+//                || uri.contains("headLogined")|| uri.contains("hospitalDetail")|| uri.contains("hospitalDetailM")
+//                || uri.contains("noticePage")|| uri.contains("numSrcOrder")|| uri.contains("orderNotice"))) {
+//
+//
+//
 //        }
 //        //session检查，看session中是否有登录过的用户
 //        // 我的登录方法中，登录成功就往session中存一个用户信息，key为login

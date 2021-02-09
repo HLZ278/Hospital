@@ -104,8 +104,10 @@
                 success:function(data){
                     if("true" === data){
                         $("#loginForm").submit()
+                        draw(show_num);
                     }else {
                         alert("请检查您的用户名或密码")
+                        draw(show_num);
                     }
                 },
             });
@@ -121,6 +123,7 @@
         var num = show_num.join("");
         if(val==''){
             alert('请输入验证码！');
+            draw(show_num);
             return false
         }else if(val == num){
             return true
