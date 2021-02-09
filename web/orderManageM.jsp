@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div style="font-weight: 600; margin: 20px">
     挂号订单
 </div>
@@ -15,9 +16,9 @@
     </select>
     <button onclick="searchOrder()">查询</button>
 </div>
-<div>
-    <table width="900px" style="margin: 30px"  border="1" cellspacing="0">
-        <tr style="text-align: center">
+<div style="overflow: auto; height: 490px;margin: 30px">
+    <table width="900px" style=""  border="1" cellspacing="0">
+        <tr style="text-align: center;">
             <th>就诊人</th>
             <th>医院名</th>
             <th>科室</th>
@@ -56,6 +57,6 @@
 
     </table>
 </div>
-<div style="width: 100px; height:70px">
+<div style="width: 100px; height:70px;">
 
 </div>

@@ -31,7 +31,13 @@ public class UpdateHospitalMessage extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
+        //项目部署目录
         String dir = getServletContext().getRealPath("./") + "images";
+        File file = new File(dir);
+        File parent = file.getParentFile().getParentFile().getParentFile().getParentFile();
+        //实际项目目录，存两份，因为项目部署目录只存在与项目部署时使用，关闭项目后将会丢失
+        String dir2 = parent.getAbsolutePath() + "\\web\\images";
+
         String fileName = UUID.randomUUID().toString();
         User user = (User) req.getSession().getAttribute("user");
         HospitalServiceImpl hospitalService = new HospitalServiceImpl();
@@ -62,7 +68,9 @@ public class UpdateHospitalMessage extends HttpServlet {
                         // 二进制文件
                         InputStream input = item.getInputStream();
                         File saveFile = new File(dir, fileName+".png");
+                        File saveFile2 = new File(dir2, fileName+".png");
                         item.write(saveFile);
+                        item.write(saveFile2);
                         item.delete();
                         input.close();
                         //上传新的图片
@@ -89,8 +97,9 @@ public class UpdateHospitalMessage extends HttpServlet {
             resp.sendRedirect("hospitalMessageManage?current=6");
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            resp.sendRedirect("hospitalMessageManage?current=6");
         }
-
 
     }
 

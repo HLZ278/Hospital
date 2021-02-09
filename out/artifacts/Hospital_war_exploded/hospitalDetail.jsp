@@ -73,7 +73,7 @@
 </div>
 
 <div class="leftMenu">
-    <div style="float: left">
+    <div style="float: left; position: fixed">
         <ul class="patientul">
             <li id="hospitalDetails" class="hospitalLi"><a>医院详情</a><span style="margin-left: 5px">></span></li>
             <li id="subscribe" class="hospitalLi"><a></a>预约挂号<span style="margin-left: 5px">></span></li>

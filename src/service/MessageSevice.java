@@ -6,5 +6,7 @@ import entity.Notice;
 import java.util.List;
 
 public interface MessageSevice {
-    public List<Message> queryAll();
+    public List<Message> queryAll(int page);
+
+    List<Message> queryAllByUserID(int userID, int page);
 }

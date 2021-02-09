@@ -15,7 +15,9 @@
         .hospitalContainer::-webkit-scrollbar {
             border-width:1px;
         }
-
+        form div{
+            margin: 30px;
+        }
     </style>
 </head>
 <body>
@@ -52,11 +54,9 @@
             <div>
             医院详情：<textarea name="hospitalDetails" style="width: 400px; height: 200px" >${userHospital.getDetails()}</textarea>
             </div>
-            <button type="submit">保存</button>
+            <button style="margin-left:300px;margin-bottom:20px;width: 200px; height: 60px; border: none; background-color: #85f2ff" type="submit">保存</button>
         </form>
     </div>
 </div>
-
-
 </body>
 </html>

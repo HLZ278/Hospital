@@ -3,9 +3,17 @@
 <div style="margin: 30px;">
     <font style="font-weight: 600; ">个人信息管理</font>
 </div>
-<div style="margin: 30px; margin-bottom: 0px; width: 940px; height:400px; background-color: white">
-    <div>用户名：${user.getUserName()}</div>
-    <div>密码：${user.getUserPwd()}</div>
+<style>
+    #personContaine div{
+        margin:20px;
+    }
+    form div{
+        margin:20px;
+    }
+</style>
+<div id="personContaine" style="padding:1px;margin: 30px;width: 940px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.2)">
+    <div >用户名：${user.getUserName()}</div>
+    <div>密码：******</div>
     <div>电话：${user.getUserTel()}</div>
     <div>真实姓名：${user.getRealName()}</div>
     <div>身份证类型：
@@ -23,7 +31,7 @@
     <div>身份证号：${user.getIdCardNum()}</div>
     <div>注册日期：${user.getRegisteDate()}</div>
 </div>
-<div onclick="updateUserDetail()" style="margin:20px;margin-left: 30px; width: 940px; height:80px; background-color: white; text-align: center; line-height: 80px">
+<div onclick="updateUserDetail()" style="margin:20px;margin-left: 30px; width: 940px; height:80px; background-color: white; text-align: center; line-height: 80px; border-radius: 10px;box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.2)">
     点击修改
 </div>
 <div id="updateBox" class="popup__wrapper" style="display: none">

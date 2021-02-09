@@ -7,7 +7,98 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ab5ccb4-3899-49ad-b746-6f8e72580c73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Hospital/controller/QueryMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Hospital/controller/QueryMessageByUserID.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/QueryMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/QueryMessageByUserID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/CancleOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/CompleteOrBreakOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteDoctor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteHospital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteNotice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeletePatient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DepartmentInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DoctorInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/ExitLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/FindUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/Home.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/HospitalInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/HospitalMessageManage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/HospitalTableQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/HospitalUserQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/InsertNotice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/InsertOrUpdateNumSrc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/LoadMoreHospitalAjax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/OrderConfirm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/OrderInset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/OrdinaryQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/PatientDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/PatientInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryAllNotice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryDoctor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryHospitalByID.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryHospitalOrderManageView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryNumSrc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryNumSrcView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryOrderManageView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryPatient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/RegistController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/SearchByHospitalName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/SearchHospitalAjax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/SearchHospitalOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/SearchNotice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/SearchOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/SearchOrderByID.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateDoctor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateHospital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateHospitalMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateNotice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdatePatient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdatePerson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UserInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageSevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageSevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/headLogined.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/headLogined.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalMessageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalMessageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/messageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/messageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/numSrcOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/numSrcOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/orderManageM.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/orderManageM.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/patientDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/patientDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/patientM.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/patientM.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/patientManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/patientManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/personManageM.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/personManageM.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/controller/UpdateHospitalMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/controller/UpdateHospitalMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/service/MessageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/service/MessageSevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/service/MessageSevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateHospitalMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateHospitalMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/MessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MessageDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/MessageSevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/MessageSevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/headLogined.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/headLogined.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/hospitalDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/hospitalManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/hospitalMessageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalMessageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/messageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/messageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/numSrcOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/numSrcOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/orderManageM.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/orderManageM.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/patientDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/patientDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/patientM.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/patientM.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/patientManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/patientManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/personManageM.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/personManageM.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +160,8 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
-      <recent name="service" />
       <recent name="dao" />
+      <recent name="service" />
       <recent name="entity" />
       <recent name="utils" />
     </key>
@@ -290,7 +381,9 @@
       <workItem from="1612246909830" duration="5052000" />
       <workItem from="1612485496163" duration="16013000" />
       <workItem from="1612586406854" duration="7202000" />
-      <workItem from="1612594558907" duration="34352000" />
+      <workItem from="1612594558907" duration="35947000" />
+      <workItem from="1612856431040" duration="4507000" />
+      <workItem from="1612860958358" duration="4492000" />
     </task>
     <task id="LOCAL-00001" summary="数据库版本更改">
       <created>1610587530103</created>
@@ -418,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612779633198</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="分页完成。爽约完成">
+      <created>1612781097638</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1612781097638</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,10 +601,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="13" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610685769030" />
-    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1612779302540">
+    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1612859105055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1612779302540" />
+    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1612859105055" />
     <state x="716" y="328" width="429" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1611834109703">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -521,10 +621,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="279" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1610594771735" />
-    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1612779632353">
+    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1612865506073">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1612779632353" />
+    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1612865506073" />
     <state x="38" y="32" width="1350" height="638" key="DiffContextDialog" timestamp="1610876283089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -533,54 +633,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="165" y="172" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610673817848" />
-    <state width="1084" height="136" key="GridCell.Tab.0.bottom" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.0.bottom" timestamp="1612861374953">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.0.center" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612861374953" />
+    <state width="1084" height="312" key="GridCell.Tab.0.center" timestamp="1612861374953">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.0.left" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612861374953" />
+    <state width="1084" height="312" key="GridCell.Tab.0.left" timestamp="1612861374953">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.0.right" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612861374953" />
+    <state width="1084" height="312" key="GridCell.Tab.0.right" timestamp="1612861374953">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.1.bottom" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612861374953" />
+    <state width="1084" height="312" key="GridCell.Tab.1.bottom" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.1.center" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.1.center" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.1.left" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.1.left" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.1.right" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.1.right" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.2.bottom" timestamp="1612779632376">
+    <state width="1084" height="312" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.2.bottom" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612779632376" />
-    <state width="1084" height="136" key="GridCell.Tab.2.center" timestamp="1612779632376">
+    <state width="1084" height="312" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.2.center" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1612779632376" />
-    <state width="1084" height="136" key="GridCell.Tab.2.left" timestamp="1612779632375">
+    <state width="1084" height="312" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.2.left" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1612779632375" />
-    <state width="1084" height="136" key="GridCell.Tab.2.right" timestamp="1612779632376">
+    <state width="1084" height="312" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
+    <state width="1084" height="312" key="GridCell.Tab.2.right" timestamp="1612861374796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="136" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1612779632376" />
+    <state width="1084" height="312" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1612861374796" />
     <state width="1084" height="278" key="GridCell.Tab.3.bottom" timestamp="1612242703148">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -601,14 +701,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="367" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610685706047" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1612779643856">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1612781103051">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1612779643856" />
-    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1612594559426">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1612781103051" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1612860960056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1612594559426" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1612860960056" />
     <state x="388" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610609586137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -633,10 +733,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="472" y="45" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1611111535468" />
-    <state x="584" y="202" width="672" height="677" key="run.anything.popup" timestamp="1612756485780">
+    <state x="584" y="202" width="672" height="677" key="run.anything.popup" timestamp="1612859680068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="584" y="202" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612756485780" />
+    <state x="584" y="202" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612859680068" />
     <state x="814" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1612691947443">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

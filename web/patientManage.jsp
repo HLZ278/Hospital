@@ -26,8 +26,6 @@
         top: 70px;
         width: 1000px;
         margin-left:368px;
-        height: 650px;
-        background-color: #b5b5b5;
         padding: 0px;
     }
     .patientul li{
@@ -70,7 +68,7 @@
 </div>
 
 <div class="leftMenu">
-    <div style="float: left">
+    <div style="float: left; position: fixed">
         <ul class="patientul">
             <li id="patientManage" class="patientLi"><a>就诊人管理</a><span style="margin-left: 5px">></span></li>
             <li id="orderManage" class="patientLi"><a>预约订单管理</a><span style="margin-left: 5px">></span></li>

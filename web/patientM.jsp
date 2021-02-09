@@ -1,12 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<style>
+    #patientCon div{
+        margin: 10px;
+    }
+    form div{
+        margin:10px;
+    }
+    form{
+    }
+</style>
 <div style="margin: 30px;">
     <font style="font-weight: 600; ">就诊人管理</font>
 </div>
 <c:forEach var="patient" items="${ patients }">
-    <div style="margin: 30px; width: 940px; height: 130px; background-color: white">
+    <div id="patientCon" style="margin: 30px; width: 940px; height: 130px; background-color: white; border-radius: 10px;box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.2);
+">
         <div>${patient.patientName}</div>
         <div>身份证号:${patient.idCardNum}</div>
         <div>身份证类型:
@@ -21,11 +31,11 @@
                 <c:otherwise><td>其他</td></c:otherwise>
             </c:choose>
         </div>
-        <div>年龄:${patient.age}</div>
-        <div><a href="#" onclick="patientDetail(${patient.patientID})" class="patientDetail">查看详情 ></a></div>
+        <div style="float: left; margin-top: 0">年龄:${patient.age}</div>
+        <div><a href="#" onclick="patientDetail(${patient.patientID})" class="patientDetail" style="float: right">查看详情 ></a></div>
     </div>
 </c:forEach>
-<div onclick="addPatient()" style="margin: 30px; width: 940px; height: 65px; background-color: white; text-align: center; line-height: 65px">
+<div onclick="addPatient()" style="margin: 30px; width: 940px; height: 65px; background-color: white; text-align: center; line-height: 65px; border-radius: 10px;box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.2)">
     <div>+ 添加就诊人</div>
 </div>
 

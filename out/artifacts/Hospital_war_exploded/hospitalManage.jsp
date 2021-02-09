@@ -52,7 +52,7 @@
             window.location.href="queryHospitalOrderManageView?page="+0+"&current="+2
             break;
           case "messageManage":
-            //window.location.href="messageManage?page="+0+"&current="+3
+            window.location.href="queryMessageByUserID?page="+0+"&current="+3
             break;
           case "hospitalMessageManage":
             window.location.href="hospitalMessageManage?&current="+6

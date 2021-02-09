@@ -2,12 +2,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<style>
+    #patientDetailContain div{
+        margin: 10px;
+    }
+</style>
 <div style="margin: 30px;">
     <font style="font-weight: 600; ">就诊人管理</font>
 </div>
-<div style="margin: 30px; width: 940px; height: 350px; background-color: white">
-    <div>${patient.getPatientName()}</div>
+<div id="patientDetailContain" style="margin: 30px; width: 940px;background-color: white; border-radius: 10px">
+    <div>姓名:${patient.getPatientName()}</div>
     <div>身份证号:${patient.getIdCardNum()}</div>
     <div>身份证类型:
         <c:choose>
@@ -61,12 +65,16 @@
     <div>毁约次数:${patient.getTimes()}</div>
     <div>封禁时间:${patient.getUnseal()}</div>
 </div>
-<div onclick="updatePatientShow()" style="float: left;margin: 30px; width: 400px; height: 65px; background-color: white; text-align: center; line-height: 65px">
+<div onclick="updatePatientShow()" style="float: left;margin: 30px; width: 400px; height: 65px; background-color: white; text-align: center; line-height: 65px; border-radius: 10px">
     <div>+ 修改就诊人信息</div>
 </div>
-<div onclick="deletePatient(${patient.getPatientID()})" style="float: right; margin: 30px; width: 400px; height: 65px; background-color: white; text-align: center; line-height: 65px">
+<div onclick="deletePatient(${patient.getPatientID()})" style="float: right; margin: 30px; width: 400px; height: 65px; background-color: white; text-align: center; line-height: 65px;border-radius: 10px">
     <div>+ 删除就诊人</div>
 </div>
+<div style="width: 100px; height:70px;clear: both">
+
+</div>
+
 <div id="updateBox" class="popup__wrapper" style="display: none">
     <div class="popup">
         <div class="popup__title">修改就诊人信息</div>
