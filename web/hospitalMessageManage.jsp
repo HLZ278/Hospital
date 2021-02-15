@@ -29,7 +29,7 @@
                 医院名称：<input name="hospitalName" value="${userHospital.getHospitalName()}">
             </div>
             <div>
-                医院图标:<img name="hospitalIcon" type="image" src="images/${userHospital.getIcon()}.png">
+                医院图标:<img name="hospitalIcon" width="100px" height="100px" type="image" src="images/${userHospital.getIcon()}.png">
                 <input type="file" name="image"  accept=".png">
             </div>
             <div>

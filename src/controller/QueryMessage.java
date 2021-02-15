@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//用于医院管理界面中的科室管理
 @WebServlet("/queryMessage")
-class QueryMessage extends HttpServlet {
+public class QueryMessage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
@@ -25,6 +24,10 @@ class QueryMessage extends HttpServlet {
         int page = Integer.parseInt(req.getParameter("page"));
         MessageServiceImpl messageService = new MessageServiceImpl();
         List<Message> messages = messageService.queryAll(page);
+        int count = messageService.countAllMessage();
+        int pageCount = (count/14)+1;
+        req.setAttribute("pageCount", pageCount);
+        req.setAttribute("nowPage", page);
         req.setAttribute("messages", messages);
         req.getRequestDispatcher("systemManage.jsp").forward(req, resp);
     }

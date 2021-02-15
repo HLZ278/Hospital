@@ -60,6 +60,9 @@
                     case "notice":
                         window.location.href = "queryAllNotice?page=" + 0 + "&current=" + 4
                         break;
+                    case "message":
+                        window.location.href = "queryMessage?page=" + 0 + "&current=" + 5
+                        break;
                     default:
                         break;
                 }
@@ -88,6 +91,10 @@
             case 4:
                 filter[parseInt("<%=request.getParameter("current")%>") - 1].style.backgroundColor = "#4bbfd4"
                 $("#right").html(String.raw`<%@ include file="noticeManage.jsp"%>`)
+                break;
+            case 5:
+                filter[parseInt("<%=request.getParameter("current")%>") - 1].style.backgroundColor = "#4bbfd4"
+                $("#right").html(String.raw`<%@ include file="messageManage.jsp"%>`)
                 break;
             default:
                 break;
@@ -162,7 +169,7 @@
     function updateOrdinaryUser(obj) {
         alert(obj.href)
     }
-    function updateNotice(obj) {
+    function updateNotice(obj, content) {
         $(obj.parentNode.parentNode).children('td').each(function (j) {
             switch (j) {
                 case 0:
@@ -172,6 +179,7 @@
                     break;
             }
         })
+        $("#noticeContent").val(content)
         $("#updateBox").css('display', 'block')
     }
     function updateUser(obj) {
@@ -363,6 +371,29 @@
         if(currentPage==pageCount){
         }else {
             window.location.href = "hospitalTable?page=" + (currentPage) + "&current=" + 3
+        }
+    }
+    function showMessage(content) {
+        alert(content)
+    }
+    function deleteFormAllMessage(id) {
+        if (confirm("确定删除?")) {
+            window.location.href = "deleteFormAllMessage?messageID="+id
+        }
+    }
+    function preMessages() {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==1){
+        }else {
+            window.location.href="queryMessage?page="+(currentPage-2)+"&current="+5
+        }
+    }
+    function nextMessages(pageCount) {
+        var currentPage = $("#pageNum").html()
+        if(currentPage==pageCount){
+        }else {
+            window.location.href="queryMessage?page="+(currentPage)+"&current="+5
+
         }
     }
 </script>

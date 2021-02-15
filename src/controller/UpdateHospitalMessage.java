@@ -42,11 +42,16 @@ public class UpdateHospitalMessage extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         HospitalServiceImpl hospitalService = new HospitalServiceImpl();
         Hospital hospital = hospitalService.queryHospitalByID(user.getHospitalID());
+
         // ①　创建ServletFileUpload实例
         DiskFileItemFactory factory = new DiskFileItemFactory();
         // 【设置缓存目录】
-        factory.setRepository(new File(fileName));
+        File temp=new File(req.getSession().getServletContext().getRealPath("/temp"));
+        temp.mkdirs();
+        System.out.println("建立成功");
+        factory.setRepository(temp);
         ServletFileUpload upload = new ServletFileUpload(factory);
+
         // 【表单大小总和】
         upload.setSizeMax(1024 * 1024 * 60);
         // 【单个文件不得超过】
@@ -56,6 +61,7 @@ public class UpdateHospitalMessage extends HttpServlet {
         try {
             List<FileItem> list = upload.parseRequest(req);
             HashMap<String, String> stringStringHashMap = new HashMap<>();
+
             for (FileItem item : list) {
                 // 如果表单是文件文件
                 if (!item.isFormField()) {
@@ -82,19 +88,20 @@ public class UpdateHospitalMessage extends HttpServlet {
                     String key = item.getFieldName();
                     String value = item.getString("UTF-8");// 表单字段的输入值
                     stringStringHashMap.put(key, value);
+
                 }
             }
+            hospital.setReleaseTime(StringToTime.doParse(stringStringHashMap.get("hospitalOpen")));
+            hospital.setStopTime(StringToTime.doParse(stringStringHashMap.get("hospitalClose")));
             hospital.setHospitalName(stringStringHashMap.get("hospitalName"));
             hospital.setGrade(stringStringHashMap.get("hospitalGrade"));
             hospital.setArea(stringStringHashMap.get("hospitalArea"));
             hospital.setAddress(stringStringHashMap.get("hospitalAddress"));
-            hospital.setReleaseTime(StringToTime.doParse(stringStringHashMap.get("hospitalOpen")));
-            hospital.setStopTime(StringToTime.doParse(stringStringHashMap.get("hospitalClose")));
+
             hospital.setRule(stringStringHashMap.get("hospitalRule"));
             hospital.setDetails(stringStringHashMap.get("hospitalDetails"));
             System.out.println(hospital);
             hospitalService.updateHospitalMessage(hospital);
-            resp.sendRedirect("hospitalMessageManage?current=6");
         } catch (Exception e) {
             e.printStackTrace();
         }finally {

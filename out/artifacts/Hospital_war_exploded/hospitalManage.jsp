@@ -303,6 +303,31 @@
 
     }
   }
+  function preMessages() {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==1){
+    }else {
+      window.location.href="queryMessageByUserID?page="+(currentPage-2)+"&current="+3
+    }
+  }
+  function nextMessages(pageCount) {
+    var currentPage = $("#pageNum").html()
+    if(currentPage==pageCount){
+    }else {
+      window.location.href="queryMessageByUserID?page="+(currentPage)+"&current="+3
+    }
+  }
+  function showMessage(content) {
+    alert(content)
+  }
+  function deleteMessage(id) {
+    if (confirm("确定删除?")) {
+      window.location.href = "deleteMessage?messageID="+id
+    }
+  }
+  function add() {
+    $('#ooo').css('display', 'block')
+  }
 </script>
 </body>
 </html>

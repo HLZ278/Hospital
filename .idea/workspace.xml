@@ -7,7 +7,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ab5ccb4-3899-49ad-b746-6f8e72580c73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web/checkCode.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteFormAllMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/DeleteMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/InsertMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/20b4aca5-df68-472b-a325-fd18faf6f089.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/22aa1d12-ac86-431f-991a-5df6709eebe5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/4a4ab9e0-eed1-4b89-99e4-f634fc8c3ca2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/51a707f2-a843-493d-9d1e-00cc3ec6a272.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/625bcc95-4036-4b76-acf2-1a2f8831cd4f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/7f7ab58b-04a7-48e4-9d64-bc94a4087bd6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/aaaa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/bc8ad240-b1a1-4ff4-b82a-e5891ae39210.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/fb919117-db93-4807-ac33-3beab2044105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/u=4226190016,984411776&amp;fm=26&amp;gp=0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/temp/upload_ceffe7f3_410b_4525_8551_81020c558ef0_00000028.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/temp/upload_ceffe7f3_410b_4525_8551_81020c558ef0_00000037.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Hospital/controller/DeleteFormAllMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Hospital/controller/DeleteMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Hospital/controller/InsertMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/DeleteFormAllMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/DeleteMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/InsertMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/20b4aca5-df68-472b-a325-fd18faf6f089.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/22aa1d12-ac86-431f-991a-5df6709eebe5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/51a707f2-a843-493d-9d1e-00cc3ec6a272.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/625bcc95-4036-4b76-acf2-1a2f8831cd4f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/7f7ab58b-04a7-48e4-9d64-bc94a4087bd6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/aaaa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/bc8ad240-b1a1-4ff4-b82a-e5891ae39210.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/fb919117-db93-4807-ac33-3beab2044105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/u=4226190016,984411776&amp;fm=26&amp;gp=0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryMessageByUserID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/QueryMessageByUserID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateHospitalMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/controller/UpdateHospitalMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageSevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/WEB-INF/classes/service/MessageSevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/checkCode.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalMessageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/hospitalMessageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/images/eb2627f2-586d-4c1f-bbce-475758f9e0d7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/messageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/messageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/noticeManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/noticeManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/systemManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Hospital_war_exploded/systemManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/controller/QueryMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/controller/QueryMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/controller/QueryMessageByUserID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/controller/QueryMessageByUserID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/controller/UpdateHospitalMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/controller/UpdateHospitalMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/dao/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/service/MessageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/service/MessageSevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/service/MessageSevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/QueryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/QueryMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/QueryMessageByUserID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/QueryMessageByUserID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateHospitalMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateHospitalMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MessageDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/MessageSevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/MessageSevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/hospitalManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/hospitalMessageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/hospitalMessageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/eb2627f2-586d-4c1f-bbce-475758f9e0d7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/messageManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/messageManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/noticeManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/noticeManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/systemManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/systemManage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +128,12 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="A:\Apan\Hospital\web" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="A:\Apan\Hospital\web\WEB-INF\lib" />
       <recent name="A:\Apan\Hospital\web\images" />
+      <recent name="A:\Apan\Hospital\web" />
+      <recent name="A:\Apan\Hospital\src" />
+      <recent name="A:\Apan\Hospital\web\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
@@ -74,12 +142,10 @@
       <recent name="entity" />
       <recent name="utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="A:\Apan\Hospital\web\WEB-INF\lib" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="A:\Apan\Hospital\web\images" />
       <recent name="A:\Apan\Hospital\web" />
-      <recent name="A:\Apan\Hospital\src" />
-      <recent name="A:\Apan\Hospital\web\css" />
+      <recent name="A:\Apan\Hospital\web\WEB-INF\lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -292,7 +358,10 @@
       <workItem from="1612586406854" duration="7202000" />
       <workItem from="1612594558907" duration="35947000" />
       <workItem from="1612856431040" duration="4507000" />
-      <workItem from="1612860958358" duration="7095000" />
+      <workItem from="1612860958358" duration="9281000" />
+      <workItem from="1612933841015" duration="2872000" />
+      <workItem from="1613271949362" duration="1560000" />
+      <workItem from="1613384287601" duration="8016000" />
     </task>
     <task id="LOCAL-00001" summary="数据库版本更改">
       <created>1610587530103</created>
@@ -441,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612868104531</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="?">
+      <created>1612868175975</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1612868175975</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,14 +601,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="13" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610685769030" />
-    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1612859105055">
+    <state x="488" y="221" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613386775677">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1612859105055" />
-    <state x="716" y="328" width="429" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1611834109703">
+    <state x="488" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1613386775677" />
+    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1613387516213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="716" y="328" width="429" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1611834109703" />
+    <state x="756" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1613387516213" />
+    <state x="716" y="328" width="429" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1613388161497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="716" y="328" width="429" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1613388161497" />
     <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1612766222863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -545,10 +625,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="279" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1610594771735" />
-    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1612868103797">
+    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1612868175034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1612868103797" />
+    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1612868175034" />
     <state x="38" y="32" width="1350" height="638" key="DiffContextDialog" timestamp="1610876283089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -557,54 +637,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="165" y="172" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610673817848" />
-    <state width="1084" height="224" key="GridCell.Tab.0.bottom" timestamp="1612867915846">
+    <state width="1084" height="224" key="GridCell.Tab.0.bottom" timestamp="1613387745815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612867915846" />
-    <state width="1084" height="224" key="GridCell.Tab.0.center" timestamp="1612867915846">
+    <state width="1084" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1613387745815" />
+    <state width="1084" height="224" key="GridCell.Tab.0.center" timestamp="1613387745815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612867915846" />
-    <state width="1084" height="224" key="GridCell.Tab.0.left" timestamp="1612867915846">
+    <state width="1084" height="224" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1613387745815" />
+    <state width="1084" height="224" key="GridCell.Tab.0.left" timestamp="1613387745815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612867915846" />
-    <state width="1084" height="224" key="GridCell.Tab.0.right" timestamp="1612867915846">
+    <state width="1084" height="224" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1613387745815" />
+    <state width="1084" height="224" key="GridCell.Tab.0.right" timestamp="1613387745815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612867915846" />
-    <state width="1084" height="224" key="GridCell.Tab.1.bottom" timestamp="1612867915776">
+    <state width="1084" height="224" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1613387745815" />
+    <state width="1084" height="224" key="GridCell.Tab.1.bottom" timestamp="1613387745730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612867915776" />
-    <state width="1084" height="224" key="GridCell.Tab.1.center" timestamp="1612867915775">
+    <state width="1084" height="224" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1613387745730" />
+    <state width="1084" height="224" key="GridCell.Tab.1.center" timestamp="1613387745730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1612867915775" />
-    <state width="1084" height="224" key="GridCell.Tab.1.left" timestamp="1612867915775">
+    <state width="1084" height="224" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1613387745730" />
+    <state width="1084" height="224" key="GridCell.Tab.1.left" timestamp="1613387745730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1612867915775" />
-    <state width="1084" height="224" key="GridCell.Tab.1.right" timestamp="1612867915776">
+    <state width="1084" height="224" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1613387745730" />
+    <state width="1084" height="224" key="GridCell.Tab.1.right" timestamp="1613387745730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1612867915776" />
-    <state width="1084" height="224" key="GridCell.Tab.2.bottom" timestamp="1612867915776">
+    <state width="1084" height="224" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1613387745730" />
+    <state width="1084" height="224" key="GridCell.Tab.2.bottom" timestamp="1613387745731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612867915776" />
-    <state width="1084" height="224" key="GridCell.Tab.2.center" timestamp="1612867915776">
+    <state width="1084" height="224" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1613387745731" />
+    <state width="1084" height="224" key="GridCell.Tab.2.center" timestamp="1613387745731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1612867915776" />
-    <state width="1084" height="224" key="GridCell.Tab.2.left" timestamp="1612867915776">
+    <state width="1084" height="224" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1613387745731" />
+    <state width="1084" height="224" key="GridCell.Tab.2.left" timestamp="1613387745731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1612867915776" />
-    <state width="1084" height="224" key="GridCell.Tab.2.right" timestamp="1612867915776">
+    <state width="1084" height="224" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1613387745731" />
+    <state width="1084" height="224" key="GridCell.Tab.2.right" timestamp="1613387745731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1084" height="224" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1612867915776" />
+    <state width="1084" height="224" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1613387745731" />
     <state width="1084" height="278" key="GridCell.Tab.3.bottom" timestamp="1612242703148">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -625,14 +705,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="367" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610685706047" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1612868159758">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1612868182079">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1612868159758" />
-    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1612860960056">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1612868182079" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1613384287804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1612860960056" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1613384287804" />
     <state x="388" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610609586137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

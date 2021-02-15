@@ -27,13 +27,13 @@
         <!-- 轮播图片 -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="containerImg" src="images/web-banner1.png">
+                <img class="containerImg" src="images/u=4226190016,984411776&fm=26&gp=0.jpg">
             </div>
             <div class="carousel-item">
                 <img class="containerImg" src="images/web-banner1.png">
             </div>
             <div class="carousel-item">
-                <img class="containerImg" src="images/web-banner1.png">
+                <img class="containerImg" src="images/aaaa.jpg">
             </div>
         </div>
 

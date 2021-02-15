@@ -23,6 +23,10 @@ public class QueryMessageByUserID extends HttpServlet {
         int page = Integer.parseInt(req.getParameter("page"));
         MessageServiceImpl messageService = new MessageServiceImpl();
         List<Message> messages = messageService.queryAllByUserID(userID, page);
+        int count = messageService.countMessage(userID);
+        int pageCount = (count/14)+1;
+        req.setAttribute("pageCount", pageCount);
+        req.setAttribute("nowPage", page);
         req.setAttribute("messages", messages);
         req.getRequestDispatcher("hospitalManage.jsp").forward(req, resp);
     }

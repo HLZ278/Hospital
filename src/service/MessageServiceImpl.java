@@ -18,4 +18,28 @@ public class MessageServiceImpl implements MessageSevice {
         MessageDaoImpl messageDao = new MessageDaoImpl();
         return messageDao.queryAllByUserID(userID, page);
     }
+
+    @Override
+    public void deleteMessage(int messageID) {
+        MessageDaoImpl messageDao = new MessageDaoImpl();
+        messageDao.deleteMessage(messageID);
+    }
+
+    @Override
+    public int countMessage(int userID) {
+        MessageDaoImpl messageDao = new MessageDaoImpl();
+        return messageDao.countMessage(userID);
+    }
+
+    @Override
+    public int countAllMessage() {
+        MessageDaoImpl messageDao = new MessageDaoImpl();
+        return messageDao.countAllMessage();
+    }
+
+    @Override
+    public void insertNotice(Message message) {
+        MessageDaoImpl messageDao = new MessageDaoImpl();
+         messageDao.insertNotice(message);
+    }
 }

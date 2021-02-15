@@ -38,7 +38,8 @@
                     <td>${notice.getNoticeID()}</td>
                     <td>${notice.getTitle()}</td>
                     <td>${notice.getCreateTime()}</td>
-                    <td><a a href="#" onclick='updateNotice(this)'>修改</a>|<a href="JavaScript:deleteNoticeConfirm(${notice.getNoticeID()})">删除</a></td>
+                    <%--原来加上&quot;就可以传入字符串，唉这么晚才发现，之前一直是在js函数中通过查询这行表格获取其中字符串内容，真是失败啊哈哈--%>
+                    <td><a a href="#" onclick="updateNotice(this, '&quot;${notice.getContent()}&quot;')">修改</a>|<a href="JavaScript:deleteNoticeConfirm(${notice.getNoticeID()})">删除</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -71,12 +72,12 @@
         <div>
             <form id="noticeUpdate" method="post" action="updateNotice" >
                 <div>
-                    公告标题:<input type="text" id="updateNoticeTitle"  name="noticeTitle" autocomplete="off" placeholder="点击输入用户名"/>
+                    公告标题:<input type="text" id="updateNoticeTitle" style="width: 400px"  name="noticeTitle" autocomplete="off" placeholder="点击输入用户名"/>
                 </div>
                 <div>
-                    公告内容:<textarea name="noticeContent"></textarea>
+                    公告内容:<textarea id="noticeContent" style="width: 400px; height: 100px" name="noticeContent"></textarea>
                 </div>
-                <input id="updateNoticeID" type="text" style="display: none" name="noticeID" value="0"/>
+                <input id="updateNoticeID" type="text" style="display: none;" name="noticeID" value="0"/>
             </form>
         </div>
         <div class="popup__btnWrapper">
