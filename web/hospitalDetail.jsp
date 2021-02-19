@@ -182,7 +182,14 @@
         window.location.href = "queryNumSrcView?current=4&departmentID=" + departmentID
     }
 
-    function dataChoose(date) {
+    function dataChoose(date, obj) {
+
+        let filter = document.getElementsByClassName("datesrc")
+        for (let i = 0; i < filter.length; i++) {
+            filter[i].style.background = "#ffffff"
+        }
+        $(obj).css('background','#4bbfd4')
+
         var dateNumSrcViewMap = eval("("+'${dateNumSrcViewMap}'+")");
         $("#doctors").html("")
         for (var i in dateNumSrcViewMap[date]){

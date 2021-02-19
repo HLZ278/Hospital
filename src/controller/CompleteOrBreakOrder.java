@@ -23,22 +23,21 @@ public class CompleteOrBreakOrder extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
         int orderID = Integer.parseInt(req.getParameter("orderID"));
-        int completeOrBreak = Integer.parseInt(req.getParameter("completeOrBreak"));
+        int completeOrBreak = Integer.parseInt(req.getParameter("completeOrBreak"));//由于以履约还是爽约这两个按钮执行的是同一个js方法 所以completeOrBreak是页面传来用于判断用户点击的是以履约还是爽约
         OrderServiceImpl orderService = new OrderServiceImpl();
         int patientID = Integer.parseInt(req.getParameter("patientID"));
         PatientServiceImpl patientService = new PatientServiceImpl();
         Patient patient = patientService.queryPatientByPatientID(patientID);
-        if (completeOrBreak==1){
-            //履约
+        if (completeOrBreak==1){ //履约
             orderService.completeOrder(orderID);
-        }else {
-            //爽约次数加一
-            //爽约
+        }else {//爽约
+
             //爽约次数到达三次封禁三天
             if (patient.getTimes()==2){
                 Date date = new Date();
                 Timestamp timestamp = new Timestamp(date.getYear(),date.getMonth(), date.getDate()+3, date.getHours(), date.getMinutes(), date.getSeconds(),0);
                 patient.setUnseal(timestamp);
+                //爽约次数加一
                 patient.setTimes(patient.getTimes()+1);
 
             }else if (patient.getTimes()==5){//爽约次数到达三次封禁六天
@@ -48,6 +47,7 @@ public class CompleteOrBreakOrder extends HttpServlet {
                 //爽约到达六次后清零重计
                 patient.setTimes(0);
             }else {
+                //爽约次数加一
                 patient.setTimes(patient.getTimes()+1);
             }
             patientService.updatepatientBreak(patient);

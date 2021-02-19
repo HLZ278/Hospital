@@ -43,7 +43,6 @@ public class QueryNumSrcView extends HttpServlet {
         String bigTomorrowDate=formater.format(bigTomorrowTime);
         HashMap<String, List<NumSrcView>> dateNumSrcViewMap = new HashMap<>();
 
-
         for (NumSrcView n:
                 list) {
             if (dateNumSrcViewMap.get(formater.format(n.getContractTime()))==null){
@@ -58,14 +57,17 @@ public class QueryNumSrcView extends HttpServlet {
         for (int i=0; i<3; i++){
             haves.add("无号");
         }
+        int toDate = new Date().getDate();
         for (int i=0; i<list.size(); i++){
-            if (list.get(i).getRemain()>0){
-                haves.set(i, "有号");
+            if (list.get(i).getContractTime().getDate()==toDate&&list.get(i).getRemain()>0){
+                haves.set(0, "有号");
+            }else if (list.get(i).getContractTime().getDate()==toDate+1&&list.get(i).getRemain()>0){
+                haves.set(1, "有号");
+            }else if (list.get(i).getContractTime().getDate()==toDate+2&&list.get(i).getRemain()>0){
+                haves.set(2, "有号");
             }
         }
-        System.out.println("haves="+haves+"&list="+list);
         req.setAttribute("havas", haves);
-
         req.setAttribute("dateNumSrcViewMap", JSON.toJSONString(dateNumSrcViewMap));
         req.getRequestDispatcher("hospitalDetail.jsp").forward(req, resp);
     }
