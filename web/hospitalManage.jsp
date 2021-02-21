@@ -103,8 +103,29 @@
   function addCancle() {
     $('#ooo').css('display','none')
   }
+
   function addDepartmentConfirm() {
-    $('#addDepartment').submit()
+    var temp = true
+    if($("#departmentNameError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#departmentTypeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#positionError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#workTimeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#closeTimeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if (temp){
+      $('#addDepartment').submit()
+    }else {
+      alert("请填写完整")
+    }
   }
   function departmentSearch() {
     window.location.href="queryDepartment?page="+0+"&current="+1+"&departmentName="+$('#departmentName').val()
@@ -136,6 +157,9 @@
           break;
       }
     })
+    updateDepartmentNameBlur()
+    updateDepartmentTypeBlur()
+    updatePositionBlur()
     $("#updateBox").css('display', 'block')
   }
   function updateDepartmentConfirm() {
@@ -152,7 +176,28 @@
     $("#addDoctorBox").css('display', 'block')
   }
   function addDoctorConfirm() {
-    $("#addDoctor").submit()
+    var temp = true
+    if($("#doctorNameError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#jobError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#ageError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#expertiseError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#costError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if (temp){
+      $("#addDoctor").submit()
+    }else {
+      alert("请填写完整")
+    }
+
   }
   function addDoctorCancle() {
     $("#addDoctorBox").css('display', 'none')
@@ -195,13 +240,40 @@
           break;
       }
     })
+
+    updateDoctorNameBlur()
+    updateJobBlur()
+    updateAgeBlur()
+    updateExpertiseBlur()
+    updateCostBlur()
     $("#updateBox").css('display', 'block')
   }
   function updateCancle() {
     $("#updateBox").css('display', 'none')
   }
   function updateDoctorConfirm() {
-    $("#doctorUpdate").submit()
+    var temp = true
+    if($("#updateDoctorNameError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateJobError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateAgeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateExpertiseError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateCostError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if (temp){
+      $("#doctorUpdate").submit()
+
+    }else {
+      alert("请填写完整")
+    }
   }
   function numSrcManageEnter(doctorID, departmentID) {
     window.location.href="queryNumSrc?page="+0+"&current="+5+"&departmentID="+departmentID+"&doctorID="+doctorID
@@ -327,6 +399,359 @@
   }
   function add() {
     $('#ooo').css('display', 'block')
+  }
+
+
+
+  function departmentNameBlur() {
+    var departmentName = $("#departmentName2")[0].value
+    if(departmentName==""){
+      $("#departmentNameError").css("color","red")
+      $("#departmentNameError").html('必填')
+    }else{
+      $("#departmentNameError").css("color","green")
+      $("#departmentNameError").html('√')
+    }
+  }
+  function departmentTypeBlur() {
+      var departmentType = $("#departmentType")[0].value
+      if(departmentType==""){
+        $("#departmentTypeError").css("color","red")
+        $("#departmentTypeError").html('必填')
+      }else{
+        $("#departmentTypeError").css("color","green")
+        $("#departmentTypeError").html('√')
+      }
+  }
+  function positionBlur() {
+      var position = $("#position")[0].value
+      if(position==""){
+        $("#positionError").css("color","red")
+        $("#positionError").html('必填')
+      }else{
+        $("#positionError").css("color","green")
+        $("#positionError").html('√')
+      }
+  }
+
+  function workTimeBlur() {
+    var workTime = $("#workTime")[0].value
+    if(workTime==""||workTime.split(":").length==3){
+      $("#workTimeError").css("color","red")
+      $("#workTimeError").html('请选择')
+    }else{
+      $("#workTimeError").css("color","green")
+      $("#workTimeError").html('√')
+    }
+  }
+
+  function closeTimeBlur() {
+    var closeTime = $("#closeTime")[0].value
+    if(closeTime==""||closeTime.split(":").length==3){
+      $("#closeTimeError").css("color","red")
+      $("#closeTimeError").html('请选择')
+    }else{
+      $("#closeTimeError").css("color","green")
+      $("#closeTimeError").html('√')
+    }
+  }
+
+
+  function updateDepartmentNameBlur() {
+    var departmentName = $("#updateDepartmentName")[0].value
+    if(departmentName==""){
+      $("#updateDepartmentNameError").css("color","red")
+      $("#updateDepartmentNameError").html('必填')
+    }else{
+      $("#updateDepartmentNameError").css("color","green")
+      $("#updateDepartmentNameError").html('√')
+    }
+  }
+  function updateDepartmentTypeBlur() {
+    var departmentType = $("#updateDepartmentType")[0].value
+    if(departmentType==""){
+      $("#updateDepartmentTypeError").css("color","red")
+      $("#updateDepartmentTypeError").html('必填')
+    }else{
+      $("#updateDepartmentTypeError").css("color","green")
+      $("#updateDepartmentTypeError").html('√')
+    }
+  }
+  function updatePositionBlur() {
+    var position = $("#updatePosition")[0].value
+    if(position==""){
+      $("#updatePositionError").css("color","red")
+      $("#updatePositionError").html('必填')
+    }else{
+      $("#updatePositionError").css("color","green")
+      $("#updatePositionError").html('√')
+    }
+  }
+
+  function updateWorkTimeBlur() {
+    var workTime = $("#updateWorkTime")[0].value
+    if(workTime==""||workTime.split(":").length==3){
+      $("#updateWorkTimeError").css("color","red")
+      $("#updateWorkTimeError").html('请选择')
+    }else{
+      $("#updateWorkTimeError").css("color","green")
+      $("#updateWorkTimeError").html('√')
+    }
+  }
+
+  function updateCloseTimeBlur() {
+    var closeTime = $("#updateCloseTime")[0].value
+    if(closeTime==""||closeTime.split(":").length==3){
+      $("#updateCloseTimeError").css("color","red")
+      $("#updateCloseTimeError").html('请选择')
+    }else{
+      $("#updateCloseTimeError").css("color","green")
+      $("#updateCloseTimeError").html('√')
+    }
+  }
+  function updateDoctorNameBlur() {
+    var doctorName = $("#updateDoctorName")[0].value
+    if(doctorName==""){
+      $("#updateDoctorNameError").css("color","red")
+      $("#updateDoctorNameError").html('必填')
+    }else{
+      $("#updateDoctorNameError").css("color","green")
+      $("#updateDoctorNameError").html('√')
+    }
+  }
+  function updateJobBlur() {
+    var job = $("#updateJob")[0].value
+    if(job==""){
+      $("#updateJobError").css("color","red")
+      $("#updateJobError").html('必填')
+    }else{
+      $("#updateJobError").css("color","green")
+      $("#updateJobError").html('√')
+    }
+  }
+  function updateAgeBlur() {
+    var age = $("#updateAge")[0].value
+    if(age==""||(age<0||age>100)){
+      $("#updateAgeError").css("color","red")
+      $("#updateAgeError").html('请输入正确年龄')
+    }else{
+      $("#updateAgeError").css("color","green")
+      $("#updateAgeError").html('√')
+    }
+  }
+  function updateExpertiseBlur() {
+    var expertise = $("#updateExpertise")[0].value
+    if(expertise==""){
+      $("#updateExpertiseError").css("color","red")
+      $("#updateExpertiseError").html('必填')
+    }else{
+      $("#updateExpertiseError").css("color","green")
+      $("#updateExpertiseError").html('√')
+    }
+  }
+  function updateCostBlur() {
+    var cost = $("#updateCost")[0].value
+    if(cost==""||(cost<0)){
+      $("#updateCostError").css("color","red")
+      $("#updateCostError").html('请输入正确费用')
+    }else{
+      $("#updateCostError").css("color","green")
+      $("#updateCostError").html('√')
+    }
+  }
+
+
+  function doctorNameBlur() {
+    var doctorName = $("#doctorName")[0].value
+    if(doctorName==""){
+      $("#doctorNameError").css("color","red")
+      $("#doctorNameError").html('必填')
+    }else{
+      $("#doctorNameError").css("color","green")
+      $("#doctorNameError").html('√')
+    }
+  }
+  function jobBlur() {
+    var job = $("#job")[0].value
+    if(job==""){
+      $("#jobError").css("color","red")
+      $("#jobError").html('必填')
+    }else{
+      $("#jobError").css("color","green")
+      $("#jobError").html('√')
+    }
+  }
+  function ageBlur() {
+    var age = $("#age")[0].value
+    if(age==""||(age<0||age>100)){
+      $("#ageError").css("color","red")
+      $("#ageError").html('请输入正确年龄')
+    }else{
+      $("#ageError").css("color","green")
+      $("#ageError").html('√')
+    }
+  }
+  function expertiseBlur() {
+    var expertise = $("#expertise")[0].value
+    if(expertise==""){
+      $("#expertiseError").css("color","red")
+      $("#expertiseError").html('必填')
+    }else{
+      $("#expertiseError").css("color","green")
+      $("#expertiseError").html('√')
+    }
+  }
+  function costBlur() {
+    var cost = $("#cost")[0].value
+    if(cost==""||(cost<0)){
+      $("#costError").css("color","red")
+      $("#costError").html('请输入正确费用')
+    }else{
+      $("#costError").css("color","green")
+      $("#costError").html('√')
+    }
+  }
+  function titleBlur() {
+    var title = $("#title")[0].value
+    if(title==""){
+      $("#titleError").css("color","red")
+      $("#titleError").html('必填')
+    }else{
+      $("#titleError").css("color","green")
+      $("#titleError").html('√')
+    }
+  }
+  function contentBlur() {
+    var content = $("#content")[0].value
+    if(content==""){
+      $("#contentError").css("color","red")
+      $("#contentError").html('必填')
+    }else{
+      $("#contentError").css("color","green")
+      $("#contentError").html('√')
+    }
+  }
+  function addMessage() {
+    var temp = true
+    if($("#titleError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#contentError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if (temp){
+      $("#addMessage").submit()
+    }else {
+      alert("请填写完整")
+    }
+  }
+  function hospitalNameBlur() {
+    var hospitalName = $("#hospitalName")[0].value
+    if(!hospitalName.match(/^([\u4e00-\u9fa5]{2,20}|[a-zA-Z\s]{3,20})$/)){
+      $("#hospitalNameError").css("color","red")
+      $("#hospitalNameError").html('请输入正确医院名')
+    }else{
+      $("#hospitalNameError").css("color","green")
+      $("#hospitalNameError").html('√')
+    }
+  }
+  function hospitalGradeBlur() {
+    var hospitalGrade = $("#hospitalGrade")[0].value
+    if(hospitalGrade=="一级甲等"||hospitalGrade=="二级甲等"||hospitalGrade=="三级甲等"){
+      $("#hospitalGradeError").css("color","green")
+      $("#hospitalGradeError").html('√')
+    }else{
+      $("#hospitalGradeError").css("color","red")
+      $("#hospitalGradeError").html('请输入正确等级')
+    }
+  }
+  function hospitalAreaBlur() {
+
+  }
+  function hospitalAddressBlur() {
+    var hospitalAddress = $("#hospitalAddress")[0].value
+    if(hospitalAddress.trim()!=""){
+      $("#hospitalAddressError").css("color","green")
+      $("#hospitalAddressError").html('√')
+    }else{
+      $("#hospitalAddressError").css("color","red")
+      $("#hospitalAddressError").html('请输入地址')
+    }
+  }
+  function hospitalOpenBlur() {
+    var hospitalOpen = $("#hospitalOpen")[0].value
+    if(hospitalOpen==""||hospitalOpen.split(":").length==3){
+      $("#hospitalOpenError").css("color","red")
+      $("#hospitalOpenError").html('请选择')
+    }else{
+      $("#hospitalOpenError").css("color","green")
+      $("#hospitalOpenError").html('√')
+    }
+  }
+  function hospitalCloseBlur() {
+    var hospitalClose = $("#hospitalClose")[0].value
+    if(hospitalClose==""||hospitalClose.split(":").length==3){
+      $("#hospitalCloseError").css("color","red")
+      $("#hospitalCloseError").html('请选择')
+    }else{
+      $("#hospitalCloseError").css("color","green")
+      $("#hospitalCloseError").html('√')
+    }
+  }
+  function hospitalRuleBlur() {
+    var hospitalRule = $("#hospitalRule")[0].value
+    if(hospitalRule.trim()!=""){
+      $("#hospitalRuleError").css("color","green")
+      $("#hospitalRuleError").html('√')
+    }else{
+      $("#hospitalRuleError").css("color","red")
+      $("#hospitalRuleError").html('请输入地址')
+    }
+  }
+  function hospitalDetailsBlur() {
+    var hospitalDetails = $("#hospitalDetails")[0].value
+    if(hospitalDetails.trim()!=""){
+      $("#hospitalDetailsError").css("color","green")
+      $("#hospitalDetailsError").html('√')
+    }else{
+      $("#hospitalDetailsError").css("color","red")
+      $("#hospitalDetailsError").html('请输入地址')
+    }
+  }
+  function submitHospitalMessage() {
+    var temp = true
+    if($("#hospitalNameError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalIconError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalGradeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalAreaError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalAddressError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalOpenError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalCloseError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalRuleError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#hospitalDetailsError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if (temp){
+      $('#hospitalMessage').submit()
+    }else {
+      alert("请填写完整")
+    }
   }
 </script>
 </body>

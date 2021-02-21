@@ -81,10 +81,13 @@
         <div>
             <form id="patientUpdate" method="post" action="patientUpdate" >
                 <div>
-                    就诊人姓名:<input value="${patient.getPatientName()}" id="updatePatientName" type="text" name="updatePatientName" autocomplete="off" />
+                    就诊人姓名:<input onblur="updatePatientNameBlur()" value="${patient.getPatientName()}" id="updatePatientName" type="text" name="updatePatientName" autocomplete="off" />
+                    <font id="updatePatientNameError" style="color: green">√</font>
                 </div>
                 <div>
-                    就诊人身份证:<input value="${patient.getIdCardNum()}" id="updatePatientIdCardNum" type="text" name="updatePatientIdCardNum" autocomplete="off" />
+                    就诊人身份证:<input onblur="updatePatientIdCardNumBlur()" value="${patient.getIdCardNum()}" id="updatePatientIdCardNum" type="text" name="updatePatientIdCardNum" autocomplete="off" />
+                    <font id="updatePatientIdCardNumError" style="color: green">√</font>
+
                 </div>
                 <div>
                     就诊人身份证类型:<select id="updatePatientIDCardType" name="updatePatientIDCardType">
@@ -98,7 +101,9 @@
                     </select>
                 </div>
                 <div>
-                    年龄:<input value="${patient.getAge()}" id="updatePatientAge" type="text" name="updatePatientAge" autocomplete="off" />
+                    年龄:<input  onblur="updatePatientAgeBlur()" value="${patient.getAge()}" id="updatePatientAge" type="text" name="updatePatientAge" autocomplete="off" />
+                    <font id="updatePatientAgeError" style="color: green">√</font>
+
                 </div>
                 <div>
                     性别:
@@ -108,10 +113,14 @@
                     </select>
                 </div>
                 <div>
-                    生日:<input value="${patient.getBirthday()}" id="updatePatientBirthday" type="date" name="updatePatientBirthday" autocomplete="off" />
+                    生日:<input onblur="updatePatientBirthdayBlur()" value="${patient.getBirthday()}" id="updatePatientBirthday" type="date" name="updatePatientBirthday" autocomplete="off" />
+                    <font id="updatePatientBirthdayError" style="color: green">√</font>
+
                 </div>
                 <div>
-                    电话:<input value="${patient.getTel()}" id="updatePatientTel" type="text" name="updatePatientTel" autocomplete="off" />
+                    电话:<input  onblur="updatePatientTelBlur()" value="${patient.getTel()}" id="updatePatientTel" type="text" name="updatePatientTel" autocomplete="off" />
+                    <font id="updatePatientTelError" style="color: green">√</font>
+
                 </div>
                 <div>
                     是否已婚:
@@ -121,7 +130,9 @@
                     </select>
                 </div>
                 <div>
-                    住址:<input value="${patient.getAddress()}" id="updatePatientAddress" type="text" name="updatePatientAddress" autocomplete="off" />
+                    住址:<input  onblur="updatePatientAddressBlur()" value="${patient.getAddress()}" id="updatePatientAddress" type="text" name="updatePatientAddress" autocomplete="off" />
+                    <font id="updatePatientAddressError" style="color: green">√</font>
+
                 </div>
                 <div>
                     是否专程来连就医:
@@ -131,7 +142,9 @@
                     </select>
                 </div>
                 <div>
-                    联系人姓名:<input value="${patient.getLinkName()}" id="updatePatientLinkName" type="text" name="updatePatientLinkName" autocomplete="off" />
+                    联系人姓名:<input value="${patient.getLinkName()}"  onblur="updatePatientLinkNameBlur()" id="updatePatientLinkName" type="text" name="updatePatientLinkName" autocomplete="off" />
+                    <font id="updatePatientLinkNameError" style="color: green">√</font>
+
                 </div>
                 <div>
                     联系人身份证类型:
@@ -146,10 +159,13 @@
                     </select>
                 </div>
                 <div>
-                    联系人身份证号码:<input value="${patient.getLinkidCardNum()}" id="updatePatientLinkIdCardNum" type="text" name="updatePatientLinkIdCardNum" autocomplete="off" />
+                    联系人身份证号码:<input value="${patient.getLinkidCardNum()}"  onblur="updatePatientLinkIdCardNumBlur()" id="updatePatientLinkIdCardNum" type="text" name="updatePatientLinkIdCardNum" autocomplete="off" />
+                    <font id="updatePatientLinkIdCardNumError" style="color: green">√</font>
+
                 </div>
                 <div>
-                    联系人电话:<input value="${patient.getLinkTel()}" id="updatePatientLinkTel" type="text" name="updatePatientLinkTel" autocomplete="off"/>
+                    联系人电话:<input value="${patient.getLinkTel()}" onblur="updatePatientLinkTelBlur()" id="updatePatientLinkTel" type="text" name="updatePatientLinkTel" autocomplete="off"/>
+                    <font id="updatePatientLinkTelError" style="color: green">√</font>
                 </div>
                 <input type="text" style="display: none" name="patientID" value="${patient.getPatientID()}"/>
             </form>

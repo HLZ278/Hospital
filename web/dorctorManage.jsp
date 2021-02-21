@@ -73,10 +73,12 @@
         <div>
             <form id="addDoctor" method="post" action="doctorInsert" >
                 <div>
-                    医生名:<input type="text" name="doctorName" autocomplete="off" placeholder="点击输入医生名"/>
+                    医生名:<input type="text" onblur="doctorNameBlur()" id="doctorName" name="doctorName" autocomplete="off" placeholder="点击输入医生名"/>
+                    <font id="doctorNameError" style="color: red">必填</font>
                 </div>
                 <div>
-                    医生职位:<input type="text" name="job" autocomplete="off" placeholder="点击输入医生职位"/>
+                    医生职位:<input type="text" onblur="jobBlur()" id="job" name="job" autocomplete="off" placeholder="点击输入医生职位"/>
+                    <font id="jobError" style="color: red">必填</font>
                 </div>
                 <div>
                     性别:<select name="gender">
@@ -85,13 +87,16 @@
                     </select>
                 </div>
                 <div>
-                    年龄:<input type="number" name="age" autocomplete="off" placeholder="点击输入年龄"/>
+                    年龄:<input type="number" onblur="ageBlur()" id="age" name="age" autocomplete="off" placeholder="点击输入年龄"/>
+                    <font id="ageError" style="color: red">必填</font>
                 </div>
                 <div>
-                    专长:<input type="text" name="expertise" autocomplete="off" placeholder="点击输入专长"/>
+                    专长:<input type="text" onblur="expertiseBlur()" id="expertise" name="expertise" autocomplete="off" placeholder="点击输入专长"/>
+                    <font id="expertiseError" style="color: red">必填</font>
                 </div>
                 <div>
-                    预约费用:<input type="number" name="cost" autocomplete="off" placeholder="点击输入预约费用"/>
+                    预约费用:<input type="number" onblur="costBlur()" id="cost" name="cost" autocomplete="off" placeholder="点击输入预约费用"/>
+                    <font id="costError" style="color: red">必填</font>
                 </div>
                 <input type="hidden" name="departmentID" autocomplete="off" value="${department.getDepartmentID()}"/>
             </form>
@@ -108,10 +113,12 @@
         <div>
             <form id="doctorUpdate" method="post" action="doctorUpdate" >
                 <div>
-                    医生名:<input id="updateDoctorName" type="text" name="doctorName" autocomplete="off" placeholder="点击输入医生名"/>
+                    医生名:<input id="updateDoctorName" onblur="updateDoctorNameBlur()" type="text" name="doctorName" autocomplete="off" placeholder="点击输入医生名"/>
+                    <font id="updateDoctorNameError" style="color: green">√</font>
                 </div>
                 <div>
-                    医生职位:<input id="updateJob" type="text" name="job" autocomplete="off" placeholder="点击输入医生职位"/>
+                    医生职位:<input id="updateJob" onblur="updateJobBlur()" type="text" name="job" autocomplete="off" placeholder="点击输入医生职位"/>
+                    <font id="updateJobError" style="color: green">√</font>
                 </div>
                 <div>
                     性别:<select id="updateGender" name="gender">
@@ -120,13 +127,16 @@
                 </select>
                 </div>
                 <div>
-                    年龄:<input id="updateAge" type="number" name="age" autocomplete="off" placeholder="点击输入年龄"/>
+                    年龄:<input id="updateAge" onblur="updateAgeBlur()" type="number" name="age" autocomplete="off" placeholder="点击输入年龄"/>
+                    <font id="updateAgeError" style="color: green">√</font>
                 </div>
                 <div>
-                    专长:<input id="updateExpertise" type="text" name="expertise" autocomplete="off" placeholder="点击输入专长"/>
+                    专长:<input id="updateExpertise" onblur="updateExpertiseBlur()" type="text" name="expertise" autocomplete="off" placeholder="点击输入专长"/>
+                    <font id="updateExpertiseError" style="color: green">√</font>
                 </div>
                 <div>
-                    预约费用:<input id="updateCost" type="number" name="cost" autocomplete="off" placeholder="点击输入预约费用"/>
+                    预约费用:<input id="updateCost" onblur="updateCostBlur()" type="number" name="cost" autocomplete="off" placeholder="点击输入预约费用"/>
+                    <font id="updateCostError" style="color: green">√</font>
                 </div>
                 <input id="updateDoctorID" type="text" style="display: none" name="doctorID" value="0"/>
                 <input type="hidden" name="departmentID" autocomplete="off" value="${department.getDepartmentID()}"/>

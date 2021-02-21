@@ -37,13 +37,9 @@ import java.io.IOException;
         }else {
             result = userService.addUser(user, UserType.NORMAL_USER);
         }
-        String which = req.getParameter("which");
         if (result!=0){
             if (req.getParameter("userType").equals("1")){
-                if (which.equals("ordinaryOption")){
-                }else {
-                    resp.sendRedirect("ordinaryUser?page="+0+"&current="+1);
-                }
+                resp.sendRedirect("ordinaryUser?page="+0+"&current="+1);
             }else {
                 resp.sendRedirect("hospitalUser?page="+0+"&current="+2);
             }

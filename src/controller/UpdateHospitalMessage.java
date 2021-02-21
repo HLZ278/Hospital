@@ -48,7 +48,6 @@ public class UpdateHospitalMessage extends HttpServlet {
         // 【设置缓存目录】
         File temp=new File(req.getSession().getServletContext().getRealPath("/temp"));
         temp.mkdirs();
-        System.out.println("建立成功");
         factory.setRepository(temp);
         ServletFileUpload upload = new ServletFileUpload(factory);
 

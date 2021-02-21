@@ -45,10 +45,14 @@
         <div>
             <form id="patientInsert" method="post" action="patientInsert" >
                 <div>
-                    就诊人姓名:<input  id="updatePatientName" type="text" name="updatePatientName" autocomplete="off" />
+                    就诊人姓名:<input onblur="updatePatientNameBlur()" id="updatePatientName" type="text" name="updatePatientName" autocomplete="off" />
+                    <font id="updatePatientNameError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    就诊人身份证:<input  id="updatePatientIdCardNum" type="text" name="updatePatientIdCardNum" autocomplete="off" />
+                    就诊人身份证:<input onblur="updatePatientIdCardNumBlur()" id="updatePatientIdCardNum" type="text" name="updatePatientIdCardNum" autocomplete="off" />
+                    <font id="updatePatientIdCardNumError" style="color: red">必填</font>
+
                 </div>
                 <div>
                     就诊人身份证类型:<select id="updatePatientIDCardType" name="updatePatientIDCardType">
@@ -62,7 +66,9 @@
                 </select>
                 </div>
                 <div>
-                    年龄:<input  id="updatePatientAge" type="text" name="updatePatientAge" autocomplete="off" />
+                    年龄:<input  onblur="updatePatientAgeBlur()" id="updatePatientAge"  type="number" name="updatePatientAge" autocomplete="off" />
+                    <font id="updatePatientAgeError" style="color: red">必填</font>
+
                 </div>
                 <div>
                     性别:
@@ -72,30 +78,37 @@
                     </select>
                 </div>
                 <div>
-                    生日:<input  id="updatePatientBirthday" type="date" name="updatePatientBirthday" autocomplete="off" />
+                    生日:<input  onblur="updatePatientBirthdayBlur()" id="updatePatientBirthday" type="date" name="updatePatientBirthday" autocomplete="off" />
+                    <font id="updatePatientBirthdayError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    电话:<input  id="updatePatientTel" type="text" name="updatePatientTel" autocomplete="off" />
+                    电话:<input  onblur="updatePatientTelBlur()" id="updatePatientTel" type="text" name="updatePatientTel" autocomplete="off" />
+                    <font id="updatePatientTelError" style="color: red">必填</font>
+
                 </div>
                 <div>
                     是否已婚:
-                    <select id="updatePatientMarry" name="updatePatientMarry">
+                    <select  id="updatePatientMarry" name="updatePatientMarry">
                         <option value ="1">否</option>
                         <option value ="2">是</option>
                     </select>
                 </div>
                 <div>
-                    住址:<input  id="updatePatientAddress" type="text" name="updatePatientAddress" autocomplete="off" />
+                    住址:<input  onblur="updatePatientAddressBlur()" id="updatePatientAddress" type="text" name="updatePatientAddress" autocomplete="off" />
+                    <font id="updatePatientAddressError" style="color: red">必填</font>
                 </div>
                 <div>
                     是否专程来连就医:
-                    <select id="updatePatientObjective" name="updatePatientObjective">
+                    <select  id="updatePatientObjective" name="updatePatientObjective">
                         <option value ="1">否</option>
                         <option value ="2">是</option>
                     </select>
                 </div>
                 <div>
-                    联系人姓名:<input  id="updatePatientLinkName" type="text" name="updatePatientLinkName" autocomplete="off" />
+                    联系人姓名:<input onblur="updatePatientLinkNameBlur()" id="updatePatientLinkName" type="text" name="updatePatientLinkName" autocomplete="off" />
+                    <font id="updatePatientLinkNameError" style="color: red">必填</font>
+
                 </div>
                 <div>
                     联系人身份证类型:
@@ -110,10 +123,13 @@
                     </select>
                 </div>
                 <div>
-                    联系人身份证号码:<input  id="updatePatientLinkIdCardNum" type="text" name="updatePatientLinkIdCardNum" autocomplete="off" />
+                    联系人身份证号码:<input onblur="updatePatientLinkIdCardNumBlur()" id="updatePatientLinkIdCardNum" type="text" name="updatePatientLinkIdCardNum" autocomplete="off" />
+                    <font id="updatePatientLinkIdCardNumError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    联系人电话:<input  id="updatePatientLinkTel" type="text" name="updatePatientLinkTel" autocomplete="off"/>
+                    联系人电话:<input onblur="updatePatientLinkTelBlur()" id="updatePatientLinkTel" type="text" name="updatePatientLinkTel" autocomplete="off"/>
+                    <font id="updatePatientLinkTelError" style="color: red">必填</font>
                 </div>
             </form>
         </div>

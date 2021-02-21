@@ -166,11 +166,12 @@ public class HospitalDaoImpl implements HospitalDAO {
     }
     @Override
     public void updateHospitalMessage(Hospital hospital) {
+        System.out.println("ssss"+hospital);
         Connection conn = DBUtils.getCon();
         PreparedStatement pstatement = null;
         try {
             String sql;
-            sql = "update hospital set hospitalName=?,grade=?, area=?, address=?, releaseTime=?, stopTime=?, icon=? where hospitalID=?";
+            sql = "update hospital set hospitalName=?,grade=?, area=?, address=?, releaseTime=?, stopTime=?, icon=?, rule=?, details=?, notice=? where hospitalID=?";
             pstatement = conn.prepareStatement(sql);
             pstatement.setString(1, hospital.getHospitalName());
             pstatement.setString(2, hospital.getGrade());
@@ -179,7 +180,10 @@ public class HospitalDaoImpl implements HospitalDAO {
             pstatement.setTime(5, hospital.getReleaseTime());
             pstatement.setTime(6, hospital.getStopTime());
             pstatement.setString(7, hospital.getIcon());
-            pstatement.setInt(8, hospital.getHospitalID());
+            pstatement.setString(8, hospital.getRule());
+            pstatement.setString(9, hospital.getDetails());
+            pstatement.setString(10, hospital.getNotice());
+            pstatement.setInt(11, hospital.getHospitalID());
             pstatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

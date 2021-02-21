@@ -89,16 +89,20 @@
         <div>
             <form id="addUser" method="post" action="userInsert" >
                 <div>
-                    请输入用户名:<input type="text" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                    请输入用户名:<input onblur="addUserNameBlur()" type="text" id="userName" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                    <font id="nameError" style="color: red">必填</font>
                 </div>
                 <div>
-                    请输入密码:<input type="text" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                    请输入密码:<input type="text" onblur="addUserPasswdBlur()" id="userPwd" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                    <font id="userPwdError" style="color: red">必填</font>
                 </div>
                 <div>
-                    手机号:<input type="text" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                    手机号:<input type="text" onblur="phoneBlur()" id="userTel" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                    <font id="userTelError" style="color: red">必填</font>
                 </div>
                 <div>
-                    真实姓名:<input type="text" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    真实姓名:<input type="text" onblur="realNameBlur()" id="realName" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    <font id="realNameError" style="color: red">必填</font>
                 </div>
                 <div>
                     身份证类型:<select name="idCardType">
@@ -112,10 +116,10 @@
                 </select>
                 </div>
                 <div>
-                    身份证号码:<input type="text" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                    身份证号码:<input type="text" onblur="idCardNumBlur()" id="idCardNum" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                    <font id="idCardNumError" style="color: red">必填</font>
                 </div>
                 <input type="text" style="display: none" name="userType" value="1"/>
-                <input type="text" style="display: none" name="which" value="1"/>
             </form>
         </div>
         <div class="popup__btnWrapper">
@@ -130,16 +134,22 @@
         <div>
             <form id="userUpdate" method="post" action="userUpdate" >
                 <div>
-                    请输入用户名:<input id="updateUserName" type="text" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                    请输入用户名:<input id="updateUserName" onblur="updateUserNameBlur()" type="text" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                    <font id="updateNameError" style="color: green">格式正确</font>
                 </div>
                 <div>
-                    请输入密码:<input id="updateUserPwd" type="text" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                    请输入密码:<input id="updateUserPwd" onblur="updateUserPasswdBlur()" type="text" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                    <font id="updateUserPwdError" style="color: green">密码可用</font>
                 </div>
                 <div>
-                    手机号:<input id="updateUserTel" type="text" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                    手机号:<input id="updateUserTel" type="text" onblur="updateUserPhoneBlur()" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                    <font id="updateUserTelError" style="color: green">格式正确</font>
+
                 </div>
                 <div>
-                    真实姓名:<input id="updateRealName" type="text" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    真实姓名:<input id="updateRealName" type="text" onblur="updateUserRealNameBlur()" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    <font id="updateRealNameError" style="color: green">格式正确</font>
+
                 </div>
                 <div>
                     身份证类型:<select id="updateIdCardType" name="idCardType">
@@ -153,7 +163,8 @@
                 </select>
                 </div>
                 <div>
-                    身份证号码:<input id="updateIdcardNum" type="text" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                    身份证号码:<input id="updateIdcardNum" onblur="updateUserIdCardNumBlur()" type="text" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                    <font id="updateIdcardNumError" style="color: green">格式正确</font>
                 </div>
                 <input type="text" style="display: none" name="userType" value="1"/>
                 <input id="updateUserID" type="text" style="display: none" name="userID" value="0"/>

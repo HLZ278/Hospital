@@ -66,23 +66,31 @@
 </div>
 <div id="ooo" class="popup__wrapper" style="display: none">
     <div class="popup">
-        <div class="popup__title">添加普通用户</div>
+        <div class="popup__title">添加科室</div>
         <div>
             <form id="addDepartment" method="post" action="departmentInsert" >
                 <div>
-                    科室名:<input type="text" name="departmentName" autocomplete="off" placeholder="点击输入科室名"/>
+                    科室名:<input type="text" onblur="departmentNameBlur()" id="departmentName2" name="departmentName" autocomplete="off" placeholder="点击输入科室名"/>
+                    <font id="departmentNameError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    科室总类:<input type="text" name="departmentType" autocomplete="off" placeholder="点击输入科室总类"/>
+                    科室总类:<input type="text" onblur="departmentTypeBlur()" id="departmentType" name="departmentType" autocomplete="off" placeholder="点击输入科室总类"/>
+                    <font id="departmentTypeError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    科室位置:<input type="text" name="position" autocomplete="off" placeholder="点击输入科室位置"/>
+                    科室位置:<input type="text" onblur="positionBlur()" id="position" name="position" autocomplete="off" placeholder="点击输入科室位置"/>
+                    <font id="positionError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    上班时间:<input type="time" name="workTime" autocomplete="off" />
+                    上班时间:<input type="time" onblur="workTimeBlur()" id="workTime" name="workTime" autocomplete="off" />
+                    <font id="workTimeError" style="color: red">请选择</font>
                 </div>
                 <div>
-                    下班时间:<input type="time" name="closeTime" autocomplete="off" />
+                    下班时间:<input type="time" onblur="closeTimeBlur()" id="closeTime" name="closeTime" autocomplete="off" />
+                    <font id="closeTimeError" style="color: red">请选择</font>
                 </div>
             </form>
         </div>
@@ -98,23 +106,27 @@
         <div>
             <form id="departmentUpdate" method="post" action="departmentUpdate" >
                 <div>
-                    科室名:<input id="updateDepartmentName" type="text" name="departmentName" autocomplete="off" placeholder="点击输入科室名"/>
+                    科室名:<input id="updateDepartmentName" onblur="updateDepartmentNameBlur()" type="text" name="departmentName" autocomplete="off" placeholder="点击输入科室名"/>
+                    <font id="updateDepartmentNameError" style="color: green">√</font>
                 </div>
                 <div>
-                    科室类别:<input id="updateDepartmentType" type="text" name="departmentType" autocomplete="off" placeholder="点击输入科室类别"/>
+                    科室类别:<input id="updateDepartmentType" onblur="updateDepartmentTypeBlur()" type="text" name="departmentType" autocomplete="off" placeholder="点击输入科室类别"/>
+                    <font id="updateDepartmentTypeError" style="color: green">√</font>
                 </div>
                 <div>
-                    科室位置:<input id="updatePosition" type="text" name="position" autocomplete="off" placeholder="点击输入科室位置"/>
+                    科室位置:<input id="updatePosition" type="text" onblur="updatePositionBlur()" name="position" autocomplete="off" placeholder="点击输入科室位置"/>
+                    <font id="updatePositionError" style="color: green">√</font>
                 </div>
                 <div>
-                    上班时间:<input id="updateWorkTime" type="time" name="workTime" autocomplete="off"/>
+                    上班时间:<input id="updateWorkTime" type="time" onblur="updateWorkTimeBlur()" name="workTime" autocomplete="off"/>
+                    <font id="updateWorkTimeError" style="color: red">请确认</font>
                 </div>
                 <div>
-                    下班时间:<input id="updateCloseTime" type="time" name="closeTime" autocomplete="off" />
+                    下班时间:<input id="updateCloseTime" type="time" onblur="updateCloseTimeBlur()" name="closeTime" autocomplete="off" />
+                    <font id="updateCloseTimeError" style="color: red">请确认</font>
                 </div>
                 <input type="text" style="display: none" name="userType" value="1"/>
                 <input id="updateDepartmentID" type="text" style="display: none" name="departmentID" value="0"/>
-                <input type="text" style="display: none" name="which" value="1"/>
             </form>
         </div>
         <div class="popup__btnWrapper">

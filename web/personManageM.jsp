@@ -40,16 +40,20 @@
         <div>
             <form id="personUpdate" method="post" action="personUpdate" >
                 <div>
-                    用户名：<input value="${user.getUserName()}" type="text" name="updateUserName" autocomplete="off" />
+                    用户名：<input value="${user.getUserName()}" onblur="updateUserNameBlur()" id="updateUserName" type="text" name="updateUserName" autocomplete="off" />
+                    <font id="updateUserNameError" style="color: green">√</font>
                 </div>
                 <div>
-                    密码：<input value="${user.getUserPwd()}" type="password" name="updateUserPwd" autocomplete="off" />
+                    密码：<input value="${user.getUserPwd()}" onblur="updateUserPwdBlur()" id="updateUserPwd" type="password" name="updateUserPwd" autocomplete="off" />
+                    <font id="updateUserPwdError" style="color: green">√</font>
                 </div>
                 <div>
-                    电话:<input value="${user.getUserTel()}" type="number" name="updateUserTel" autocomplete="off" />
+                    电话:<input value="${user.getUserTel()}" onblur="updateUserTelBlur()" id="updateUserTel" type="number" name="updateUserTel" autocomplete="off" />
+                    <font id="updateUserTelError" style="color: green">√</font>
                 </div>
                 <div>
-                    真实姓名：<input value="${user.getRealName()}" type="text" name="updateUserRealName" autocomplete="off" />
+                    真实姓名：<input value="${user.getRealName()}" onblur="updateUserRealNameBlur()" id="updateUserRealName" type="text" name="updateUserRealName" autocomplete="off" />
+                    <font id="updateUserRealNameError" style="color: green">√</font>
                 </div>
                 <div>
                     身份证类型：
@@ -64,7 +68,8 @@
                     </select>
                 </div>
                 <div>
-                    身份证号：<input value="${user.getIdCardNum()}"  type="text" name="updateUserIDNum" autocomplete="off" />
+                    身份证号：<input value="${user.getIdCardNum()}"  onblur="updateUserIDNumBlur()" id="updateUserIDNum" type="text" name="updateUserIDNum" autocomplete="off" />
+                    <font id="updateUserIDNumError" style="color: green">√</font>
                 </div>
 
                 <input type="text" style="display: none" name="updateUserID" value="${user.getUserID()}"/>
