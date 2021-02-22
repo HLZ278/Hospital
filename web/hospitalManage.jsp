@@ -163,7 +163,27 @@
     $("#updateBox").css('display', 'block')
   }
   function updateDepartmentConfirm() {
-    $("#departmentUpdate").submit()
+    var temp = true
+    if($("#updateDepartmentNameError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateDepartmentTypeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updatePositionError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateWorkTimeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if($("#updateCloseTimeError").css("color")=="rgb(255, 0, 0)"){
+      temp=false
+    }
+    if (temp){
+      $("#departmentUpdate").submit()
+    }else {
+      alert("请填写完整")
+    }
   }
   function updateDepartmentCancle() {
     $("#updateBox").css('display', 'none')
@@ -173,6 +193,7 @@
   }
 
   function addDoctor() {
+
     $("#addDoctorBox").css('display', 'block')
   }
   function addDoctorConfirm() {
