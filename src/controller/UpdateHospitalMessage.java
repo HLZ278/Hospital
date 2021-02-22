@@ -1,13 +1,10 @@
 package controller;
 
-import com.alibaba.fastjson.JSON;
 import entity.Hospital;
 import entity.User;
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import service.HospitalService;
 import service.HospitalServiceImpl;
 import utils.StringToTime;
 
@@ -19,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;

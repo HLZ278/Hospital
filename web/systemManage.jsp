@@ -428,6 +428,15 @@
             $("#releaseTimeError").css("color","green")
             $("#releaseTimeError").html('√')
         }
+    }function releaseTimeBlur() {
+        var releaseTime = $("#releaseTime")[0].value
+        if(releaseTime==""||releaseTime.split(":").length==3){
+            $("#releaseTimeError").css("color","red")
+            $("#releaseTimeError").html('请选择')
+        }else{
+            $("#releaseTimeError").css("color","green")
+            $("#releaseTimeError").html('√')
+        }
     }
 
     function stopTimeBlur() {
@@ -592,10 +601,9 @@
         if($("#updateNoticeTitleError").css("color")=="rgb(255, 0, 0)"){
             temp=false
         }
-        if($("#updateNoticeTitleError").css("color")=="rgb(255, 0, 0)"){
+        if($("#updateNoticeContentError").css("color")=="rgb(255, 0, 0)"){
             temp=false
         }
-
         if (temp){
             $("#noticeUpdate").submit()
         }else {

@@ -74,26 +74,46 @@
 </div>
 <div id="ooo" class="popup__wrapper" style="display: none">
     <div class="popup">
-        <div class="popup__title">添加普通用户</div>
+        <div class="popup__title">添加医院</div>
         <div>
             <form id="addHospital" method="post" action="hospitalInsert" >
                 <div>
-                    医院名:<input type="text" name="hospitalName" autocomplete="off" placeholder="点击输入用户名"/>
+                    医院名:<input type="text" onblur="hospitalNameBlur()" id="hospitalName2" name="hospitalName" autocomplete="off" placeholder="点击输入医院名"/>
+                    <font id="hospitalNameError" style="color: red">必填</font>
                 </div>
                 <div>
-                    医院等级:<input type="text" name="grade" autocomplete="off" placeholder="点击输入密码"/>
+                    医院等级:
+                    <select name="grade">
+                        <option value ="一级甲等">一级甲等</option>
+                        <option value ="二级甲等">二级甲等</option>
+                        <option value="三级甲等">三级甲等</option>
+                    </select>
                 </div>
                 <div>
-                    地区:<input type="text" name="area" autocomplete="off" placeholder="点击输入手机号"/>
+                    地区:
+                    <select name="area">
+                        <option value ="中山区">中山区</option>
+                        <option value ="西岗区">西岗区</option>
+                        <option value="沙河口区">沙河口区</option>
+                        <option value="甘井子区">甘井子区</option>
+                        <option value="旅顺口区">旅顺口区</option>
+                        <option value="金州区">金州区</option>
+                        <option value="普兰店区">普兰店区</option>
+                    </select>
                 </div>
                 <div>
-                    地点:<input type="text" name="address" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    地点:<input type="text" id="address" name="address" onblur="addressBlur()" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    <font id="addressError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    开门时间:<input type="time" name="releaseTime" autocomplete="off"/>
+                    开门时间:<input type="time" onblur="releaseTimeBlur()" id="releaseTime" name="releaseTime" autocomplete="off"/>
+                    <font id="releaseTimeError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    关门时间:<input type="time" name="stopTime" autocomplete="off" />
+                    关门时间:<input onblur="stopTimeBlur()" type="time" id="stopTime" name="stopTime" autocomplete="off" />
+                    <font id="stopTimeError" style="color: red">必填</font>
                 </div>
             </form>
         </div>
@@ -109,16 +129,23 @@
         <div>
             <form id="addUser" method="post" action="userInsert" >
                 <div>
-                    请输入用户名:<input type="text" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                    请输入用户名:<input type="text" id="userName" onblur="addUserNameBlur()" name="userName" autocomplete="off" placeholder="点击输入用户名"/>
+                    <font id="nameError" style="color: red">必填</font>
                 </div>
                 <div>
-                    请输入密码:<input type="text" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                    请输入密码:<input type="text" id="userPwd" onblur="addUserPasswdBlur()" name="userPwd" autocomplete="off" placeholder="点击输入密码"/>
+                    <font id="userPwdError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    手机号:<input type="text" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                    手机号:<input type="text" id="userTel" onblur="phoneBlur()" name="userTel" autocomplete="off" placeholder="点击输入手机号"/>
+                    <font id="userTelError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    真实姓名:<input type="text" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    真实姓名:<input type="text" id="realName" onblur="realNameBlur()" name="realName" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    <font id="realNameError" style="color: red">必填</font>
+
                 </div>
                 <div>
                     身份证类型:<select name="idCardType">
@@ -132,11 +159,12 @@
                 </select>
                 </div>
                 <div>
-                    身份证号码:<input type="text" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                    身份证号码:<input type="text" id="idCardNum" onblur="idCardNumBlur()" name="idCardNum" autocomplete="off" placeholder="点击输入身份证号"/>
+                    <font id="idCardNumError" style="color: red">必填</font>
+
                 </div>
                 <input type="text" style="display: none" name="userType" value="2"/>
                 <input id="addUserHospitalID" type="text" style="display: none" name="hospitalID"/>
-                <input type="text" style="display: none" name="which" value="1"/>
             </form>
         </div>
         <div class="popup__btnWrapper">
@@ -151,22 +179,40 @@
         <div>
             <form id="hospitalUpdate" method="post" action="hospitalUpdate" >
                 <div>
-                    医院名:<input id="updateHospitalName" type="text" name="hospitalName" autocomplete="off" placeholder="点击输入用户名"/>
+                    医院名:<input id="updateHospitalName" onblur="updateHospitalNameBlur()" type="text" name="hospitalName" autocomplete="off" placeholder="点击输入用户名"/>
+                    <font id="updateHospitalNameError" style="color: green">可用</font>
                 </div>
                 <div>
-                    等级:<input id="updateGrade" type="text" name="grade" autocomplete="off" placeholder="点击输入密码"/>
+                    等级:
+                    <select  id="updateGrade" name="grade">
+                        <option value ="一级甲等">一级甲等</option>
+                        <option value ="二级甲等">二级甲等</option>
+                        <option value="三级甲等">三级甲等</option>
+                    </select>
                 </div>
                 <div>
-                    地区:<input id="updateArea" type="text" name="area" autocomplete="off" placeholder="点击输入手机号"/>
+                    地区:
+                    <select  id="updateArea" name="area">
+                        <option value ="中山区">中山区</option>
+                        <option value ="西岗区">西岗区</option>
+                        <option value="沙河口区">沙河口区</option>
+                        <option value="甘井子区">甘井子区</option>
+                        <option value="旅顺口区">旅顺口区</option>
+                        <option value="金州区">金州区</option>
+                        <option value="普兰店区">普兰店区</option>
+                    </select>
                 </div>
                 <div>
-                    地点:<input id="updateAddress" type="text" name="address" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    地点:<input id="updateAddress" onblur="updateAddressBlur()" type="text" name="address" autocomplete="off" placeholder="点击输入地点"/>
+                    <font id="updateAddressError" style="color: green">可用</font>
                 </div>
                 <div>
-                    开门时间:<input id="updateReleaseTime" type="time" name="releaseTime" autocomplete="off" placeholder="点击输入真实姓名"/>
+                    开门时间:<input id="updateReleaseTime" onblur="updateReleaseTimeBlur()" type="time" name="releaseTime" autocomplete="off"/>
+                    <font id="updateReleaseTimeError" style="color: red">请确认</font>
                 </div>
                 <div>
-                    关门时间:<input id="updateStopTime" type="time" name="stopTime" autocomplete="off" placeholder="点击输入身份证号"/>
+                    关门时间:<input id="updateStopTime" onblur="updateStopTimeBlur()" type="time" name="stopTime" autocomplete="off" placeholder="点击输入身份证号"/>
+                    <font id="updateStopTimeError" style="color: red">请确认</font>
                 </div>
                 <input id="updateHospitalID" type="text" style="display: none" name="hospitalID" value="0"/>
                 <input type="text" style="display: none" name="which" value="1"/>

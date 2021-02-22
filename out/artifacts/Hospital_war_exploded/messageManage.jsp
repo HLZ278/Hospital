@@ -34,7 +34,7 @@
                     <td>${message.getTitle()}</td>
                     <td>${message.getCreateTime()}</td>
                     <%--&quot;的作用是：js函数传入数字就没问题，传入中文、字母等字符串就会没效果，加上&quot;表示引用""的含义只要就不会出错--%>
-                    <td><a href="JavaScript:showMessage(&quot;${message.getContent()}&quot;)">查看内容</a>|<a href="JavaScript:deleteFormAllMessage(${message.getMessageID()})">删除</a></td>
+                    <td><a href="JavaScript:showMessage(&quot;${message.getContent()}&quot;)">查看内容</a>|<a href="JavaScript:deleteMessage(${message.getMessageID()})">删除</a></td>
 
                 </tr>
             </c:forEach>
@@ -55,14 +55,17 @@
         <div>
             <form id="addMessage" method="post" action="insertMessage" >
                 <div>
-                    请输入标题:<input type="text" name="title" autocomplete="off"/>
+                    请输入标题:<input type="text" onblur="titleBlur()" id="title" name="title" autocomplete="off"/>
+                    <font id="titleError" style="color: red">必填</font>
+
                 </div>
                 <div>
-                    请输入内容:<textarea name="content" autocomplete="off" />
+                    请输入内容:<textarea id="content" onblur="contentBlur()" name="content" autocomplete="off" />
+                    <font id="contentError" style="color: red">必填</font>
                 </div>
                 <div class="popup__btnWrapper">
-                    <button class="popup__yesBtn" type="submit">Yes</button>
-                    <button class="popup__noBtn" onclick="addCancle()">No</button>
+                    <button class="popup__yesBtn" type="button" onclick="addMessage()">Yes</button>
+                    <button class="popup__noBtn" type="button" onclick="addCancle()">No</button>
                 </div>
             </form>
         </div>

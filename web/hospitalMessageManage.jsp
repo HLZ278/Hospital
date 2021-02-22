@@ -30,8 +30,8 @@
                 <font id="hospitalNameError" style="color: green">√</font>
             </div>
             <div>
-                医院图标:<img name="hospitalIcon" width="100px" height="100px" type="image" src="images/${userHospital.getIcon()}.png">
-                <input type="file" name="image"  accept=".png">
+                医院图标:<img id="img_id" name="hospitalIcon" width="100px" height="100px" type="image" src="images/${userHospital.getIcon()}.png">
+                <input type="file" name="image" onchange="showImg()" id="img_file" accept=".png">
                 <font id="hospitalIconError" style="color: green">√</font>
             </div>
             <div>

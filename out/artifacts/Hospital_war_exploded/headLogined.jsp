@@ -53,6 +53,7 @@
                 <div class="dropdown">
                     <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
+                        <a href="queryDepartment?page=0&current=1">管理界面</a>
                         <a  href="javascript:exit();">退出登录</a>
                 </div>
                 </div>
@@ -61,6 +62,7 @@
                 <div class="dropdown">
                     <span>* ${user.getRealName().substring(user.getRealName().length()-2)} ▽</span>
                     <div class="dropdown-content">
+                        <a href="ordinaryUser?page=0&current=1">管理界面</a>
                         <a href="javascript:exit();">退出登录</a>
                     </div>
                 </div>

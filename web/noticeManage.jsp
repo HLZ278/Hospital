@@ -38,7 +38,6 @@
                     <td>${notice.getNoticeID()}</td>
                     <td>${notice.getTitle()}</td>
                     <td>${notice.getCreateTime()}</td>
-                        <%--原来加上&quot;就可以传入字符串，唉这么晚才发现，之前一直是在js函数中通过查询这行表格获取其中字符串内容，真是失败啊哈哈--%>
                     <td><a a href="#" onclick="updateNotice(this, '&quot;${notice.getContent()}&quot;')">修改</a>|<a href="JavaScript:deleteNoticeConfirm(${notice.getNoticeID()})">删除</a></td>
                 </tr>
             </c:forEach>

@@ -38,7 +38,6 @@
                     <td>${notice.getNoticeID()}</td>
                     <td>${notice.getTitle()}</td>
                     <td>${notice.getCreateTime()}</td>
-                    <%--原来加上&quot;就可以传入字符串，唉这么晚才发现，之前一直是在js函数中通过查询这行表格获取其中字符串内容，真是失败啊哈哈--%>
                     <td><a a href="#" onclick="updateNotice(this, '&quot;${notice.getContent()}&quot;')">修改</a>|<a href="JavaScript:deleteNoticeConfirm(${notice.getNoticeID()})">删除</a></td>
                 </tr>
             </c:forEach>
@@ -49,14 +48,16 @@
 
 <div id="ooo" class="popup__wrapper" style="display: none">
     <div class="popup">
-        <div class="popup__title">修改医院信息</div>
+        <div class="popup__title">添加公告</div>
         <div>
             <form id="insertNotice" method="post" action="insertNotice" >
                 <div>
-                    公告标题:<input type="text" name="noticeTitle" autocomplete="off" placeholder="点击输入用户名"/>
+                    公告标题:<input type="text" onblur="noticeTitleBlur()" id="noticeTitle2" name="noticeTitle" autocomplete="off" placeholder="公告标题"/>
+                    <font id="noticeTitleError" style="color: red">必填</font>
                 </div>
                 <div>
-                    公告内容:<textarea name="noticeContent"></textarea>
+                    公告内容:<textarea  onblur="noticeContentBlur()" id="noticeContent2" name="noticeContent" style="width: 300px; height: 250px" placeholder="公告内容"></textarea>
+                    <font id="noticeContentError" style="color: red">必填</font>
                 </div>
             </form>
         </div>
@@ -68,14 +69,17 @@
 </div>
 <div id="updateBox" class="popup__wrapper" style="display: none">
     <div class="popup">
-        <div class="popup__title">修改医院信息</div>
+        <div class="popup__title">修改公告信息</div>
         <div>
             <form id="noticeUpdate" method="post" action="updateNotice" >
                 <div>
-                    公告标题:<input type="text" id="updateNoticeTitle" style="width: 400px"  name="noticeTitle" autocomplete="off" placeholder="点击输入用户名"/>
+                    公告标题:<input type="text" onblur="updateNoticeTitleBlur()" id="updateNoticeTitle" style="width: 400px"  name="noticeTitle" autocomplete="off" placeholder="公告标题"/>
+                    <font id="updateNoticeTitleError" style="color: green">√</font>
+
                 </div>
                 <div>
-                    公告内容:<textarea id="noticeContent" style="width: 400px; height: 100px" name="noticeContent"></textarea>
+                    公告内容:<textarea id="noticeContent"  onblur="updateNoticeContentBlur()" style="width: 400px; height: 100px" name="noticeContent"></textarea>
+                    <font id="updateNoticeContentError" style="color: green">√</font>
                 </div>
                 <input id="updateNoticeID" type="text" style="display: none;" name="noticeID" value="0"/>
             </form>
