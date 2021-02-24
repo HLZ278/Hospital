@@ -95,7 +95,6 @@ public class UpdateHospitalMessage extends HttpServlet {
 
             hospital.setRule(stringStringHashMap.get("hospitalRule"));
             hospital.setDetails(stringStringHashMap.get("hospitalDetails"));
-            System.out.println(hospital);
             hospitalService.updateHospitalMessage(hospital);
         } catch (Exception e) {
             e.printStackTrace();

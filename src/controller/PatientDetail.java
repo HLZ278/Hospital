@@ -29,7 +29,6 @@ public class PatientDetail extends HttpServlet {
         req.setAttribute("patient", patient);
         Object o = JSON.toJSON(patient);
         req.setAttribute("patientJson", o);
-        System.out.println(o);
         req.getRequestDispatcher("patientManage.jsp").forward(req, resp);
     }
 

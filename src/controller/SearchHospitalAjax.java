@@ -22,7 +22,6 @@ public class SearchHospitalAjax extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         String level = req.getParameter("level");
         String area = req.getParameter("area");
-        System.out.println(level+"--"+area);
         HospitalService hospitalService = new HospitalServiceImpl();
         List<Hospital> hospitals = hospitalService.queryHospitalByLevelAndArea(level, area);
 //        req.setAttribute("hospitals", hospitals);

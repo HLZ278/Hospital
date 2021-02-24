@@ -29,7 +29,6 @@ public class UpdateUser extends HttpServlet {
         user.setIdCardType(Integer.parseInt(req.getParameter("idCardType")));
         user.setIdCardNum((String) req.getParameter("idCardNum"));
         user.setUserType(Integer.parseInt(req.getParameter("userType")));
-        System.out.println(user);
         UserService userService = new UserServiceImpl();
         userService.updateUser(user);
         String which = req.getParameter("which");

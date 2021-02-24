@@ -25,7 +25,6 @@ public class QueryDoctor extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
         int departmentID = Integer.parseInt(req.getParameter("departmentID"));
-        System.out.println(departmentID);
         String doctorName = req.getParameter("doctorName");
         int page = Integer.parseInt(req.getParameter("page"));
         DoctorServiceImpl doctorService = new DoctorServiceImpl();
@@ -37,7 +36,6 @@ public class QueryDoctor extends HttpServlet {
         int pageCount = (count/14)+1;
         req.setAttribute("pageCount", pageCount);
         req.setAttribute("nowPage", page);
-
         req.setAttribute("list", o);
         req.setAttribute("department", department);
         req.getRequestDispatcher("hospitalManage.jsp").forward(req, resp);
