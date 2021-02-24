@@ -10,4 +10,6 @@ public interface NumSrcDao {
 	public int subtract(int numSrcID);
 
 	void cancleOrder(int numSrcID);
+
+    boolean checkTime(int signalSrcID);
 }

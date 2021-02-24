@@ -26,7 +26,6 @@ public class LoadMoreHospitalAjax extends HttpServlet {
         int page = Integer.parseInt(req.getParameter("page"));
         HospitalService hospitalService = new HospitalServiceImpl();
         List<Hospital> hospitals = hospitalService.loadMoreHospital(level, area, page);
-        System.out.println(hospitals);
         Object o = JSON.toJSON(hospitals);
         PrintWriter writer = resp.getWriter();
         writer.print(o);

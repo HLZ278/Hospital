@@ -47,4 +47,10 @@ public class NumSrcServiceImpl implements NumSrcService {
         NumSrcDaoImpl numSrcDao = new NumSrcDaoImpl();
         return numSrcDao.subtract(numSrcID);
     }
+
+    @Override
+    public boolean checkTime(int signalSrcID) {
+        NumSrcDaoImpl numSrcDao = new NumSrcDaoImpl();
+        return numSrcDao.checkTime(signalSrcID);
+    }
 }

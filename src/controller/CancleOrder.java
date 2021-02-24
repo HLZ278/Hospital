@@ -22,9 +22,17 @@ public class CancleOrder extends HttpServlet {
         int signalSrcID = Integer.parseInt(req.getParameter("signalSrcID"));
         OrderServiceImpl orderService = new OrderServiceImpl();
         NumSrcServiceImpl numSrcService = new NumSrcServiceImpl();
-        orderService.cancle(orderID);
-        numSrcService.cancleOrder(signalSrcID);
-        req.getRequestDispatcher("queryOrderManageView").forward(req, resp);
+        //检查预约时间是否是12小时以上
+        boolean isNotTimeout = numSrcService.checkTime(signalSrcID);
+        if (isNotTimeout){
+            orderService.cancle(orderID);
+            numSrcService.cancleOrder(signalSrcID);
+            req.getRequestDispatcher("queryOrderManageView").forward(req, resp);
+        }else {
+            resp.getWriter().print("距就诊日12小时，无法取消，等待3秒自动跳回...");
+            resp.setHeader("refresh", "3;url=queryOrderManageView?current=2");
+        }
+
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -32,7 +32,6 @@ public class QueryDoctor extends HttpServlet {
         List<Doctor> doctors = doctorService.queryDoctor(departmentID, page, doctorName);
         DepartmentServiceImpl departmentService = new DepartmentServiceImpl();
         Department department = departmentService.queryDepartmentByID(departmentID);
-        System.out.println(department);
         Object o = JSON.toJSON(doctors);
         int count = doctorService.countDoctor(departmentID);
         int pageCount = (count/14)+1;

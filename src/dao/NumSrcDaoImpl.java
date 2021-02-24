@@ -109,4 +109,27 @@ public class NumSrcDaoImpl implements NumSrcDao{
             DBUtils.Close(null, pstatement, conn);
         }
     }
+
+    @Override
+    public boolean checkTime(int signalSrcID) {
+        Connection conn = DBUtils.getCon();
+        PreparedStatement pstatement = null;
+        ResultSet resultSet = null;
+        try {
+            String sql = "SELECT * FROM signalsrc WHERE signalSrcID=? and now()<ADDDATE(contractTime,interval - 12 hour);";
+            pstatement = conn.prepareStatement(sql);
+            pstatement.setInt(1, signalSrcID);
+            resultSet = pstatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭数据库连接，同时先要关闭结果集和PreparedStatement
+            DBUtils.Close(resultSet, pstatement, conn);
+        }
+        return false;
+
+    }
 }

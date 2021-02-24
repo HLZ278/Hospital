@@ -10,4 +10,6 @@ public interface NumSrcService {
     public void cancleOrder(int numSrcID);
 
     int subtract(int numSrcID);
+
+    boolean checkTime(int signalSrcID);
 }
