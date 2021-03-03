@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ab5ccb4-3899-49ad-b746-6f8e72580c73" name="Default Changelist" comment="" />
+    <list default="true" id="8ab5ccb4-3899-49ad-b746-6f8e72580c73" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +305,7 @@
       <workItem from="1614132568568" duration="9391000" />
       <workItem from="1614324832906" duration="653000" />
       <workItem from="1614506267569" duration="3041000" />
-      <workItem from="1614734321354" duration="5824000" />
+      <workItem from="1614734321354" duration="6066000" />
     </task>
     <task id="LOCAL-00001" summary="数据库版本更改">
       <created>1610587530103</created>
@@ -550,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614759250777</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="ok">
+      <created>1614760172439</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1614760172439</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,10 +670,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="279" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1610594771735" />
-    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1614759249232">
+    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1614760171266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1614759249232" />
+    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1614760171266" />
     <state x="80" y="259" width="1350" height="622" key="DiffContextDialog" timestamp="1613998464776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -741,10 +750,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="367" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610685706047" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1614759278887">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1614760174013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614759278887" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614760174013" />
     <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1614734348607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
