@@ -30,7 +30,7 @@ public class QueryNumSrc extends HttpServlet {
         int doctorID = Integer.parseInt(req.getParameter("doctorID"));
         int page = Integer.parseInt(req.getParameter("page"));
         DoctorServiceImpl doctorService = new DoctorServiceImpl();
-        Doctor doctor = doctorService.queryDoctor(departmentID);
+        Doctor doctor = doctorService.queryDoctor(doctorID);
         DepartmentServiceImpl departmentService = new DepartmentServiceImpl();
         Department department = departmentService.queryDepartmentByID(departmentID);
         NumSrcServiceImpl numSrcService = new NumSrcServiceImpl();

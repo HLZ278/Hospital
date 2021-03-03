@@ -33,7 +33,7 @@ public class OrderInset extends HttpServlet {
         Patient patient = patientService.queryPatientByPatientID(patientID);
         Timestamp unseal = patient.getUnseal();
         //在解禁后才可以进行预约
-        if (unseal.before(new Timestamp(System.currentTimeMillis()))){
+        if ((unseal!=null&&unseal.before(new Timestamp(System.currentTimeMillis())))||unseal==null){
             NumSrcServiceImpl numSrcService = new NumSrcServiceImpl();
             //如果成功减掉result返回1，否则返回0,返回0的话直接return，结束servlet而不进行添加订单
             int result = numSrcService.subtract(numSrcID);
@@ -47,7 +47,6 @@ public class OrderInset extends HttpServlet {
             }else {
                 String ctxPath = req.getContextPath();
                 resp.getWriter().println("手慢啦，没抢过别人，请返回");
-                //resp.setHeader("refresh", "3;url=" + ctxPath + "/login.jsp");
             }
 
         }else {

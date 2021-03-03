@@ -33,7 +33,7 @@ public class LoginAuthorizeFilter implements Filter
                 && !servletPath.contains("noticePage.jsp")&& !servletPath.contains("homeWithSearchByHospitalName")
                 && !servletPath.contains("searchHospitalAjaxC") && !servletPath.contains("regist.jsp")&& !servletPath.contains("regist.jsp")
                 && !servletPath.contains("exitLogin")&& !servletPath.contains("exitLogin")&& !servletPath.contains("doLogin")
-                && !servletPath.contains("registC"))
+                && !servletPath.contains("registC")&& !servletPath.contains("exitLogin")&& !servletPath.contains("loadMoreHospital"))
         {
             HttpSession session = ((HttpServletRequest) request).getSession();
             Object object = session.getAttribute("user");
