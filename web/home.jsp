@@ -309,10 +309,8 @@
         }
 
     }
-    if (document.addEventListener) {//firefox
-
+    if (document.addEventListener) {
         document.addEventListener('DOMMouseScroll', scrollFunc, false);
-
     }
     window.onmousewheel = document.onmousewheel = scrollFunc;
 </script>
